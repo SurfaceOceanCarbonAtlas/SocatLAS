@@ -9,13 +9,13 @@ LET baddat = 0
 
 CANCEL SYMBOL dm_labels
 
-LET ok = IFV ($1) THEN 1 ELSE 0
+LET ok = IFV (($1)) THEN 1 ELSE 0
 IF `ok` THEN 
    DEFINE SYMBOL ax_lo = `($1)`
 ELSE 
    DEFINE SYMBOl ax_lo = bad
 ENDIF
-LET ok = IFV ($2) THEN 1 ELSE 0
+LET ok = IFV (($2)) THEN 1 ELSE 0
 IF `ok` THEN 
    DEFINE SYMBOL ax_hi = `($2)`
 ELSE 

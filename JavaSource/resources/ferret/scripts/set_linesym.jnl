@@ -53,7 +53,14 @@ ELSE
 ENDIF ! curvilinear or not
 
 LET npoints = ngood + nbad
-list npoints
+
+DEFINE SYMBOL shape = `npoints,RETURN=shape`
+IF ($shape"0|POINT>0|E>1") THEN 
+   LET epoints = ngood + nbad
+   LET nmax = epoints[e=@max]
+   LET npoints = `nmax[e=1]`  ! works around a bug where the context of `nmax[e=1]` is nfeatures long, not 1
+ENDIF
+
 LET nminpts = 120
 IF ($itsa_multi_lineplot"0|*>1") THEN LET nminpts = 15
 

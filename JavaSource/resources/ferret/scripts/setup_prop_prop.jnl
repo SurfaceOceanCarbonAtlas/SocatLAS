@@ -17,12 +17,13 @@ LET vnames = ..varnames
 ! Define symbols associated with the region and data and perform any
 ! initialization needed for this dataset.
 
-! Initialize
+! Initialize mask
+
+LET constraints_mask = 1
 
 
-
-!!! Plot time only as the independent variable.  If they
-!!! have sent in time as the dependent var, swap it.
+! Plot time only as the independent variable.  If they
+! have sent in time as the dependent var, swap it.
 
 IF ($data_1_var"0|*>1") THEN GO LAS_var_lon_lat_time ($data_1_var)
 
@@ -180,7 +181,6 @@ IF ($error_status"0|*>1") THEN
   EXIT/PROGRAM
 ENDIF
 
-
 ! Here is variable 1 title 
 DEFINE SYMBOL ferret_title_1 = ($ferret_plot_title"($data_1_var)")
 IF `(STRINDEX("($ferret_title_1%0%)", "Time") GT 0) AND (STRINDEX("($ferret_title_1%0%)", " since ") GT 0)` THEN \
@@ -226,6 +226,7 @@ ENDIF
 ! Could analyze the axes, see if, without striding, they are in fact
 ! the same length, and if so apply striding to all grids. This is a rare
 ! case; not doing this now.
+
 LET nshape = STRLEN ("($vshape)")
 IF `($data_count"0") GE 2 AND ($its_prop_plot"0") AND nshape GT 1` THEN 
    SET DATA ($data_0_url)
@@ -363,7 +364,10 @@ IF `($data_count"0") GE 3` THEN ! color by 3rd variable
    DEFINE SYMBOL ferret_plot_var_2 = ($($fer_sym)_var)
    DEFINE SYMBOL ferret_plot_var = ($($fer_sym)_var)
 
-   LET/TITLE="($ferret_title_2)" zvar = XSEQUENCE(($ferret_plot_var_2))
+   LET/TITLE="($ferret_title_2)" zvar = ($ferret_plot_var_2)
+   
+   IF `($its_trajectory_corr"0|*>1") EQ 0` THEN\  
+     LET/TITLE="($ferret_title_1)" zvar = XSEQUENCE(($ferret_plot_var_2)) 
 
 ! Is it a varible on the E axis of a DSG file?
 
@@ -373,26 +377,6 @@ IF `($data_count"0") GE 3` THEN ! color by 3rd variable
 ! Is it a Profile or Trajectory dataset?
       IF `($rowvar"0|*>1") EQ 0` THEN GO LAS_setup_dsg
       IF ($rowvar"0|*>1") THEN DEFINE SYMBOL rowvar = rowsize
-
-! Expand trajectory variable into obs axis
-      DEFINE SYMBOL vtype = 0
-      DEFINE SYMBOL vtype = `zvar,RETURN=dtype`
-      DEFINE SYMBOL is_string = ($vtype"0|CHAR>1|*>0")
-
-      IF ($is_string"0|0|*>1") THEN 
-         LET zvar = EXPND_BY_LEN_STR(($ferret_plot_var_2), ($rowvar),`($rowvar)[m=@sum]`)
-
-! Set string var to a sequence number, unless its a qc_flag or region id.
-
-	 IF `(($data_2_var_in"0|region_ID>1|qc_flag>1|*>0") EQ 0) AND ($its_prop_plot"0|*>1")` THEN 
-	    LET mvar_2 = _m[ge=($ferret_plot_var_2)]
-	    LET zvar = EXPND_BY_LEN(mvar_2, ($rowvar),`($rowvar)[m=@sum]`)
-	 ELSE
-	    LET zvar = EXPND_BY_LEN(($ferret_plot_var_2), ($rowvar),`($rowvar)[m=@sum]`)
-	 ENDIF
-      ELSE
-         LET zvar = EXPND_BY_LEN(($ferret_plot_var_2), ($rowvar),`($rowvar)[m=@sum]`)
-      ENDIF
 
    ELSE
 
@@ -512,34 +496,39 @@ DEFINE SYMBOL yvar = yvar
 
 ! Apply any constraints
 
- LET npts = `xvar,return=isize`
+IF ($feature_type"0|*>1") THEN 
+   GO setup_dsg_constraints
+ELSE
+
+   LET npts = `xvar,return=isize`
 ! Initialize mask variables
 
-LET var_mask = 1+0*x[gx=xvar,i=1:`nx_var`]
+   LET var_mask = 1+0*x[gx=xvar,i=1:`nx_var`]
 
-IF `($subset_mask"0|*>1") EQ 0` THEN LET subset_mask = {1}
-LET text_mask = {1}
-LET ntext_masks = 0
+   IF `($subset_mask"0|*>1") EQ 0` THEN LET subset_mask = {1}
+   LET text_mask = {1}
+   LET ntext_masks = 0
 
-IF ($constraint_0_lhs"0|*>1) THEN
-   GO prop_prop_constraints
+   IF ($constraint_0_lhs"0|*>1) THEN
+      GO prop_prop_constraints
+   ENDIF
+
+   LET constraints_mask = text_mask * var_mask
+   IF ($have_feature_mask"0|*>1") THEN LET constraints_mask = text_mask * var_mask * feature_mask_obs
+
+   IF ($color_by"0|*>1") THEN 
+
+      DEFINE SYMBOL zvar = constraints_mask*zvar
+      DEFINE SYMBOL color_by_title = `zvar,RETURN=title`
+
+      DEFINE SYMBOL plot_arg = ($xvar), ($yvar), ($zvar)
+
+   ENDIF  ! color-by 3rd var
+
+   DEFINE SYMBOL xvar = constraints_mask*xvar
+   DEFINE SYMBOL yvar = constraints_mask*yvar
+
 ENDIF
-
-LET constraints_mask = text_mask * var_mask
-IF ($have_feature_mask"0|*>1") THEN LET constraints_mask = text_mask * var_mask * feature_mask_obs
-
-IF ($color_by"0|*>1") THEN 
-
-   DEFINE SYMBOL zvar = constraints_mask*zvar
-   DEFINE SYMBOL color_by_title = `zvar,RETURN=title`
-
-   DEFINE SYMBOL plot_arg = ($xvar), ($yvar), ($zvar)
-
-ENDIF  ! color-by 3rd var
-
-DEFINE SYMBOL xvar = constraints_mask*xvar
-DEFINE SYMBOL yvar = constraints_mask*yvar
-
 
 ! Set up annotations for the space-time region if this is a correletion plot
 ! from gridded variables. Do PLOT/SET to get Ferret's formatted version 

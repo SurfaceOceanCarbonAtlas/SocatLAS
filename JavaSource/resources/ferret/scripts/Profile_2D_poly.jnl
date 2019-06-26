@@ -37,6 +37,11 @@ DEFINE SYMBOL data_name_in = ($data_0_var)
 
 GO LAS_initialize_data 0
 
+
+LET gettype= ($ferret_plot_var)
+DEFINE SYMBOL vtype = `gettype,RETURN=dtype`
+DEFINE SYMBOL is_string = ($vtype"0|CHAR>1|*>0")
+
 ! The chosen "plot-by" variable has no effect on this result.
 ! It is only ever a set of locations on the map. Reduce possible
 ! complications with data type of variable etc by substituting longitude.
@@ -55,28 +60,22 @@ ENDIF
 GO LAS_url_label 0
 
 ! For the annotations
-DEFINE SYMBOL dshape = `($data_x_var),RETURN=shape`
-IF ($dshape"0|POINT>1|*>0) THEN
-   IF `($ngood_data"-10|*>1") LT 0` THEN DEFINE SYMBOL ngood_data = `($data_x_var)`
-   IF `($nbad_data"-10|*>1") LT 0` THEN DEFINE SYMBOL nbad_data = `($data_x_var)`
+
+define axis/($dsgshape)=1:($numobs):1 simpleax
+let countdata = ($data_0_var)[g($dsgshape)=simpleax]
+
+IF ($dsgshape"0|POINT>1|*>0) THEN
+   IF `($ngood_data"-10|*>1") LT 0` THEN DEFINE SYMBOL ngood_data = 1
+   IF `($nbad_data"-10|*>1") LT 0` THEN DEFINE SYMBOL nbad_data = 1
 ELSE
-   IF `($ngood_data"-10|*>1") LT 0` THEN DEFINE SYMBOL ngood_data = `($data_x_var)[($dshape"i")=@NGD]`
-   IF `($nbad_data"-10|*>1") LT 0` THEN DEFINE SYMBOL nbad_data = `($data_x_var)[($dshape"i")=@NBD]`
-ENDIF
-
-IF `STRINDEX("($ferret_view"0")", "x") GT 0` THEN
-
-  LET/UNITS=degrees_east x_var_data = ($data_x_var)
-  IF `($nodata"0|*>1") EQ 0` THEN
-     STAT x_var_data
-  ELSE
-     DEFINE SYMBOL stat_min ($region_x_lo)
-  ENDIF
-
-  IF ($data_y_var"0|*>1") THEN LET/UNITS=degrees_north y_var_data = ($data_y_var)
-  IF ($data_z_var"0|*>1") THEN LET z_var_data = ($data_z_var)
-  IF ($data_t_var"0|*>1") THEN LET t_var_data = ($data_t_var)
-
+   IF ($is_string) THEN
+      DEFINE SYMBOL ngood_data = 0
+      DEFINE SYMBOL nbad_data = 0
+   ELSE
+      stat ($data_0_var)
+      IF `($ngood_data"-10|*>1") LT 0` THEN DEFINE SYMBOL ngood_data = ($stat_ngood)
+      IF `($nbad_data"-10|*>1") LT 0` THEN DEFINE SYMBOL nbad_data = ($stat_nbad)
+   ENDIF
 ENDIF
 
 ! Plot qualifiers (graticule lines etc)
@@ -94,17 +93,11 @@ GO LAS_XY_overlay_basemap
 
 PPL SHASET PROTECT
 
-!  GO LAS_fland black
-!  GO LAS_fland navy
-!  GO LAS_fland brown_dark
-!  GO LAS_fland green_pine
-
 GO LAS_fland gray_dark
 PPL SHASET PROTECT
 
 ! Define plot qualifiers for polygon overlay
 
-!CANCEL SYMBOL qualifiers 
 DEFINE SYMBOL qualifiers = ($qualifiers)/OVER/NOLAB
 
 ! There is no plot variable defined - only plotting locations -
@@ -116,22 +109,8 @@ DEFINE SYMBOL qualifiers = ($qualifiers)/NOKEY
 ! If lon and lat are on the obs axis, pull out a single location
 ! for each feature id.
 
-DEFINE SYMBOL lonshape = `x_var_data,return=shape`
-DEFINE SYMBOL latshape = `y_var_data,return=shape`
-DEFINE SYMBOL feature_shape = `($feature_variable),return=shape`
-
-IF ($lonshape"0|($feature_shape)>0|*>1) THEN
-   LET longest = ($rowvar)[($rind)=@max]+2
-   LET data_var_x =  EXPNDI_BY_Z_COUNTS(x_var_data, xsequence(($rowvar)),`longest`)
-   LET data_var_y =  EXPNDI_BY_Z_COUNTS(y_var_data, xsequence(($rowvar)),`longest`)
-
-   LET xpoints = data_var_x[k=1]
-   LET ypoints = data_var_y[k=1]
-ELSE
-   LET xpoints = ($data_x_var)
-   LET ypoints = ($data_y_var)
-ENDIF
-
+LET xpoints = ($data_x_var)
+LET ypoints = ($data_y_var)
 
 ! Draw the locations as a light-blue circle with blue outline.
 IF `($program_name"0|PyFerret>1|*>0") AND ($FERRET_VERSION) GE 7.32` THEN
@@ -183,6 +162,9 @@ GO feature_labels
 GO set_constraint_labels
 
 ! Save the results
+
+! Get rid of the label that would be drawn, no valid data
+IF ($is_string"0") THEN DEFINE SYMBOL ngood_data = 1
 
 GO LAS_results box
 

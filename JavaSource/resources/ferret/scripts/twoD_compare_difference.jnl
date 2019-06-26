@@ -175,7 +175,6 @@ ELSE
    PPL ($plot_type)
 ENDIF
 
-pause
 ! Put on the custom e-axis labels
    IF ($ferret_view"0|ze>1|*>0") THEN
       

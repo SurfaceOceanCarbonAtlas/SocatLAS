@@ -69,7 +69,7 @@ ELSE
    LET feature_numbers = i[gx=xmask_axis]
    IF `($subset_mask"0|*>1") EQ 0` THEN LET feature_mask = 1 + 0*feature_numbers  ! may redefine later
 
-! Scramble the IDs if we are coloring by ID, scramble them so cruises nearby in the alphabet
+! Scramble the IDs if we are coloring by ID, scramble them so features nearby in the alphabet
 ! more likely to get different colors.  Create a 2D variable, reshape to it, then unravel
 ! that back out.
 

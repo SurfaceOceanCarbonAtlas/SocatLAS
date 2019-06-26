@@ -8,7 +8,7 @@
 ! 7/2010    ACM updates for V7.2 multi-variable plots
 ! 11/2017 *acm* Dont label plots with units of "units" or "none"
 ! 12/2017 *acm* Apply positive=down attribute if all variables in a
-*               units-group have that setting.
+!               units-group have that setting.
 
 set mode ver:always
 
@@ -66,8 +66,7 @@ IF `($have_multiline_defs"0|*>1") EQ 0` THEN
      LET title_len = `MAX(tlen, title_len)`;\
      DEFINE SYMBOL units_($qdat) = `UPCASE("($data_($qdat)_units)")`;\
      DEFINE SYMBOL all_units_same = `($all_units_same) AND (STRCMP("($units_0)", "($units_($qdat))") EQ 0)`;\
-     GO LAS_pp_set_region_labels \
-   )
+     GO LAS_pp_set_region_labels )
    DEFINE SYMBOL plot_vars_0 = ($plot_arg)
 
 ENDIF ! have_multiline_defs

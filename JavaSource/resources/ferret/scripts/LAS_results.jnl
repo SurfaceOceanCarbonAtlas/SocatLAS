@@ -47,7 +47,6 @@ ELSE
       ENDIF
    ENDIF
 ENDIF
-
 ! Annotate if the selection resulted in no data  ngood_data is defined for insitu datasets
 
 IF `($ngood_data"-1|*>1") NE -1` THEN
@@ -109,9 +108,9 @@ IF ($is_animation_frame"0|0|*>1") THEN EXIT/SCRIPT
 
 ! If an insitu waterfall plot made a "blankvar" plot underlying the color plot,
 ! re-draw that to use in making the reference map. It has the correct time/space
-! size and units.
+! size and units, so draw this plot to set pplus symbols.
 
-IF ($insitu_blankvar"0|*>1) THEN SHADE/PAL=white/NOLAB/NOKEY/LEV=(0,1,1) ($insitu_blankvar)
+IF ($insitu_blankvar"0|*>1) THEN SHADE($insitu_blankvar_qual) ($insitu_blankvar)
 
 !Do not write out the url and variable name output. This info is not saved
 !when map_scale.xml is generated anyway. (See ferret ticket 1933)
@@ -427,22 +426,5 @@ IF ($ferret_annotations%0|*>1%) THEN GO LAS_annotations_xml
 ! Result "colorbar" is the legend of the plot_image...only for Google Earth
 IF ($result_colorbar_filename%0|*>1%) THEN GO colorbar
 
-! Result ref_map is a ref map. Save to result_ref_map_filename
-
-IF  ($ferret_use_ref_map%0|false>0|*>1%) THEN 
-  CAN VIEW
-  SET VIEW full
-  GO std_refmap ($region_0_x_lo) ($region_0_x_hi) ($region_0_y_lo) ($region_0_y_hi) $1%box% ($ref_magnify%0%) ($ref_xcompress%0%) ($ref_ycompress%0%)
-  FRAME/FORMAT=gif/FILE="($result_ref_map_filename)"
-
-ENDIF
-
-! If this was a map plot, report on the topo resolution used
-IF ($fland_area"0|*>1") THEN
-   SAY _________________Map plot:  Region and topo file used:
-   SAY _________________Map plot:    XY region      ($region_xy)
-   SAY _________________Map plot:    $fland_area    ($fland_area)
-   SAY _________________Map plot:    topo file      ($topo_url)
-ENDIF
 ! End of file ------------LAS_results.jnl--------------------------
 
