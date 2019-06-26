@@ -1,0 +1,100 @@
+ <datasets>
+  <NOAA-CIRES-CDC-Leetmaa_Ocean_Analysis
+   name="NCEP Pacific Ocean Analysis"
+   doc="http://www.cdc.noaa.gov/cdc/data.ncep.pac.ocean.html">
+   <institution name="NOAA-CIRES Climate Diagnostics Center" url="http://www.cdc.noaa.gov"/>      <variables>
+         <CDC_DS17-mask2025 name="Land Sea mask" units="valid_levels" url="http://www.cdc.noaa.gov/cgi-bin/nph-nc/Datasets/ncep.pac.ocean/mask.mn.nc#mask" >
+             <link match="/lasdata/grids/CDC_DS17-grid-lon21-lat22-time42"/>
+         </CDC_DS17-mask2025>
+         <CDC_DS17-otemp2027 name="Ocean Temperature monthly mean at multiple levels" units="degC" url="http://www.cdc.noaa.gov/cgi-bin/nph-nc/Datasets/ncep.pac.ocean/otemp.mnmean.nc#otemp" >
+             <link match="/lasdata/grids/CDC_DS17-grid-lon21-lat22-level23-time44"/>
+         </CDC_DS17-otemp2027>
+         <CDC_DS17-ps2029 name="Surface pressure variation monthly mean at surface" units="980.*cm" url="http://www.cdc.noaa.gov/cgi-bin/nph-nc/Datasets/ncep.pac.ocean/ps.mnmean.nc#ps" >
+             <link match="/lasdata/grids/CDC_DS17-grid-lon21-lat22-level23-time44"/>
+         </CDC_DS17-ps2029>
+         <CDC_DS17-salt2031 name="Salinity monthly mean at multiple levels" units="deviation from .035" url="http://www.cdc.noaa.gov/cgi-bin/nph-nc/Datasets/ncep.pac.ocean/salt.mnmean.nc#salt" >
+             <link match="/lasdata/grids/CDC_DS17-grid-lon21-lat22-level23-time44"/>
+         </CDC_DS17-salt2031>
+         <CDC_DS17-taux2034 name="E-W Stress monthly mean at surface" units="dyne/cm**2" url="http://www.cdc.noaa.gov/cgi-bin/nph-nc/Datasets/ncep.pac.ocean/taux.mnmean.nc#taux" >
+             <link match="/lasdata/grids/CDC_DS17-grid-lon21-lat22-level23-time44"/>
+         </CDC_DS17-taux2034>
+         <CDC_DS17-tauy2036 name="N-S Stress monthly mean at surface" units="dyne/cm**2" url="http://www.cdc.noaa.gov/cgi-bin/nph-nc/Datasets/ncep.pac.ocean/tauy.mnmean.nc#tauy" >
+             <link match="/lasdata/grids/CDC_DS17-grid-lon21-lat22-level23-time44"/>
+         </CDC_DS17-tauy2036>
+         <CDC_DS17-tc2038 name="Temperature Correction monthly mean at multiple levels" units="DegC/hour" url="http://www.cdc.noaa.gov/cgi-bin/nph-nc/Datasets/ncep.pac.ocean/tc.mnmean.nc#tc" >
+             <link match="/lasdata/grids/CDC_DS17-grid-lon21-lat22-level23-time45"/>
+         </CDC_DS17-tc2038>
+         <CDC_DS17-ucur2040 name="U component of ocean current monthly mean at multiple levels" units="cm/sec" url="http://www.cdc.noaa.gov/cgi-bin/nph-nc/Datasets/ncep.pac.ocean/ucur.mnmean.nc#ucur" >
+             <link match="/lasdata/grids/CDC_DS17-grid-lon21-lat22-level23-time44"/>
+         </CDC_DS17-ucur2040>
+         <CDC_DS17-vcur2042 name="V component of ocean current monthly mean at multiple levels" units="cm/sec" url="http://www.cdc.noaa.gov/cgi-bin/nph-nc/Datasets/ncep.pac.ocean/vcur.mnmean.nc#vcur" >
+             <link match="/lasdata/grids/CDC_DS17-grid-lon21-lat22-level23-time44"/>
+         </CDC_DS17-vcur2042>
+      </variables>
+  </NOAA-CIRES-CDC-Leetmaa_Ocean_Analysis>
+ </datasets>
+ <grids>
+  <CDC_DS17-grid-lon21-lat22-time42>
+     <link match="/lasdata/axes/CDC_DS17-lon21"/>
+     <link match="/lasdata/axes/CDC_DS17-lat22"/>
+     <link match="/lasdata/axes/CDC_DS17-time42"/>
+  </CDC_DS17-grid-lon21-lat22-time42>
+  <CDC_DS17-grid-lon21-lat22-level23-time44>
+     <link match="/lasdata/axes/CDC_DS17-lon21"/>
+     <link match="/lasdata/axes/CDC_DS17-lat22"/>
+     <link match="/lasdata/axes/CDC_DS17-level23"/>
+     <link match="/lasdata/axes/CDC_DS17-time44"/>
+  </CDC_DS17-grid-lon21-lat22-level23-time44>
+  <CDC_DS17-grid-lon21-lat22-level23-time45>
+     <link match="/lasdata/axes/CDC_DS17-lon21"/>
+     <link match="/lasdata/axes/CDC_DS17-lat22"/>
+     <link match="/lasdata/axes/CDC_DS17-level23"/>
+     <link match="/lasdata/axes/CDC_DS17-time45"/>
+  </CDC_DS17-grid-lon21-lat22-level23-time45>
+ </grids>
+ <axes>
+   <CDC_DS17-time42 type="t" units="month">
+     <arange start="1980-01-01" step="1" size="241"/>
+   </CDC_DS17-time42>
+   <CDC_DS17-time44 type="t" units="month">
+     <arange start="1980-01-01" step="1" size="241"/>
+   </CDC_DS17-time44>
+   <CDC_DS17-time45 type="t" units="month">
+     <arange start="1980-01-01" step="1" size="241"/>
+   </CDC_DS17-time45>
+   <CDC_DS17-lon21 type="x" units = "degrees_east">
+      <arange start="122.00" step="1.50" size="112"/>
+   </CDC_DS17-lon21>
+   <CDC_DS17-lat22 type="y" units = "degrees_north">
+      <arange start="-35.00" step="1.00" size="81"/>
+   </CDC_DS17-lat22>
+   <CDC_DS17-level23 type="z" units = "cm">
+      <v> 500.00 </v>
+      <v> 1500.00 </v>
+      <v> 2500.00 </v>
+      <v> 3500.00 </v>
+      <v> 4500.00 </v>
+      <v> 5500.00 </v>
+      <v> 6500.00 </v>
+      <v> 7500.00 </v>
+      <v> 8500.00 </v>
+      <v> 9500.00 </v>
+      <v> 10625.00 </v>
+      <v> 12000.00 </v>
+      <v> 13625.00 </v>
+      <v> 15500.00 </v>
+      <v> 17750.00 </v>
+      <v> 20500.00 </v>
+      <v> 24000.00 </v>
+      <v> 28500.00 </v>
+      <v> 34500.00 </v>
+      <v> 43000.00 </v>
+      <v> 55000.00 </v>
+      <v> 72000.00 </v>
+      <v> 96750.00 </v>
+      <v> 132750.00 </v>
+      <v> 182100.00 </v>
+      <v> 244350.00 </v>
+      <v> 312650.00 </v>
+   </CDC_DS17-level23>
+ </axes>

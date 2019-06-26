@@ -1,0 +1,46 @@
+    <menus>
+
+        <menu type="constraint" name="Regrid_Curv_RectText">
+	      <item values="Curv_to_Rect_Regridding">Regrid Curvilinear to Rectiliner</item>
+	    </menu>
+         <menu type="constraint" name="Regrid_Curv_RectOps">
+	       <item values="=">=</item>
+	    </menu>
+	    <menu type="constraint" name="Regrid_Curv_RectVal">
+            <item values="d">default rectilinear grid</item>
+            <item values="2">2-degree rectilinear grid</item>
+            <item values="5">5-degree rectilinear grid</item>
+        </menu>
+
+    </menus>
+    
+    <maps>
+
+        <map type="ops" name="Regrid_Curv_Rect_Operations">
+	    <ifmenu mode="comparison" href="#Ops_StdCompare"/>
+	    <ifmenu view="x,y,z,t" href="#Ops_Std1D"/>
+	    <ifmenu view="xz,xt,yz,yt,zt" href="#Ops_Std2D"/>
+	    <ifmenu view="xy" href="#Ops_Std2D_xy"/>
+	    <ifmenu view="xyz,xyt,yzt,xzt" href="#Ops_Std3D"/>
+	    <ifmenu view="xyzt" href="#Ops_Std4D"/>
+	   <!-- <constraint type="variable"/> -->
+	    <constraint type="text" name="Regrid_Curv_Rect">
+	        <menu href="#Regrid_Curv_RectText"/>
+	        <menu href="#Regrid_Curv_RectOps"/> 
+	        <menu href="#Regrid_Curv_RectVal"/> 
+	    </constraint>
+	</map>  
+
+    </maps>
+    
+    <defaults>
+
+	<default name="Regrid_Curv_Rect">
+            <map href="#Regrid_Curv_Rect_Operations"/>
+            <map href="#DefaultViews"/>
+            <map href="#DefaultLivemap"/>
+            <map href="#DefaultOptions"/>
+	        <map href="#DefaultAnalysis"/>
+	</default>
+
+    </defaults>

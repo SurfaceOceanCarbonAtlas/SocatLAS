@@ -1,0 +1,67 @@
+    <requestEmail name="requestEmail" class="LAS::Util" method="requestEmail"/>
+    <cancelRequest name="cancelRequest" class="LAS::Util" method="cancelRequest"/>
+    <getVersion name="getVersion" class="LAS::Util" method="getVersion"/>
+    <getConfig name="getConfig" class="LAS::Util" method="getConfig"/>
+    <getPackage name="getPackage" class="LAS::Util" method="getPackage"/>
+    <getThredds name="getThredds" class="LAS::Util" method="getThredds"/>
+
+    <ls name="LAS directory handler" class="LAS::Util" method="ls"/>
+
+    <overlay name="Overlay two variables" class="LAS::Server::Ferret" method="overlay">
+     <arg type="variable"/>
+     <arg type="region"/>
+     <arg type="variable"/>
+     <arg type="region"/>
+    </overlay>
+    <sidebyside name="Side-by-side plots" class="LAS::Server::Ferret" method="sidebyside"/>
+
+    <compare name="Compare two variables" class="LAS::Server::Ferret" method="compare">
+     <arg type="variable"/>
+     <arg type="region"/>
+     <arg type="variable"/>
+     <arg type="region"/>
+    </compare>
+    <compare_data name="Data from variable comparison" class="LAS::Server::Ferret" method="compare_data">
+     <arg type="variable"/>
+     <arg type="region"/>
+     <arg type="variable"/>
+     <arg type="region"/>
+    </compare_data>
+   <compare_data_file name="Data from variable comparison file" class="LAS::Server::Ferret" method="compare_data_file">
+     <arg type="variable"/>
+     <arg type="region"/>
+     <arg type="variable"/>
+     <arg type="region"/>
+    </compare_data_file>
+    <shade name="Shade a variable" class="LAS::Server::Ferret" method="overlay">
+     <arg type="variable"/>
+     <arg type="region"/>
+    </shade>
+    <line name="Draw line from variable" class="LAS::Server::Ferret" method="overlay">
+     <arg type="variable"/>
+     <arg type="region"/>
+    </line>
+    <data name="Return variable data" class="LAS::Server::Ferret" method="data">
+     <arg type="variable"/>
+     <arg type="region"/>
+    </data>
+    <data_file name="Return variable data file" class="LAS::Server::Ferret" method="data_file">
+     <arg type="variable"/>
+     <arg type="region"/>
+    </data_file>
+    <vrml name="Generate a VRML graphic" class="LAS::Server::Ferret" method="vrml">
+     <arg type="variable"/>
+     <arg type="region"/>
+    </vrml>
+    <vector name="Vector graphic" class="LAS::Server::Ferret" method="vector">
+     <arg type="variable"/>
+     <arg type="variable"/>
+     <arg type="region"/>
+    </vector>
+    <!-- ferret_script and gen_script both refer to method="gen_script", 
+         left in for backwards compatibility with custom ui.xml files-->
+    <ferret_script class="LAS::Server::Ferret" method="gen_script"/>
+    <gen_script class="LAS::Server::Ferret" method="gen_script"/>
+    <timeline_list class="LAS::Server::Ferret" method="timeline_list"/>
+    <timeline_list_xyt class="LAS::Server::Ferret" method="timeline_list_xyt"/>
+

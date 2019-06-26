@@ -1,0 +1,26 @@
+<las_categories>
+    <category name="Climatologies defined on a grid">
+       <category name="COADS Climatology">
+          <filter action="apply-dataset" contains-tag="coads_climatology_cdf"/>
+       </category>
+       <category name="Levitus Climatology">
+          <filter action="apply-dataset" contains-tag="levitus_climatology_cdf"/>
+       </category>
+    </category>
+    <category name="Monthly data defined on a grid">
+       <category name="NCEP Pacific Ocean Analysis">
+          <filter action="apply-variable" contains-tag="CDC_DS17"/>
+       </category>
+    </category>
+    <category name="Observational Point Data">
+       <category name="NWIOOS Hake Survey 1998">
+          <filter action="apply-dataset" equals="1998 Hake Survey ADCP (Example of data from a DRDS Server)"/>
+       </category>
+       <category name="LAS Demo 1">
+          <filter action="apply-dataset" contains="in-situ demo"/>
+       </category>
+       <category name="Platforms with IDs">
+          <filter action="apply-dataset" contains="Platforms with IDs"/>
+       </category>
+    </category>
+ </las_categories>

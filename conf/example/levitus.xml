@@ -1,0 +1,59 @@
+   <datasets>
+    <levitus_climatology_cdf name="Levitus Climatology" 
+                             url="file:levitus_climatology" 
+                             doc="docs/levitus_monthly.html">
+
+   <!-- Default properties for this dataset -->
+   <properties>
+    <ferret>
+     <land_type>shade</land_type> <!-- filled continents -->
+    </ferret>
+   </properties>
+
+     <variables>
+      <salt name="SALINITY" units="PPT">
+       <link match="/lasdata/grids/levitus_climatology_cdf_grid"/>
+      </salt>
+      <temp name="TEMPERATURE" units="DEG C">
+       <link match="/lasdata/grids/levitus_climatology_cdf_grid"/>
+      </temp>
+     </variables>
+    </levitus_climatology_cdf>
+   </datasets>
+   <grids>
+    <levitus_climatology_cdf_grid>
+     <link match="/lasdata/axes/levitus_climatology_cdf_XAXLEVITR"/>
+     <link match="/lasdata/axes/levitus_climatology_cdf_YAXLEVITR"/>
+     <link match="/lasdata/axes/levitus_climatology_cdf_ZAXLEVITR"/>
+    </levitus_climatology_cdf_grid>
+   </grids>
+   <axes>
+    <levitus_climatology_cdf_XAXLEVITR type="x" units="degrees_east">
+     <arange start="20.5" step="1" size="360"/>
+    </levitus_climatology_cdf_XAXLEVITR>
+    <levitus_climatology_cdf_YAXLEVITR type="y" units="degrees_north">
+     <arange start="-89.5" step="1" size="180"/>
+    </levitus_climatology_cdf_YAXLEVITR>
+    <levitus_climatology_cdf_ZAXLEVITR type="z" units="METERS">
+     <v>0</v>
+     <v>10</v>
+     <v>20</v>
+     <v>30</v>
+     <v>50</v>
+     <v>75</v>
+     <v>100</v>
+     <v>150</v>
+     <v>200</v>
+     <v>300</v>
+     <v>400</v>
+     <v>600</v>
+     <v>800</v>
+     <v>1000</v>
+     <v>1200</v>
+     <v>1500</v>
+     <v>2000</v>
+     <v>3000</v>
+     <v>4000</v>
+     <v>5000</v>
+    </levitus_climatology_cdf_ZAXLEVITR>
+   </axes>

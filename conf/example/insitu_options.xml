@@ -1,0 +1,136 @@
+<!--
+     This file is broken into two sections:
+
+     1) The first creates a set of uniquely named options.
+     2) The second combines those options into named groups of options. 
+
+     As of the 'Armstrong' release of LAS, we are still using the 
+     original options syntax and thus need to create a separate <optiondef>
+     for each named option.  Then we use more <optiondef>s and the 'inherit' 
+     attribute to associate individual options into named groups.
+-->
+
+<!--
+     SECTION 1:  Named individual options
+-->
+
+<options>
+
+  <optiondef name="poly_shape">
+    <option>
+      <help>Set the marker shape.</help>
+      <title>Marker shape</title>
+      <menu type="options" name="poly_shape">
+        <item values="default">Default</item>
+        <item values="diamond">Diamond</item>
+        <item values="triangle">Triangle</item>
+        <item values="delta">Delta</item>
+        <item values="square">Square</item>
+        <item values="hexagon">Hexagon</item>
+        <item values="circle">Circle</item>
+        <item values="star">Star</item>
+        <item values="plus">Plus sign</item>
+        <item values="ex">X</item>
+      </menu>
+    </option>
+  </optiondef>
+
+  <optiondef name="insitu_palette">
+    <option>
+      <help>Set the color palette for the plot.</help>
+      <title>Palette</title>
+      <menu type="options" name="insitu_palette">
+        <item values="default">Default</item>
+        <item values="rainbow">temperature rainbow</item>
+        <item values="rnb2">precipitation rainbow</item>
+        <item values="light_rainbow">pastel rainbow</item>
+        <item values="rainbow_by_levels">rainbow by levels</item>
+        <item values="ocean_temp">ocean temperature</item>
+        <item values="light_centered">anomaly</item>
+        <item values="land_sea">topography/bathymetry</item>
+        <item values="dark_land_sea">dark topography/bathymetry</item>
+        <item values="ocean_blue">blue bathymetry</item>
+        <item values="terrestrial">topography</item>
+        <item values="dark_terrestrial">dark topography</item>
+
+        <item values="bluescale">range of blues</item>
+        <item values="inverse_bluescale">inverse range of blues</item>
+        <item values="redscale">range of reds</item>
+        <item values="inverse_redscale">inverse range of reds</item>
+        <item values="greenscale">range of greens</item>
+        <item values="inverse_greenscale">inverse range of greens</item>
+        <item values="grayscale">range of grays</item>
+        <item values="inverse_grayscale">inverse range of grays</item>
+
+        <item values="low_blue">low_blue</item>
+        <item values="no_blue">no_blue</item>
+        <item values="low_green">low_green</item>
+        <item values="no_green">no_green</item>
+        <item values="low_red">low_red</item>
+        <item values="no_red">no_red</item>
+
+        <item values="no_blue_centered">no_blue_centered</item>
+        <item values="no_green_centered">no_green_centered</item>
+        <item values="no_red_centered">no_red_centered</item>
+        <item values="white_centered">white_centered</item>
+
+        <item values="orange">solid orange</item>
+        <item values="gray">solid gray</item>
+        <item values="green">solid green</item>
+        <item values="red">solid red</item>
+
+        <item values="violet">solid violet</item>
+        <item values="white">solid white</item>
+        <item values="yellow">solid yellow</item>
+      </menu>
+    </option>
+  </optiondef>
+
+  <optiondef name="ts_bin_size">
+    <option>
+      <help>Enter the number of hours corresponding to the desired  Time Averaging interval
+&lt;ul>
+&lt;li>day: 24 hrs
+&lt;li>week: 168 hrs
+&lt;li>month: 730.485 hrs  (24*(365.2425/12))
+&lt;li>3-month: 2191.455 hrs
+&lt;li>year: 8765.82 hrs  (365.2425*24) 
+&lt;/ul>
+      </help>
+      <title>Time averaging interval in hours</title>
+      <textfield name="ts_bin_size"/>
+    </option>
+  </optiondef>
+
+  <optiondef name="insitu_gaussian_markers">
+    <option>
+      <help>Turn on and off the data location markers on plots</help>
+      <title>Location markers</title>
+      <menu type="options" name="insitu_gaussian_markers">
+        <item values="1">On</item>
+        <item values="0">Off</item>
+      </menu>
+    </option>
+  </optiondef>
+
+</options>
+
+<!--
+      SECTION 2: Named groups of options
+-->
+
+<options>
+
+  <optiondef name="Options_insitu" inherit="#Options_2D,#poly_shape"/>
+
+  <optiondef name="Options_insitu_fill" inherit="#Options_insitu,#fill_levels"/>
+  <optiondef name="Options_insitu_palette" inherit="#Options_insitu,#insitu_palette"/>
+
+  <!-- TODO:  Options_insitu_time_ave and Options_insitu_time_sum are identical -->
+  <optiondef name="Options_insitu_time_ave" inherit="#Options_insitu,#ts_bin_size"/>
+  <optiondef name="Options_insitu_time_sum" inherit="#Options_insitu,#ts_bin_size"/>
+
+  <optiondef name="Options_insitu_gauss" inherit="#Options_insitu_fill,#insitu_gaussian_markers"/>
+
+</options>
+

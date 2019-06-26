@@ -1,0 +1,239 @@
+    <images>
+<!-- Example custom image:
+        <image name="Image_JGOFS_Southern" url="gifs/JGOFS_bottle_southern.gif" 
+               bounds="124,216,-83,-47"/>
+-->
+        <image name="Image_insituWorld" url="gifs/java_0_world.gif" 
+               bounds="-180,180,-90,90"/>
+    </images>
+    <menus>
+        <menu type="regions" name="Regions_insituNone">
+            <item values="-360,360,-90,90">Full Region</item>
+        </menu>
+<!-- Example custom region and constraints 
+        <menu type="regions" name="JGOFS_Southern_Regions">
+            <item values="-360,360,-90,90">Full Region</item>
+        </menu>
+        <menu type="constraint" name="JGOFS_Southern_CruiseText">
+	    <item values="cruise_id">Cruise</item>
+	</menu>
+        <menu type="constraint" name="JGOFS_Southern_CruiseOps">
+	    <item values="=">=</item>
+	    <item values="!=">!=</item>
+	</menu>
+	<menu type="constraint" name="JGOFS_Southern_Cruises">
+	    <item values="NBP-96_4">Ross Sea Site Survey NBP-96_4</item>
+	    <item values="NBP-96_4A">Ross Sea P1 NBP-96_4A</item>
+	    <item values="NBP-97_1">Ross Sea P2 NBP-97_1</item>
+	    <item values="NBP-97_3">Ross Sea P3 NBP-97_3</item>
+	    <item values="NBP-97_8">Ross Sea P4 NBP-97_8</item>
+	    <item values="RR-6">APFZ S1 RR-6</item>
+	    <item values="RR-7">APFZ P1 RR-7</item>
+	    <item values="RR-8">APFZ S2 RR-8</item>
+	    <item values="RR-9">APFZ P2 RR-9</item>
+        </menu>
+-->
+        <menu type="ops" name="Ops_insituSurfaceXY">
+            <item values="insitu_poly_xy,gif">Raw data plot</item>
+            <item values="insitu_gaussian_xy,gif">Gridded data plot</item>
+            <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+            <item values="insitu_data,txt,20">ASCII table</item>
+        </menu>
+        <menu type="ops" name="Ops_insituSurfaceXT">
+            <item values="insitu_poly_xt,gif">Surface Hofmoeller plot</item>
+            <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+            <item values="insitu_data,txt,20">ASCII table</item>
+        </menu>
+        <menu type="ops" name="Ops_insituSurfaceYT">
+            <item values="insitu_poly_yt,gif">Surface Hofmoeller plot</item>
+            <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+            <item values="insitu_data,txt,20">ASCII table</item>
+        </menu>
+
+	<menu type="ops" name="Ops_insituProfileXY">
+	    <item values="Insitu_extract_location_plot,gif">Data location plot</item>
+            <item values="prop_prop_plot_insitu,gif">Property-property plot</item>
+            <item values="DBExtractRowset,txt,25">Table of values (text)</item>
+            <item values="DBExtract,gif,25">netCDF file</item>
+            <!-- not yet implemented
+	    <item values="insitu_gaussian_xy,gif">Interpolated (gridded) data plot</item>
+	    <item values="insitu_data,txt,20">Table of values (text)</item>
+	    <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+	    <item values="insitu_property_depth,gif">Property-depth plot</item>
+	    <item values="insitu_property,gif,2">Property-property plot (2 vars only)</item>
+            -->
+	</menu>
+	<menu type="ops" name="Ops_insituProfileXZ">
+	    <item values="insitu_meta_xz,gif">Data location plot</item>
+	    <item values="insitu_pie_xz,gif">Data value plot</item>
+	    <item values="insitu_gaussian_xz,gif">Interpolated (gridded) data plot</item>
+	    <item values="insitu_waterfall_xz,gif">Multiple profile plot</item>
+	    <item values="insitu_data,txt,20">Table of values (text)</item>
+	    <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+	    <item values="insitu_property_depth,gif">Property-depth plot</item>
+	    <item values="insitu_property,gif,2">Property-property plot (2 vars only)</item>
+	</menu>
+        <menu type="ops" name="Ops_insituProfileXT">
+	    <item values="insitu_meta_xz,gif">Data location plot</item>
+	    <item values="insitu_pie_xt,gif">Data value plot</item>
+	    <item values="insitu_gaussian_xt,gif">Interpolated (gridded) data plot</item>
+	    <item values="insitu_data,txt,20">Table of values (text)</item>
+	    <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+	    <item values="insitu_property_depth,gif">Property-depth plot</item>
+	    <item values="insitu_property,gif,2">Property-property plot (2 vars only)</item>
+        </menu>
+	<menu type="ops" name="Ops_insituProfileYZ">
+	    <item values="insitu_meta_yz,gif">Data location plot</item>
+	    <item values="insitu_pie_yz,gif">Data value plot</item>
+	    <item values="insitu_gaussian_yz,gif">Interpolated (gridded) data plot</item>
+	    <item values="insitu_waterfall_yz,gif">Multiple profile plot</item>
+	    <item values="insitu_data,txt,20">Table of values (text)</item>
+	    <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+	    <item values="insitu_property_depth,gif">Property-depth plot</item>
+	    <item values="insitu_property,gif,2">Property-property plot (2 vars only)</item>
+	</menu>
+        <menu type="ops" name="Ops_insituProfileYT">
+	    <item values="insitu_meta_yz,gif">Data location plot</item>
+	    <item values="insitu_pie_yt,gif">Data value plot</item>
+	    <item values="insitu_gaussian_yt,gif">Interpolated (gridded) data plot</item>
+	    <item values="insitu_data,txt,20">Table of values (text)</item>
+	    <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+	    <item values="insitu_property_depth,gif">Property-depth plot</item>
+	    <item values="insitu_property,gif,2">Property-property plot (2 vars only)</item>
+        </menu>
+	<menu type="ops" name="Ops_insituProfileZT">
+	    <item values="insitu_meta_xz,gif">Data location plot</item>
+	    <item values="insitu_pie_zt,gif">Data value plot</item>
+	    <item values="insitu_gaussian_zt,gif">Interpolated (gridded) data plot</item>
+	    <item values="insitu_waterfall_zt,gif">Multiple profile plot</item>
+	    <item values="insitu_data,txt,20">Table of values (text)</item>
+	    <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+	    <item values="insitu_property_depth,gif">Property-depth plot</item>
+	    <item values="insitu_property,gif,2">Property-property plot (2 vars only)</item>
+	</menu>
+        <menu type="ops" name="Ops_insituProfileZ">
+            <item values="insitu_profile_list,html,9">Single profile plot</item>
+        </menu>
+
+<!-- Use the following "ops" menu if your database contains a cruise_id field
+     By adding <ifmenu view="z" href="#Ops_CruiseProfileZ"/> to the ui ops map -->
+<!-- You must also configure your database_access element per the instructions
+     in $lasroot/xml/perl/TMAP/cruise.pl -->
+
+        <menu type="ops" name="Ops_CruiseProfileZ">
+            <item values="insitu_profile_list,html,9">Single profile plot</item>
+            <item values="insitu_cruise_list,html">Cruise section plot</item>
+        </menu>
+	<menu type="ops" name="Ops_insituProfileXYZT">
+	    <!-- item values="insitu_property,gif,2">Property-property plot (2 vars)</item -->
+	    <item values="insitu_data,txt,20">Table of values (text)</item>
+	    <item values="insitu_data_cdf,cdf,20">NetCDF file</item>
+	</menu>
+	<menu type="views" name="Views_insituSurface">
+	    <ifitem view="xy" values="xyzt">Latitude-longitude (xy)</ifitem>
+            <!-- not implemented yet
+	    <ifitem view="xt" values="xyzt">Longitude-time (xt)</ifitem>
+	    <ifitem view="yt" values="xyzt">Latitude-time (yt)</ifitem>
+            -->
+	</menu>
+	<menu type="views" name="Views_insituProfile">
+	    <ifitem view="xy" values="xyzt">Longitude-latitude map (xy)</ifitem>
+            <!--
+	    <ifitem view="xz" values="xyzt">Longitude-depth sections (xz)</ifitem>
+	    <ifitem view="xt" values="xyzt">Longitude-time hofmoeller (xt)</ifitem>
+	    <ifitem view="yz" values="xyzt">Latitude-depth sections (yz)</ifitem>
+	    <ifitem view="yt" values="xyzt">Latitude-time hofmoeller (yt)</ifitem>
+	    <ifitem view="zt" values="xyzt">Depth-time hofmoeller (zt)</ifitem>
+            <ifitem view="z"  values="xyzt">Depth sections (z)</ifitem>
+            -->
+	</menu>
+    </menus>
+    <maps>
+        <map type="ops" name="insituSurfaceOperations">
+	    <ifmenu view="xy" href="#Ops_insituSurfaceXY"/>
+	    <ifmenu view="xt" href="#Ops_insituSurfaceXT"/>
+	    <ifmenu view="yt" href="#Ops_insituSurfaceYT"/>
+	</map>
+	<map type="views" name="insituSurfaceViews">
+	    <menu href="#Views_insituSurface"/>
+	</map>
+        <map type="ops" name="insituProfileOperations">
+	    <ifmenu view="xy" href="#Ops_insituProfileXY"/>
+	    <ifmenu view="xz" href="#Ops_insituProfileXZ"/>
+	    <ifmenu view="xt" href="#Ops_insituProfileXT"/>
+	    <ifmenu view="yz" href="#Ops_insituProfileYZ"/>
+	    <ifmenu view="yt" href="#Ops_insituProfileYT"/>
+	    <ifmenu view="zt" href="#Ops_insituProfileZT"/>
+	    <ifmenu view="z" href="#Ops_insituProfileZ"/>
+            <!-- Use <ifmenu view="z" href="#Ops_CruiseProfileZ"/>
+                 instead if your data is configured to support Cruise_Id processing -->
+	    <ifmenu view="xyzt" href="#Ops_insituProfileXYZT"/>
+        </map>
+	<map type="views" name="insituProfileViews">
+	    <menu href="#Views_insituProfile"/>
+	</map>
+        <map type="livemap" name="insituLiveMap">
+            <image href="#Image_insituWorld"/>
+            <menu href="#Regions_insituNone"/>
+        </map>
+<!-- Example custom operations
+        <map type="ops" name="insitu_Southern_Operations">
+	    <ifmenu view="xy" href="#Ops_insituProfileXY"/>
+	    <ifmenu view="xz" href="#Ops_insituProfileXZ"/>
+	    <ifmenu view="yz" href="#Ops_insituProfileYZ"/>
+	    <ifmenu view="zt" href="#Ops_insituProfileZT"/>
+	    <constraint type="variable"/>
+	    <constraint type="text" name="insitu_Southern_Cruise">
+	        <menu href="#insitu_Southern_CruiseText"/>
+	        <menu href="#insitu_Southern_CruiseOps"/>
+	        <menu href="#insitu_Southern_Cruises"/>
+	    </constraint>
+	</map>
+        <map type="livemap" name="insitu_Southern_LiveMap">
+            <image href="#Image_insitu_Southern"/>
+            <menu href="#Regions_Default"/>
+        </map>
+-->
+        <map type="options" name="insituColorOptions">
+<!-- Can have ifoptions or options tag. ifoptions is for op dependent
+     option menus -->
+            <ifoptions op="Insitu_extract_location_plot" href="#Options_insitu"/>
+            <ifoptions op="Insitu_extract_location_value_plot" href="#Options_insitu_fill"/>
+            <ifoptions op="insitu_pie_xz" href="#Options_insitu_fill"/>
+            <ifoptions op="insitu_pie_xt" href="#Options_insitu_fill"/>
+            <ifoptions op="insitu_pie_yz" href="#Options_insitu_fill"/>
+            <ifoptions op="insitu_pie_yt" href="#Options_insitu_fill"/>
+            <ifoptions op="insitu_pie_zt" href="#Options_insitu_fill"/>
+            <ifoptions op="insitu_pie_station_depth" href="#Options_insitu_fill"/>
+
+            <ifoptions op="insitu_gaussian_xy" href="#Options_insitu_gauss"/>
+            <ifoptions op="insitu_gaussian_xz" href="#Options_insitu_gauss"/>
+            <ifoptions op="insitu_gaussian_xt" href="#Options_insitu_gauss"/>
+            <ifoptions op="insitu_gaussian_yz" href="#Options_insitu_gauss"/>
+            <ifoptions op="insitu_gaussian_yt" href="#Options_insitu_gauss"/>
+            <ifoptions op="insitu_gaussian_zt" href="#Options_insitu_gauss"/>
+            <ifoptions op="insitu_meta_xz" href="#Options_insitu_palette"/>
+            <ifoptions op="insitu_meta_yz" href="#Options_insitu_palette"/>
+            <ifoptions op="insitu_meta_xy" href="#Options_insitu_palette"/>
+            <ifoptions op="insitu_property" href="#Options_insitu"/>
+            <ifoptions op="insitu_property_depth" href="#Options_insitu"/>
+            <ifoptions op="insitu_tsum" href="#Options_insitu_time_sum"/>
+            <ifoptions op="insitu_tave" href="#Options_insitu_time_ave"/>
+            <options href=""/>
+        </map>
+    </maps>
+    <defaults>
+	<default name="insituSurface">
+	    <map href="#insituSurfaceOperations"/>
+	    <map href="#insituSurfaceViews"/>
+	    <map href="#insituLiveMap"/>
+            <map href="#insituColorOptions"/>
+	</default>
+	<default name="insituProfile">
+	    <map href="#insituProfileOperations"/>
+	    <map href="#insituProfileViews"/>
+	    <map href="#insituLiveMap"/>
+            <map href="#insituColorOptions"/>
+	</default>
+    </defaults>
+

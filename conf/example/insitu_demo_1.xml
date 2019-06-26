@@ -1,0 +1,74 @@
+<datasets>
+  <Indian_Data
+    name = "LAS in-situ demo"
+    url = "Indian"
+    doc = "">
+
+    <properties><ui>
+      <default>file:ui.xml#insitu_demo</default>
+    </ui>
+
+    <database_access name="mysql">
+      <db_type>mysql</db_type>
+      <db_name>LAS_insitu_demo</db_name>
+      <db_title>LAS in-situ demo</db_title>
+      <db_host>localhost</db_host>
+      <db_login>las</db_login>
+      <db_passwd>lasrules</db_passwd>
+      <db_table>Indian</db_table>
+      <longitude>Longitude</longitude>
+      <lon_domain>0:360</lon_domain>
+      <latitude>Latitude</latitude>
+      <depth>Depth</depth>
+      <depth_units>meters</depth_units>
+      <time>t</time>
+      <time_sample>19990101</time_sample>
+      <time_type>int</time_type>
+      <time_format>YYYYMMdd</time_format>
+      <time_units>hours since 1970-01-01 00:00:00</time_units>
+      <hours_1970></hours_1970>
+      <profID></profID>
+      <cruiseID>CruiseNum</cruiseID>
+      <metadata></metadata>
+      <executable></executable>
+      <missing>-999</missing>
+      <timeout>180</timeout>
+      <row_limit>150000</row_limit>
+    </database_access>
+
+    </properties>
+
+    <variables>
+      <Temperature units="Deg C" name="Temperature: ">
+        <link match="/lasdata/grids/Indian_latitude_longitude_depth_time_grid"/>
+      </Temperature>
+      <Salinity units="umol/kg" name="Salinity: ">
+        <link match="/lasdata/grids/Indian_latitude_longitude_depth_time_grid"/>
+      </Salinity>
+    </variables>
+  </Indian_Data>
+</datasets>
+
+<grids>
+  <Indian_latitude_longitude_depth_time_grid>
+    <link match="/lasdata/axes/Indian_latitude"/>
+    <link match="/lasdata/axes/Indian_longitude"/>
+    <link match="/lasdata/axes/Indian_depth"/>
+    <link match="/lasdata/axes/Indian_time"/>
+  </Indian_latitude_longitude_depth_time_grid>
+</grids>
+
+<axes>
+  <Indian_latitude units="degrees_north" type="y">
+    <arange start="-75" step="1" size="110"/>
+  </Indian_latitude>
+  <Indian_longitude units="degrees_east" type="x">
+    <arange start="0" step="1" size="130"/>
+  </Indian_longitude>
+  <Indian_depth units="meters" type="z">
+    <arange start="0" step="100" size="66"/>
+  </Indian_depth>
+  <Indian_time units="day" type="t">
+   <arange start="1977-12-07" step="1" size="4400"/>
+  </Indian_time>
+</axes>

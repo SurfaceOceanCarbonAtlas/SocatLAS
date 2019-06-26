@@ -1,0 +1,17 @@
+#!/bin/csh -f
+#
+# This script will delete all las/server/output/* files
+# which have not been accessed in more than 'age' days or
+# which are larger than 'size' bytes.  It is designed to
+# be run by a nightly cron job.
+
+set age  = 90        # days
+set size = 1000000   # bytes
+
+# INSERT YOUR OWN DIRECTORIES, ONE FOR EACH SERVER
+#
+#find /usr/local2/web/htdocs/lasxml_1/server/output/ -atime +$age -exec rm {} \;
+#find /usr/local2/web/htdocs/lasxml_1/server/output/ -size +$size -exec rm {} \;
+
+#find /usr/local2/web/htdocs/lasxml_2/server/output/ -atime +$age -exec rm {} \;
+#find /usr/local2/web/htdocs/lasxml_2/server/output/ -size +$size -exec rm {} \;

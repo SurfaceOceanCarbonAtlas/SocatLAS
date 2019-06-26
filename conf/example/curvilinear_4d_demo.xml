@@ -1,0 +1,57 @@
+<datasets>
+ <tripolar_fine_cdf_subset name="Tripolar 4D local subset" 
+                       url="/home/porter/ansley/local_ipcc_CM2_1_SRESB1_ocean_tripolar_tracers"
+                        doc="">
+
+  <!-- Default properties for this dataset -->
+  <properties>
+   <ferret>
+    <curvi_coord_lon>geolon</curvi_coord_lon> <!-- Curvilinear coordinates -->
+    <curvi_coord_lat>geolat</curvi_coord_lat> <!-- Curvilinear coordinates -->
+    <curvi_coord_map2file>/home/porter/ansley/tri_fine_2map.nc</curvi_coord_map2file> <!-- Curv. regridding --> 
+    <curvi_coord_map5file>/home/porter/ansley/tri_fine_5map.nc</curvi_coord_map5file> <!-- Curv. regridding --> 
+    <curvi_coord_mapvar>map</curvi_coord_mapvar> <!-- Curv. regridding --> 
+   </ferret>
+  <ui>
+  <default>file:ui.xml#Regrid_Curv_Rect</default> 
+  </ui>
+  </properties>
+  <variables>
+   <thetao name="Potential Temperature" units="m/s">
+    <link match="/lasdata/grids/tri4d_cdf_subset_grid"/>
+   </thetao>
+  </variables>
+ </tripolar_fine_cdf_subset>
+</datasets>   
+<grids>
+    <tri4d_cdf_subset_grid>
+     <link match="/lasdata/axes/tri4d_cdf_subset_GRIDLON"/>
+     <link match="/lasdata/axes/tri4d_cdf_subset_GRIDLAT"/>
+     <link match="/lasdata/axes/tri4d_cdf_subset_DEPTH"/>
+     <link match="/lasdata/axes/tri4d_cdf_subset_TIME"/>
+    </tri4d_cdf_subset_grid>
+   </grids>
+<axes>
+    <tri4d_cdf_subset_GRIDLON type="x" units="degrees_east">
+     <arange start="20.5" step="1" size="360"/>
+    </tri4d_cdf_subset_GRIDLON>
+    <tri4d_cdf_subset_GRIDLAT type="y" units="degrees_north">
+     <arange start="-89.5" step="1" size="180"/>
+    </tri4d_cdf_subset_GRIDLAT>
+    <tri4d_cdf_subset_DEPTH type="z" units="METERS">
+     <v>5</v>
+     <v>15</v>
+     <v>25</v>
+     <v>35</v>
+     <v>45</v>
+     <v>55</v>
+     <v>65</v>
+     <v>75</v>
+     <v>85</v>
+     <v>95</v>
+    </tri4d_cdf_subset_DEPTH>
+	<tri4d_cdf_subset_TIME type="t" units="month">  <!-- this axis *SHOULD* be irregular -->
+     <arange start="2001-01-16" step="1" size="10"/>
+    </tri4d_cdf_subset_TIME>
+
+</axes>

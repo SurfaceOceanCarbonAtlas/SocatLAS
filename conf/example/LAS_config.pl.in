@@ -1,0 +1,55 @@
+#
+# Copyright (c) 2001 TMAP, NOAA
+# ALL RIGHTS RESERVED
+#
+# Please read the full copyright notice in the file COPYRIGHT
+# included with this code distribution
+
+# LAS_config.pl
+#
+# Jonathan Callahan
+# Joe Sirott
+#
+# $Id: LAS_config.pl.in,v 1.13.2.7 2006/03/03 22:44:29 webuser Exp $
+#
+# This file contains configuration information for the 'Live Access Server' (LAS)
+#
+# output_directory     the relative directory where the LAS output files are stored
+# debug_file           file for debug output
+# log_file             file for logging
+# error_file           file for errors
+# allow_sisters        permission flag for sister server requests
+# allow_sister_driven  permission flag for sister initiated generation of packages
+# serverhost           the host name of the HTTP server
+# proxy                'yes' or 'no' as to whether the tomcat port will be "hidden"
+# tomcathost           hostname where the tomcat servlet engine will be running
+# tomcatport           the HTTP port of the tomcat servlet container.
+
+package LAS::Server;
+
+use vars qw($LAS_VERSION %Config);
+use LAS;
+my $LAS_VERSION = $LAS::VERSION ? $LAS::VERSION : "6.5.2.2";
+
+%Config = (
+output_directory     => "output/",
+OPeNDAP_directory    => '',
+debug_file           => "log/debug",
+log_file             => "log/access",
+error_file           => "log/errors",
+output_alias         => '@OUTPUT_ALIAS@/',
+uipath               => '@UIPATH@',
+custom_include       => '@CUSTOM_PERL_INCLUDE@',
+db_login             => 'las',
+db_password          => 'lasrules',
+db_host              => '@DB_HOST@',
+allow_sisters        => 'false',
+allow_sister_driven  => 'false',
+serverhost           => '@SERVERHOST@',
+proxy                => '@PROXY@',
+servlet_root_url     => '@SERVLET_ROOT_URL@',
+tomcathost           => '@TOMCATHOST@',
+tomcatport           => '@SERVLET_PORT@',
+);
+
+1; #return true

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+  <appender name="las" class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="File" value="@JAKARTA_HOME@/content/@APPNAME@/logs/las.log"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="LAS %d{yyyy-MM-dd'T'HH:mm:ss.SSS Z} %-5p - %c{1} - %m%n"/>
+    </layout>
+  </appender>
+   <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %c{1} - %m%n" />
+        </layout>
+    </appender>
+    <appender name="LOGFILE" class="org.apache.log4j.FileAppender">
+        <param name="File" value="addxml.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %c{1} - %m%n" />
+        </layout>
+    </appender>
+    <logger name="gov.noaa.pmel.tmap.addxml.addXML">
+        <level value="info" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.apache">
+        <level value="ERROR" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="httpclient">
+        <level value="ERROR" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+  <logger name="gov.noaa.pmel.tmap.las" additivity="false">
+    <level value="INFO"/>
+    <appender-ref ref="las"/>
+  </logger>
+
+  <root>
+    <level value="WARN"/>
+    <appender-ref ref="las"/>
+  </root>
+
+</log4j:configuration>

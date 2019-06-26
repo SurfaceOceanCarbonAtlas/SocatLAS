@@ -1,0 +1,70 @@
+<datasets>
+  <platforms
+    name = "Platforms with IDs"
+    url = "platforms"
+    doc = "">
+
+    <properties><ui>
+      <default>file:ui.xml#insitu_demo_2</default>
+    </ui>
+
+    <database_access name="mysql">
+      <db_type>mysql</db_type>
+      <db_name>LAS_insitu_demo</db_name>
+      <db_title>LAS in-situ demo 2</db_title>
+      <db_host>localhost</db_host>
+      <db_login>las</db_login>
+      <db_passwd>lasrules</db_passwd>
+      <db_table>platforms</db_table>
+      <longitude>lon</longitude>
+      <lon_domain>0:360</lon_domain>
+      <latitude>lat</latitude>
+      <depth></depth>
+      <depth_units></depth_units>
+      <time>time</time>
+      <time_sample>1999-01-01</time_sample>
+      <time_type>string</time_type>
+      <time_format>yyyy-MM-dd HH:mm:ss.SSS</time_format>
+      <time_units>hours since 1970-01-01 00:00:00</time_units>
+      <hours_1970></hours_1970>
+      <profID></profID>
+      <cruiseID></cruiseID>
+      <string_vars>id,country,type</string_vars>
+      <string_var_titles>ID,Country,Platform Type</string_var_titles>
+      <string_var_lengths>8,2,16</string_var_lengths>
+      <metadata></metadata>
+      <executable></executable>
+      <missing>-999</missing>
+      <timeout>180</timeout>
+      <row_limit>150000</row_limit>
+    </database_access>
+
+    </properties>
+
+    <variables>
+      <sst units="deg C" name="Sea Surface Temperature">
+        <link match="/lasdata/grids/platforms_latitude_longitude_time_grid"/>
+      </sst>
+    </variables>
+  </platforms>
+</datasets>
+
+<grids>
+  <platforms_latitude_longitude_time_grid>
+    <link match="/lasdata/axes/platforms_latitude"/>
+    <link match="/lasdata/axes/platforms_longitude"/>
+    <link match="/lasdata/axes/platforms_time"/>
+  </platforms_latitude_longitude_time_grid>
+</grids>
+
+<axes>
+  <platforms_latitude units="degrees_north" type="y">
+    <arange start="-30" step="1" size="50"/>
+  </platforms_latitude>
+  <platforms_longitude units="degrees_east" type="x">
+    <arange start="120" step="1" size="60"/>
+  </platforms_longitude>
+  <platforms_time units="day" type="t">
+   <arange start="2005-05-26" step="1" size="3"/>
+  </platforms_time>
+</axes>

@@ -1,0 +1,76 @@
+<?xml version='1.0' ?>
+<!DOCTYPE spec SYSTEM "spec.dtd" [
+
+<!-- Declaration of operations files to be included -->
+<!ENTITY operations SYSTEM "operations.xml">
+
+<!ENTITY insitu_operations SYSTEM "insitu_operations.xml">
+
+<!-- Declaration of dataset files to be included -->
+<!-- Default LAS datasets -->
+<!ENTITY coads SYSTEM "coads.xml">
+<!ENTITY levitus SYSTEM "levitus.xml">
+<!ENTITY paco SYSTEM "DODS_IRI_NOAA_NCEP_EMC_CMB_Pac_ocean.xml">
+<!ENTITY ocean_atlas_subset SYSTEM "ocean_atlas_subset.xml">
+
+<!-- Sample insitu datasets -->
+<!ENTITY insitu_demo_1 SYSTEM "insitu_demo_1.xml">
+<!ENTITY insitu_demo_2 SYSTEM "insitu_demo_2.xml">
+<!ENTITY nwioos_hake98 SYSTEM "nwioos_hake98.xml">
+<!--<!ENTITY pfeg SYSTEM "pfeg.xml">-->
+
+]>
+
+
+<lasdata>
+
+ <output_dir>@JAKARTA_HOME@/webapps/@APPNAME@/output</output_dir>
+ <institution name="Pacific Marine Environmental Lab"
+              contact="@ADMIN_EMAIL@"
+              url="http://www.pmel.noaa.gov"/>
+
+ <!-- Default properties for this server -->
+ <properties>
+
+  <product_server>
+   <ui_timeout>20</ui_timeout>
+   <ps_timeout>3600</ps_timeout>
+   <use_cache>true</use_cache>
+   <default_catid>ocean_atlas_subset</default_catid>
+   <default_dsid>ocean_atlas_subset</default_dsid>
+   <default_varid>TEMP-ocean_atlas_subset</default_varid>
+   <default_operation>Plot_2D_XY_zoom</default_operation>
+   <default_option>Options_2D_image_contour_xy_7</default_option>
+   <default_view>xy</default_view>
+   <clean_interval>24</clean_interval>  <!-- How often to run the cleaning task.  Once every 24 hours in this case. -->
+   <clean_units>hour</clean_units>      <!-- Units for clean_interval and clean_age.  Accepts hour or day. -->
+   <clean_age>168</clean_age>           <!-- Age of a file in units that will be deleted.  In this case files 168 hours (1 week) old or older will be deleted. -->
+   <clean_time>00:01</clean_time>       <!-- Time of day in a 24-hour clock at which the first cleaning will start. Then will run every interval after that. -->
+  </product_server>
+
+  <ferret>
+   <land_type>contour</land_type>
+   <fill_type>fill</fill_type>
+  </ferret>
+
+ </properties>
+
+ <!-- Operations supported by this server -->
+ <operations url="http://@SERVLET_ROOT_URL@/@APPNAME@/ProductServer.do">
+   &operations;
+   &insitu_operations;
+ </operations>
+
+ <!-- Datasets provided by this server -->
+ <!-- Default gridded LAS datasets -->
+ &coads;
+ &levitus;
+ &paco;
+ &ocean_atlas_subset;
+ <!-- Example scattered LAS datasets -->
+ &insitu_demo_1;
+ &insitu_demo_2;
+ &nwioos_hake98;
+ <!-- &pfeg; -->
+
+</lasdata>

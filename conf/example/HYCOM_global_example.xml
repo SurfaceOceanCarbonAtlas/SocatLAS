@@ -1,0 +1,81 @@
+<datasets>
+<HYCOM_global_example name="HYCOM global example XYZ">
+   <institution name="Naval Research Lab" url="hycom.coaps.fsu.edu"/>      
+   <properties>
+      <ferret>
+         <thk_url>http://hycom.coaps.fsu.edu/opendap/nph-dods/datasets/test/hycom_2.1_Global_1o12ml_lthk_b20030101_f20030102.nc</thk_url>
+         <thk_var>lthk</thk_var>
+         <curvi_coord_lon>longitude</curvi_coord_lon> <!-- Curvilinear coordinates -->
+         <curvi_coord_lat>latitude</curvi_coord_lat>  <!-- Curvilinear coordinates -->
+      </ferret>
+      <ui>
+         <default>file:ui.xml#HYCOM_Hybrid_Z</default>
+      </ui>
+   </properties>
+   <variables>
+         <temp name="Sea Water Potential Temperature" units="degC" url="http://hycom.coaps.fsu.edu/opendap/nph-dods/datasets/test/hycom_2.1_Global_1o12ml_temp_b20030101_f20030102.nc" >
+            <link match="/lasdata/grids/hycom_global_xyz_grid"/>
+            <properties>
+               <ferret>
+                  <init_script>HYCOM_initialize_data</init_script>
+                </ferret>
+              </properties>
+         </temp>
+         <ssh name="Sea Surface Elevation" units="Meters" url="http://hycom.coaps.fsu.edu/opendap/nph-dods/datasets/test/hycom_2.1_Global_1o12ml_ssh_b20030101_f20030102.nc" >
+            <link match="/lasdata/grids/hycom_global_xyz_grid"/>
+            <properties>
+               <ferret>
+                  <init_script>HYCOM_initialize_data</init_script>
+                  <palette>light_centered</palette>
+                  <fill_levels>20c</fill_levels>
+                </ferret>
+              </properties>
+         </ssh>
+      </variables>
+   </HYCOM_global_example>
+ </datasets>
+ <grids>
+  <hycom_global_xyz_grid>
+     <link match="/lasdata/axes/hycom_global_lon_4500"/>
+     <link match="/lasdata/axes/hycom_global_lat_3298"/>
+     <link match="/lasdata/axes/HYCOM_xyz_zfixed"/>
+  </hycom_global_xyz_grid>  
+ </grids>
+ <axes>
+   <hycom_global_lon_4500 type="x" units = "degrees_east">
+      <arange start="74.16" step="0.08" size="4500"/>
+   </hycom_global_lon_4500>
+   <hycom_global_lat_3298 type="y" units = "degrees_north">
+      <arange start="-78.29" step="0.0546" size="3298"/>
+   </hycom_global_lat_3298>
+   <HYCOM_xyz_zlayer type="z" units="">
+      <arange start="1" step="1" size="32"/>
+   </HYCOM_xyz_zlayer>
+   <HYCOM_xyz_zfixed type="z" units="meter">
+      <v> 0. </v>
+      <v> 2. </v>
+      <v> 5. </v>
+      <v> 10. </v>
+      <v> 20. </v>
+      <v> 30. </v>
+      <v> 50. </v>
+      <v> 75. </v>
+      <v> 100. </v>
+      <v> 150. </v>
+      <v> 200. </v>
+      <v> 300. </v>
+      <v> 400. </v>
+      <v> 600. </v>
+      <v> 800. </v>
+      <v> 1000. </v>
+      <v> 1200. </v>
+      <v> 1500. </v>
+      <v> 2000. </v>
+      <v> 3000. </v>
+      <v> 4000. </v>
+      <v> 6000. </v>
+      <v> 8000. </v>
+   </HYCOM_xyz_zfixed>
+
+ </axes>
+

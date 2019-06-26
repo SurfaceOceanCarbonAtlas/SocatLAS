@@ -1,0 +1,3580 @@
+<datasets>
+  <cscWT
+    name = "Buoy Data (Water Temperature) from the NOAA CSC microWFS"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://www.csc.noaa.gov/DTL/dtl_proj4_gmlsfp_wfs.html">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>cscWT</id>
+        <title>Buoy Data (Water Temperature) from the NOAA CSC microWFS</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <station_id name="Station ID" url="#station_id">
+        <link match="/lasdata/grids/cscWT_grid"/>
+      </station_id>
+      <sea_water_temperature units="degree_C" name="Sea Water Temperature" url="#sea_water_temperature">
+        <link match="/lasdata/grids/cscWT_grid"/>
+      </sea_water_temperature>
+    </variables>
+  </cscWT>
+  <gomoosBuoy
+    name = "Buoy Data from the GoMOOS SOS Server"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://www.oostethys.org/ogc-oceans-interoperability-experiment">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>gomoosBuoy</id>
+        <title>Buoy Data from the GoMOOS SOS Server</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <station_id name="Station ID" url="#station_id">
+        <link match="/lasdata/grids/gomoosBuoy_grid"/>
+      </station_id>
+      <sea_water_temperature units="degree_C" name="Sea Water Temperature" url="#sea_water_temperature">
+        <link match="/lasdata/grids/gomoosBuoy_grid"/>
+      </sea_water_temperature>
+      <sea_water_salinity units="psu" name="Sea Water Salinity" url="#sea_water_salinity">
+        <link match="/lasdata/grids/gomoosBuoy_grid"/>
+      </sea_water_salinity>
+    </variables>
+  </gomoosBuoy>
+  <nosCoopsWind
+    name = "Buoy Wind Data from the NOAA NOS SOAP+XML Server"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://opendap.co-ops.nos.noaa.gov/axis/">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nosCoopsWind</id>
+        <title>Buoy Wind Data from the NOAA NOS SOAP+XML Server</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <station_name name="Station Name" url="#station_name">
+        <link match="/lasdata/grids/nosCoopsWind_grid"/>
+      </station_name>
+      <station_id name="Station ID" url="#station_id">
+        <link match="/lasdata/grids/nosCoopsWind_grid"/>
+      </station_id>
+      <wind_speed units="m s-1" name="Wind Speed" url="#wind_speed">
+        <link match="/lasdata/grids/nosCoopsWind_grid"/>
+      </wind_speed>
+      <wind_from_direction units="degrees_true" name="Wind From Direction" url="#wind_from_direction">
+        <link match="/lasdata/grids/nosCoopsWind_grid"/>
+      </wind_from_direction>
+      <wind_speed_of_gust units="m s-1" name="Wind Speed of Gust" url="#wind_speed_of_gust">
+        <link match="/lasdata/grids/nosCoopsWind_grid"/>
+      </wind_speed_of_gust>
+      <MaxExceeded units="0=False, 1=True" name="Max Value Was Exceeded" url="#MaxExceeded">
+        <link match="/lasdata/grids/nosCoopsWind_grid"/>
+      </MaxExceeded>
+      <RateExceeded units="0=False, 1=True" name="Rate of Change Tolerance Limit Was Exceeded" url="#RateExceeded">
+        <link match="/lasdata/grids/nosCoopsWind_grid"/>
+      </RateExceeded>
+    </variables>
+  </nosCoopsWind>
+  <erdCalcofiBio
+    name = "CalCOFI Fish Larvae Count"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://www.calcofi.org/newhome/publications/Atlases/atlases.htm">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>erdCalcofiBio</id>
+        <title>CalCOFI Fish Larvae Count</title>
+        <longitude>longitude</longitude>
+        <lon_domain>0:360</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ID name="sequence id" url="#ID">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </ID>
+      <line_number name="CalCOFI Line Number" url="#line_number">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </line_number>
+      <station_number name="CalCOFI Station Number" url="#station_number">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </station_number>
+      <ship name="Ship" url="#ship">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </ship>
+      <TotalFishEggs units="count" name="Total Fish Eggs" url="#TotalFishEggs">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </TotalFishEggs>
+      <TotalFishLarvae units="count" name="Total Fish Larvae" url="#TotalFishLarvae">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </TotalFishLarvae>
+      <TotalPlanktonVolume units="count" name="Total Plankton Volume" url="#TotalPlanktonVolume">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </TotalPlanktonVolume>
+      <Argyropelecus_spp_LarvaeCount units="count" name="Argyropelecus Spp Larvae Count" url="#Argyropelecus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Argyropelecus_spp_LarvaeCount>
+      <Arrow_goby_LarvaeCount units="count" name="Arrow Goby Larvae Count" url="#Arrow_goby_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Arrow_goby_LarvaeCount>
+      <Artedius_spp_LarvaeCount units="count" name="Artedius Spp Larvae Count" url="#Artedius_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Artedius_spp_LarvaeCount>
+      <Atlantic_fangjaw_LarvaeCount units="count" name="Atlantic Fangjaw Larvae Count" url="#Atlantic_fangjaw_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Atlantic_fangjaw_LarvaeCount>
+      <Aurora_rockfish_LarvaeCount units="count" name="Aurora Rockfish Larvae Count" url="#Aurora_rockfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Aurora_rockfish_LarvaeCount>
+      <Barradcudinas_LarvaeCount units="count" name="Barradcudinas Larvae Count" url="#Barradcudinas_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Barradcudinas_LarvaeCount>
+      <Basketweave_cusk-eel_LarvaeCount units="count" name="Basketweave Cusk-eel Larvae Count" url="#Basketweave_cusk-eel_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Basketweave_cusk-eel_LarvaeCount>
+      <Bathophilus_spp_LarvaeCount units="count" name="Bathophilus Spp Larvae Count" url="#Bathophilus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bathophilus_spp_LarvaeCount>
+      <Bathylagus_spp_LarvaeCount units="count" name="Bathylagus Spp Larvae Count" url="#Bathylagus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bathylagus_spp_LarvaeCount>
+      <Bay_blenny_LarvaeCount units="count" name="Bay Blenny Larvae Count" url="#Bay_blenny_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bay_blenny_LarvaeCount>
+      <Bay_goby_LarvaeCount units="count" name="Bay Goby Larvae Count" url="#Bay_goby_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bay_goby_LarvaeCount>
+      <Benttooth_bristlemouth_LarvaeCount units="count" name="Benttooth Bristlemouth Larvae Count" url="#Benttooth_bristlemouth_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Benttooth_bristlemouth_LarvaeCount>
+      <Bigeye_starsnout_LarvaeCount units="count" name="Bigeye Starsnout Larvae Count" url="#Bigeye_starsnout_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bigeye_starsnout_LarvaeCount>
+      <Bigmouth_sole_LarvaeCount units="count" name="Bigmouth Sole Larvae Count" url="#Bigmouth_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bigmouth_sole_LarvaeCount>
+      <Bigscales_LarvaeCount units="count" name="Bigscales Larvae Count" url="#Bigscales_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bigscales_LarvaeCount>
+      <Black_croaker_LarvaeCount units="count" name="Black Croaker Larvae Count" url="#Black_croaker_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Black_croaker_LarvaeCount>
+      <Black_snake_mackerel_LarvaeCount units="count" name="Black Snake Mackerel Larvae Count" url="#Black_snake_mackerel_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Black_snake_mackerel_LarvaeCount>
+      <Black_swallower_LarvaeCount units="count" name="Black Swallower Larvae Count" url="#Black_swallower_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Black_swallower_LarvaeCount>
+      <Blackbelly_dragonfish_LarvaeCount units="count" name="Blackbelly Dragonfish Larvae Count" url="#Blackbelly_dragonfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blackbelly_dragonfish_LarvaeCount>
+      <Blackbelly_pearleye_LarvaeCount units="count" name="Blackbelly Pearleye Larvae Count" url="#Blackbelly_pearleye_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blackbelly_pearleye_LarvaeCount>
+      <Blackdevil_LarvaeCount units="count" name="Blackdevil Larvae Count" url="#Blackdevil_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blackdevil_LarvaeCount>
+      <Blackedge_poacher_LarvaeCount units="count" name="Blackedge Poacher Larvae Count" url="#Blackedge_poacher_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blackedge_poacher_LarvaeCount>
+      <Blackeye_goby_LarvaeCount units="count" name="Blackeye Goby Larvae Count" url="#Blackeye_goby_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blackeye_goby_LarvaeCount>
+      <Blackgill_rockfish_LarvaeCount units="count" name="Blackgill Rockfish Larvae Count" url="#Blackgill_rockfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blackgill_rockfish_LarvaeCount>
+      <Blacksmelts_LarvaeCount units="count" name="Blacksmelts Larvae Count" url="#Blacksmelts_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blacksmelts_LarvaeCount>
+      <Blacksmith_LarvaeCount units="count" name="Blacksmith Larvae Count" url="#Blacksmith_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blacksmith_LarvaeCount>
+      <Blennioidei_LarvaeCount units="count" name="Blennioidei Larvae Count" url="#Blennioidei_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blennioidei_LarvaeCount>
+      <Blind_goby_LarvaeCount units="count" name="Blind Goby Larvae Count" url="#Blind_goby_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blind_goby_LarvaeCount>
+      <Blue_lanternfish_LarvaeCount units="count" name="Blue Lanternfish Larvae Count" url="#Blue_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Blue_lanternfish_LarvaeCount>
+      <Bluebanded_goby_LarvaeCount units="count" name="Bluebanded Goby Larvae Count" url="#Bluebanded_goby_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bluebanded_goby_LarvaeCount>
+      <Bluebarred_prickleback_LarvaeCount units="count" name="Bluebarred Prickleback Larvae Count" url="#Bluebarred_prickleback_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bluebarred_prickleback_LarvaeCount>
+      <Bluefin_driftfish_blackrag_LarvaeCount units="count" name="Bluefin Driftfish Blackrag Larvae Count" url="#Bluefin_driftfish_blackrag_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bluefin_driftfish_blackrag_LarvaeCount>
+      <Bluethroat_argentine_LarvaeCount units="count" name="Bluethroat Argentine Larvae Count" url="#Bluethroat_argentine_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bluethroat_argentine_LarvaeCount>
+      <Bobtail_Eels_LarvaeCount units="count" name="Bobtail Eels Larvae Count" url="#Bobtail_Eels_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bobtail_Eels_LarvaeCount>
+      <Bobtail_eel_LarvaeCount units="count" name="Bobtail Eel Larvae Count" url="#Bobtail_eel_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bobtail_eel_LarvaeCount>
+      <Bocaccio_LarvaeCount units="count" name="Bocaccio Larvae Count" url="#Bocaccio_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bocaccio_LarvaeCount>
+      <Bottlelight_LarvaeCount units="count" name="Bottlelight Larvae Count" url="#Bottlelight_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bottlelight_LarvaeCount>
+      <Bristlemouths_LarvaeCount units="count" name="Bristlemouths Larvae Count" url="#Bristlemouths_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bristlemouths_LarvaeCount>
+      <Broadfin_lampfish_LarvaeCount units="count" name="Broadfin Lampfish Larvae Count" url="#Broadfin_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Broadfin_lampfish_LarvaeCount>
+      <Brown_Irish_lord_LarvaeCount units="count" name="Brown Irish Lord Larvae Count" url="#Brown_Irish_lord_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Brown_Irish_lord_LarvaeCount>
+      <Brown_snipe_eel_LarvaeCount units="count" name="Brown Snipe Eel Larvae Count" url="#Brown_snipe_eel_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Brown_snipe_eel_LarvaeCount>
+      <Brownsnout_spookfish_LarvaeCount units="count" name="Brownsnout Spookfish Larvae Count" url="#Brownsnout_spookfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Brownsnout_spookfish_LarvaeCount>
+      <Buffalo_sculpin_LarvaeCount units="count" name="Buffalo Sculpin Larvae Count" url="#Buffalo_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Buffalo_sculpin_LarvaeCount>
+      <Bulldog_lightfish_LarvaeCount units="count" name="Bulldog Lightfish Larvae Count" url="#Bulldog_lightfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Bulldog_lightfish_LarvaeCount>
+      <Butter_sole_LarvaeCount units="count" name="Butter Sole Larvae Count" url="#Butter_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Butter_sole_LarvaeCount>
+      <C-O_turbot_LarvaeCount units="count" name="C-O Turbot Larvae Count" url="#C-O_turbot_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </C-O_turbot_LarvaeCount>
+      <Cabezon_LarvaeCount units="count" name="Cabezon Larvae Count" url="#Cabezon_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Cabezon_LarvaeCount>
+      <California_corbina_LarvaeCount units="count" name="California Corbina Larvae Count" url="#California_corbina_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_corbina_LarvaeCount>
+      <California_flashlightfish_LarvaeCount units="count" name="California Flashlightfish Larvae Count" url="#California_flashlightfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_flashlightfish_LarvaeCount>
+      <California_flyingfish_LarvaeCount units="count" name="California Flyingfish Larvae Count" url="#California_flyingfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_flyingfish_LarvaeCount>
+      <California_grunion_LarvaeCount units="count" name="California Grunion Larvae Count" url="#California_grunion_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_grunion_LarvaeCount>
+      <California_halibut_LarvaeCount units="count" name="California Halibut Larvae Count" url="#California_halibut_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_halibut_LarvaeCount>
+      <California_headlightfish_LarvaeCount units="count" name="California Headlightfish Larvae Count" url="#California_headlightfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_headlightfish_LarvaeCount>
+      <California_lanternfish_LarvaeCount units="count" name="California Lanternfish Larvae Count" url="#California_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_lanternfish_LarvaeCount>
+      <California_lizardfish_LarvaeCount units="count" name="California Lizardfish Larvae Count" url="#California_lizardfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_lizardfish_LarvaeCount>
+      <California_scorpionfish_sculpin_LarvaeCount units="count" name="California Scorpionfish Sculpin Larvae Count" url="#California_scorpionfish_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_scorpionfish_sculpin_LarvaeCount>
+      <California_sheephead_LarvaeCount units="count" name="California Sheephead Larvae Count" url="#California_sheephead_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_sheephead_LarvaeCount>
+      <California_smoothtongue_LarvaeCount units="count" name="California Smoothtongue Larvae Count" url="#California_smoothtongue_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_smoothtongue_LarvaeCount>
+      <California_tonguefish_LarvaeCount units="count" name="California Tonguefish Larvae Count" url="#California_tonguefish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </California_tonguefish_LarvaeCount>
+      <Ceratioidei_LarvaeCount units="count" name="Ceratioidei Larvae Count" url="#Ceratioidei_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ceratioidei_LarvaeCount>
+      <Cheekspot_goby_LarvaeCount units="count" name="Cheekspot Goby Larvae Count" url="#Cheekspot_goby_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Cheekspot_goby_LarvaeCount>
+      <Chilipepper_LarvaeCount units="count" name="Chilipepper Larvae Count" url="#Chilipepper_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Chilipepper_LarvaeCount>
+      <Chubby_flashlightfish_LarvaeCount units="count" name="Chubby Flashlightfish Larvae Count" url="#Chubby_flashlightfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Chubby_flashlightfish_LarvaeCount>
+      <Chubby_pearleye_LarvaeCount units="count" name="Chubby Pearleye Larvae Count" url="#Chubby_pearleye_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Chubby_pearleye_LarvaeCount>
+      <Clingfishes_LarvaeCount units="count" name="Clingfishes Larvae Count" url="#Clingfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Clingfishes_LarvaeCount>
+      <Clupeiformes_LarvaeCount units="count" name="Clupeiformes Larvae Count" url="#Clupeiformes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Clupeiformes_LarvaeCount>
+      <Common_dolphinfish_LarvaeCount units="count" name="Common Dolphinfish Larvae Count" url="#Common_dolphinfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Common_dolphinfish_LarvaeCount>
+      <Constellationfish_LarvaeCount units="count" name="Constellationfish Larvae Count" url="#Constellationfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Constellationfish_LarvaeCount>
+      <Cow_rockfish_cowcod_LarvaeCount units="count" name="Cow Rockfish Cowcod Larvae Count" url="#Cow_rockfish_cowcod_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Cow_rockfish_cowcod_LarvaeCount>
+      <Crested_bigscale_LarvaeCount units="count" name="Crested Bigscale Larvae Count" url="#Crested_bigscale_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Crested_bigscale_LarvaeCount>
+      <Croakers_LarvaeCount units="count" name="Croakers Larvae Count" url="#Croakers_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Croakers_LarvaeCount>
+      <Cubiceps_baxteri_LarvaeCount units="count" name="Cubiceps Baxteri Larvae Count" url="#Cubiceps_baxteri_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Cubiceps_baxteri_LarvaeCount>
+      <Curlfin_turbot_LarvaeCount units="count" name="Curlfin Turbot Larvae Count" url="#Curlfin_turbot_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Curlfin_turbot_LarvaeCount>
+      <Cyclothone_spp_LarvaeCount units="count" name="Cyclothone Spp Larvae Count" url="#Cyclothone_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Cyclothone_spp_LarvaeCount>
+      <Daggertooth_LarvaeCount units="count" name="Daggertooth Larvae Count" url="#Daggertooth_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Daggertooth_LarvaeCount>
+      <Deepsea_sole_LarvaeCount units="count" name="Deepsea Sole Larvae Count" url="#Deepsea_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Deepsea_sole_LarvaeCount>
+      <Deepwater_kelpfish_LarvaeCount units="count" name="Deepwater Kelpfish Larvae Count" url="#Deepwater_kelpfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Deepwater_kelpfish_LarvaeCount>
+      <Diamond_turbot_LarvaeCount units="count" name="Diamond Turbot Larvae Count" url="#Diamond_turbot_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Diamond_turbot_LarvaeCount>
+      <Diogenes_lanternfish_LarvaeCount units="count" name="Diogenes Lanternfish Larvae Count" url="#Diogenes_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Diogenes_lanternfish_LarvaeCount>
+      <Diogenichthys_spp_LarvaeCount units="count" name="Diogenichthys Spp Larvae Count" url="#Diogenichthys_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Diogenichthys_spp_LarvaeCount>
+      <Diplophos_proximus_LarvaeCount units="count" name="Diplophos Proximus Larvae Count" url="#Diplophos_proximus_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Diplophos_proximus_LarvaeCount>
+      <Diplophos_taenia_LarvaeCount units="count" name="Diplophos Taenia Larvae Count" url="#Diplophos_taenia_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Diplophos_taenia_LarvaeCount>
+      <Disintegrated_fish_larvae_LarvaeCount units="count" name="Disintegrated Fish Larvae Larvae Count" url="#Disintegrated_fish_larvae_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Disintegrated_fish_larvae_LarvaeCount>
+      <Dogtooth_lampfish_LarvaeCount units="count" name="Dogtooth Lampfish Larvae Count" url="#Dogtooth_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Dogtooth_lampfish_LarvaeCount>
+      <Dollar_hatchetfishes_LarvaeCount units="count" name="Dollar Hatchetfishes Larvae Count" url="#Dollar_hatchetfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Dollar_hatchetfishes_LarvaeCount>
+      <Dolopichthys_spp_LarvaeCount units="count" name="Dolopichthys Spp Larvae Count" url="#Dolopichthys_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Dolopichthys_spp_LarvaeCount>
+      <Dover_sole_EggCount units="count" name="Dover Sole Egg Count" url="#Dover_sole_EggCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Dover_sole_EggCount>
+      <Dover_sole_LarvaeCount units="count" name="Dover Sole Larvae Count" url="#Dover_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Dover_sole_LarvaeCount>
+      <Dreamers_LarvaeCount units="count" name="Dreamers Larvae Count" url="#Dreamers_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Dreamers_LarvaeCount>
+      <Duckbill_barracudina_LarvaeCount units="count" name="Duckbill Barracudina Larvae Count" url="#Duckbill_barracudina_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Duckbill_barracudina_LarvaeCount>
+      <Dusky_pencilsmelt_LarvaeCount units="count" name="Dusky Pencilsmelt Larvae Count" url="#Dusky_pencilsmelt_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Dusky_pencilsmelt_LarvaeCount>
+      <Dwarf_lanternfish_LarvaeCount units="count" name="Dwarf Lanternfish Larvae Count" url="#Dwarf_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Dwarf_lanternfish_LarvaeCount>
+      <Ebelings_fangjaw_LarvaeCount units="count" name="Ebelings Fangjaw Larvae Count" url="#Ebelings_fangjaw_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ebelings_fangjaw_LarvaeCount>
+      <Eels_LarvaeCount units="count" name="Eels Larvae Count" url="#Eels_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Eels_LarvaeCount>
+      <English_sole_LarvaeCount units="count" name="English Sole Larvae Count" url="#English_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </English_sole_LarvaeCount>
+      <Escolar_LarvaeCount units="count" name="Escolar Larvae Count" url="#Escolar_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Escolar_LarvaeCount>
+      <Eustomias_spp_LarvaeCount units="count" name="Eustomias Spp Larvae Count" url="#Eustomias_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Eustomias_spp_LarvaeCount>
+      <Eutaeniophorus_spp_LarvaeCount units="count" name="Eutaeniophorus Spp Larvae Count" url="#Eutaeniophorus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Eutaeniophorus_spp_LarvaeCount>
+      <Fanfins_LarvaeCount units="count" name="Fanfins Larvae Count" url="#Fanfins_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Fanfins_LarvaeCount>
+      <Fantail_sole_LarvaeCount units="count" name="Fantail Sole Larvae Count" url="#Fantail_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Fantail_sole_LarvaeCount>
+      <Festive_ribbontail_LarvaeCount units="count" name="Festive Ribbontail Larvae Count" url="#Festive_ribbontail_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Festive_ribbontail_LarvaeCount>
+      <Flyingfishes_LarvaeCount units="count" name="Flyingfishes Larvae Count" url="#Flyingfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Flyingfishes_LarvaeCount>
+      <Garibaldi_LarvaeCount units="count" name="Garibaldi Larvae Count" url="#Garibaldi_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Garibaldi_LarvaeCount>
+      <Ghostly_grenadier_LarvaeCount units="count" name="Ghostly Grenadier Larvae Count" url="#Ghostly_grenadier_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ghostly_grenadier_LarvaeCount>
+      <Giant_grenadier_LarvaeCount units="count" name="Giant Grenadier Larvae Count" url="#Giant_grenadier_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Giant_grenadier_LarvaeCount>
+      <Giant_lampfish_LarvaeCount units="count" name="Giant Lampfish Larvae Count" url="#Giant_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Giant_lampfish_LarvaeCount>
+      <Gibbonsia_spp_LarvaeCount units="count" name="Gibbonsia Spp Larvae Count" url="#Gibbonsia_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Gibbonsia_spp_LarvaeCount>
+      <Gobies_LarvaeCount units="count" name="Gobies Larvae Count" url="#Gobies_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Gobies_LarvaeCount>
+      <Gonostoma_spp_LarvaeCount units="count" name="Gonostoma Spp Larvae Count" url="#Gonostoma_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Gonostoma_spp_LarvaeCount>
+      <Grenadiers_LarvaeCount units="count" name="Grenadiers Larvae Count" url="#Grenadiers_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Grenadiers_LarvaeCount>
+      <Grunts_LarvaeCount units="count" name="Grunts Larvae Count" url="#Grunts_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Grunts_LarvaeCount>
+      <Gulf_sanddab_LarvaeCount units="count" name="Gulf Sanddab Larvae Count" url="#Gulf_sanddab_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Gulf_sanddab_LarvaeCount>
+      <Gunnels_LarvaeCount units="count" name="Gunnels Larvae Count" url="#Gunnels_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Gunnels_LarvaeCount>
+      <Halfmoon_LarvaeCount units="count" name="Halfmoon Larvae Count" url="#Halfmoon_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Halfmoon_LarvaeCount>
+      <Halichoeres_spp_LarvaeCount units="count" name="Halichoeres Spp Larvae Count" url="#Halichoeres_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Halichoeres_spp_LarvaeCount>
+      <Hatchetfishes_LarvaeCount units="count" name="Hatchetfishes Larvae Count" url="#Hatchetfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Hatchetfishes_LarvaeCount>
+      <Headlightfishes_LarvaeCount units="count" name="Headlightfishes Larvae Count" url="#Headlightfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Headlightfishes_LarvaeCount>
+      <High_cockscomb_LarvaeCount units="count" name="High Cockscomb Larvae Count" url="#High_cockscomb_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </High_cockscomb_LarvaeCount>
+      <Highfin_dragonfish_LarvaeCount units="count" name="Highfin Dragonfish Larvae Count" url="#Highfin_dragonfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Highfin_dragonfish_LarvaeCount>
+      <Highseas_lampfish_LarvaeCount units="count" name="Highseas Lampfish Larvae Count" url="#Highseas_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Highseas_lampfish_LarvaeCount>
+      <Highseas_lightfish_LarvaeCount units="count" name="Highseas Lightfish Larvae Count" url="#Highseas_lightfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Highseas_lightfish_LarvaeCount>
+      <Highsnout_bigscale_LarvaeCount units="count" name="Highsnout Bigscale Larvae Count" url="#Highsnout_bigscale_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Highsnout_bigscale_LarvaeCount>
+      <Hornyhead_turbot_LarvaeCount units="count" name="Hornyhead Turbot Larvae Count" url="#Hornyhead_turbot_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Hornyhead_turbot_LarvaeCount>
+      <Howella_pammelas_LarvaeCount units="count" name="Howella Pammelas Larvae Count" url="#Howella_pammelas_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Howella_pammelas_LarvaeCount>
+      <Hygophum_spp_LarvaeCount units="count" name="Hygophum Spp Larvae Count" url="#Hygophum_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Hygophum_spp_LarvaeCount>
+      <Hypsoblennius_spp_LarvaeCount units="count" name="Hypsoblennius Spp Larvae Count" url="#Hypsoblennius_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Hypsoblennius_spp_LarvaeCount>
+      <Icelinus_spp_LarvaeCount units="count" name="Icelinus Spp Larvae Count" url="#Icelinus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Icelinus_spp_LarvaeCount>
+      <Ichthyococcus_spp_LarvaeCount units="count" name="Ichthyococcus Spp Larvae Count" url="#Ichthyococcus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ichthyococcus_spp_LarvaeCount>
+      <Jack_mackerel_LarvaeCount units="count" name="Jack Mackerel Larvae Count" url="#Jack_mackerel_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Jack_mackerel_LarvaeCount>
+      <Jacksmelt_LarvaeCount units="count" name="Jacksmelt Larvae Count" url="#Jacksmelt_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Jacksmelt_LarvaeCount>
+      <Kali_spp_LarvaeCount units="count" name="Kali Spp Larvae Count" url="#Kali_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Kali_spp_LarvaeCount>
+      <Kelp_and_sand_basses_LarvaeCount units="count" name="Kelp And Sand Basses Larvae Count" url="#Kelp_and_sand_basses_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Kelp_and_sand_basses_LarvaeCount>
+      <Kelp_greenling_LarvaeCount units="count" name="Kelp Greenling Larvae Count" url="#Kelp_greenling_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Kelp_greenling_LarvaeCount>
+      <Kelpfishes_LarvaeCount units="count" name="Kelpfishes Larvae Count" url="#Kelpfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Kelpfishes_LarvaeCount>
+      <King-of-the-salmon_LarvaeCount units="count" name="King-of-the-salmon Larvae Count" url="#King-of-the-salmon_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </King-of-the-salmon_LarvaeCount>
+      <Labrisomid_kelpfishes_LarvaeCount units="count" name="Labrisomid Kelpfishes Larvae Count" url="#Labrisomid_kelpfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Labrisomid_kelpfishes_LarvaeCount>
+      <Lampanyctus_omostigma_LarvaeCount units="count" name="Lampanyctus Omostigma Larvae Count" url="#Lampanyctus_omostigma_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Lampanyctus_omostigma_LarvaeCount>
+      <Lampanyctus_tenuiformis_LarvaeCount units="count" name="Lampanyctus Tenuiformis Larvae Count" url="#Lampanyctus_tenuiformis_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Lampanyctus_tenuiformis_LarvaeCount>
+      <Lanternfishes_LarvaeCount units="count" name="Lanternfishes Larvae Count" url="#Lanternfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Lanternfishes_LarvaeCount>
+      <Leptocephalus_giganteus_LarvaeCount units="count" name="Leptocephalus Giganteus Larvae Count" url="#Leptocephalus_giganteus_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Leptocephalus_giganteus_LarvaeCount>
+      <Leptocephalus_holti_LarvaeCount units="count" name="Leptocephalus Holti Larvae Count" url="#Leptocephalus_holti_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Leptocephalus_holti_LarvaeCount>
+      <Lestidiops_spp_LarvaeCount units="count" name="Lestidiops Spp Larvae Count" url="#Lestidiops_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Lestidiops_spp_LarvaeCount>
+      <Lined_clingfish_LarvaeCount units="count" name="Lined Clingfish Larvae Count" url="#Lined_clingfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Lined_clingfish_LarvaeCount>
+      <Lingcod_LarvaeCount units="count" name="Lingcod Larvae Count" url="#Lingcod_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Lingcod_LarvaeCount>
+      <Liparis_spp_LarvaeCount units="count" name="Liparis Spp Larvae Count" url="#Liparis_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Liparis_spp_LarvaeCount>
+      <Little_bigscale_LarvaeCount units="count" name="Little Bigscale Larvae Count" url="#Little_bigscale_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Little_bigscale_LarvaeCount>
+      <Livebearing_Brotulas_LarvaeCount units="count" name="Livebearing Brotulas Larvae Count" url="#Livebearing_Brotulas_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Livebearing_Brotulas_LarvaeCount>
+      <Longfin_dragonfish_LarvaeCount units="count" name="Longfin Dragonfish Larvae Count" url="#Longfin_dragonfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Longfin_dragonfish_LarvaeCount>
+      <Longfin_lampfish_LarvaeCount units="count" name="Longfin Lampfish Larvae Count" url="#Longfin_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Longfin_lampfish_LarvaeCount>
+      <Longfin_lanternfish_LarvaeCount units="count" name="Longfin Lanternfish Larvae Count" url="#Longfin_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Longfin_lanternfish_LarvaeCount>
+      <Longfin_sanddab_LarvaeCount units="count" name="Longfin Sanddab Larvae Count" url="#Longfin_sanddab_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Longfin_sanddab_LarvaeCount>
+      <Longjaw_bigscale_LarvaeCount units="count" name="Longjaw Bigscale Larvae Count" url="#Longjaw_bigscale_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Longjaw_bigscale_LarvaeCount>
+      <Longspine_combfish_LarvaeCount units="count" name="Longspine Combfish Larvae Count" url="#Longspine_combfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Longspine_combfish_LarvaeCount>
+      <Longspine_thornyhead_LarvaeCount units="count" name="Longspine Thornyhead Larvae Count" url="#Longspine_thornyhead_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Longspine_thornyhead_LarvaeCount>
+      <Lowcrest_hatchetfish_LarvaeCount units="count" name="Lowcrest Hatchetfish Larvae Count" url="#Lowcrest_hatchetfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Lowcrest_hatchetfish_LarvaeCount>
+      <Lythrypnus_spp_LarvaeCount units="count" name="Lythrypnus Spp Larvae Count" url="#Lythrypnus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Lythrypnus_spp_LarvaeCount>
+      <Manefin_LarvaeCount units="count" name="Manefin Larvae Count" url="#Manefin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Manefin_LarvaeCount>
+      <Medusafish_LarvaeCount units="count" name="Medusafish Larvae Count" url="#Medusafish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Medusafish_LarvaeCount>
+      <Melamphaes_simus_LarvaeCount units="count" name="Melamphaes Simus Larvae Count" url="#Melamphaes_simus_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Melamphaes_simus_LarvaeCount>
+      <Melamphaes_spp_LarvaeCount units="count" name="Melamphaes Spp Larvae Count" url="#Melamphaes_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Melamphaes_spp_LarvaeCount>
+      <Mexican_lampfish_LarvaeCount units="count" name="Mexican Lampfish Larvae Count" url="#Mexican_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Mexican_lampfish_LarvaeCount>
+      <Mexican_rockfish_LarvaeCount units="count" name="Mexican Rockfish Larvae Count" url="#Mexican_rockfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Mexican_rockfish_LarvaeCount>
+      <Mojarras_LarvaeCount units="count" name="Mojarras Larvae Count" url="#Mojarras_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Mojarras_LarvaeCount>
+      <Mussel_blenny_LarvaeCount units="count" name="Mussel Blenny Larvae Count" url="#Mussel_blenny_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Mussel_blenny_LarvaeCount>
+      <Myctophum_lychnobium_LarvaeCount units="count" name="Myctophum Lychnobium Larvae Count" url="#Myctophum_lychnobium_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Myctophum_lychnobium_LarvaeCount>
+      <Nannobrachium_bristori_LarvaeCount units="count" name="Nannobrachium Bristori Larvae Count" url="#Nannobrachium_bristori_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Nannobrachium_bristori_LarvaeCount>
+      <Nannobrachium_hawaiiensis_LarvaeCount units="count" name="Nannobrachium Hawaiiensis Larvae Count" url="#Nannobrachium_hawaiiensis_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Nannobrachium_hawaiiensis_LarvaeCount>
+      <Nannobrachium_spp_LarvaeCount units="count" name="Nannobrachium Spp Larvae Count" url="#Nannobrachium_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Nannobrachium_spp_LarvaeCount>
+      <Neoclinus_spp_LarvaeCount units="count" name="Neoclinus Spp Larvae Count" url="#Neoclinus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Neoclinus_spp_LarvaeCount>
+      <Nezumia_spp_LarvaeCount units="count" name="Nezumia Spp Larvae Count" url="#Nezumia_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Nezumia_spp_LarvaeCount>
+      <Northern_anchovy_EggCount units="count" name="Northern Anchovy Egg Count" url="#Northern_anchovy_EggCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Northern_anchovy_EggCount>
+      <Northern_anchovy_LarvaeCount units="count" name="Northern Anchovy Larvae Count" url="#Northern_anchovy_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Northern_anchovy_LarvaeCount>
+      <Northern_clingfish_LarvaeCount units="count" name="Northern Clingfish Larvae Count" url="#Northern_clingfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Northern_clingfish_LarvaeCount>
+      <Northern_lampfish_LarvaeCount units="count" name="Northern Lampfish Larvae Count" url="#Northern_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Northern_lampfish_LarvaeCount>
+      <Northern_pearleye_LarvaeCount units="count" name="Northern Pearleye Larvae Count" url="#Northern_pearleye_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Northern_pearleye_LarvaeCount>
+      <Northern_ronquil_LarvaeCount units="count" name="Northern Ronquil Larvae Count" url="#Northern_ronquil_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Northern_ronquil_LarvaeCount>
+      <Occupy units="count" name="Occupy" url="#Occupy">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Occupy>
+      <Ocean_whitefish_LarvaeCount units="count" name="Ocean Whitefish Larvae Count" url="#Ocean_whitefish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ocean_whitefish_LarvaeCount>
+      <Oligocottus_spp_LarvaeCount units="count" name="Oligocottus Spp Larvae Count" url="#Oligocottus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Oligocottus_spp_LarvaeCount>
+      <Opaleye_LarvaeCount units="count" name="Opaleye Larvae Count" url="#Opaleye_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Opaleye_LarvaeCount>
+      <Ophidiiformes_LarvaeCount units="count" name="Ophidiiformes Larvae Count" url="#Ophidiiformes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ophidiiformes_LarvaeCount>
+      <Orangethroat_pikeblenny_LarvaeCount units="count" name="Orangethroat Pikeblenny Larvae Count" url="#Orangethroat_pikeblenny_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Orangethroat_pikeblenny_LarvaeCount>
+      <Pacific_argentine_LarvaeCount units="count" name="Pacific Argentine Larvae Count" url="#Pacific_argentine_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_argentine_LarvaeCount>
+      <Pacific_barracuda_California_barracuda_LarvaeCount units="count" name="Pacific Barracuda California Barracuda Larvae Count" url="#Pacific_barracuda_California_barracuda_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_barracuda_California_barracuda_LarvaeCount>
+      <Pacific_blackdragon_LarvaeCount units="count" name="Pacific Blackdragon Larvae Count" url="#Pacific_blackdragon_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_blackdragon_LarvaeCount>
+      <Pacific_blacksmelt_LarvaeCount units="count" name="Pacific Blacksmelt Larvae Count" url="#Pacific_blacksmelt_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_blacksmelt_LarvaeCount>
+      <Pacific_bonito_LarvaeCount units="count" name="Pacific Bonito Larvae Count" url="#Pacific_bonito_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_bonito_LarvaeCount>
+      <Pacific_butterfish_LarvaeCount units="count" name="Pacific Butterfish Larvae Count" url="#Pacific_butterfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_butterfish_LarvaeCount>
+      <Pacific_grenadier_LarvaeCount units="count" name="Pacific Grenadier Larvae Count" url="#Pacific_grenadier_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_grenadier_LarvaeCount>
+      <Pacific_hake_or_whiting_LarvaeCount units="count" name="Pacific Hake Or Whiting Larvae Count" url="#Pacific_hake_or_whiting_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_hake_or_whiting_LarvaeCount>
+      <Pacific_mackerel_chub_mackerel_LarvaeCount units="count" name="Pacific Mackerel Chub Mackerel Larvae Count" url="#Pacific_mackerel_chub_mackerel_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_mackerel_chub_mackerel_LarvaeCount>
+      <Pacific_pomfret_LarvaeCount units="count" name="Pacific Pomfret Larvae Count" url="#Pacific_pomfret_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_pomfret_LarvaeCount>
+      <Pacific_sanddab_LarvaeCount units="count" name="Pacific Sanddab Larvae Count" url="#Pacific_sanddab_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_sanddab_LarvaeCount>
+      <Pacific_sardine_pilchard_EggCount units="count" name="Pacific Sardine Pilchard Egg Count" url="#Pacific_sardine_pilchard_EggCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_sardine_pilchard_EggCount>
+      <Pacific_sardine_pilchard_LarvaeCount units="count" name="Pacific Sardine Pilchard Larvae Count" url="#Pacific_sardine_pilchard_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_sardine_pilchard_LarvaeCount>
+      <Pacific_saury_EggCount units="count" name="Pacific Saury Egg Count" url="#Pacific_saury_EggCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_saury_EggCount>
+      <Pacific_saury_LarvaeCount units="count" name="Pacific Saury Larvae Count" url="#Pacific_saury_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_saury_LarvaeCount>
+      <Pacific_scabbardfish_LarvaeCount units="count" name="Pacific Scabbardfish Larvae Count" url="#Pacific_scabbardfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_scabbardfish_LarvaeCount>
+      <Pacific_staghorn_sculpin_LarvaeCount units="count" name="Pacific Staghorn Sculpin Larvae Count" url="#Pacific_staghorn_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_staghorn_sculpin_LarvaeCount>
+      <Pacific_viperfish_LarvaeCount units="count" name="Pacific Viperfish Larvae Count" url="#Pacific_viperfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pacific_viperfish_LarvaeCount>
+      <Padded_sculpin_LarvaeCount units="count" name="Padded Sculpin Larvae Count" url="#Padded_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Padded_sculpin_LarvaeCount>
+      <Painted_greenling_LarvaeCount units="count" name="Painted Greenling Larvae Count" url="#Painted_greenling_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Painted_greenling_LarvaeCount>
+      <Panama_lightfish_LarvaeCount units="count" name="Panama Lightfish Larvae Count" url="#Panama_lightfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Panama_lightfish_LarvaeCount>
+      <Paperbones_LarvaeCount units="count" name="Paperbones Larvae Count" url="#Paperbones_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Paperbones_LarvaeCount>
+      <Patchwork_lampfish_LarvaeCount units="count" name="Patchwork Lampfish Larvae Count" url="#Patchwork_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Patchwork_lampfish_LarvaeCount>
+      <Pearleyes_LarvaeCount units="count" name="Pearleyes Larvae Count" url="#Pearleyes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pearleyes_LarvaeCount>
+      <Pearly_lanternfish_LarvaeCount units="count" name="Pearly Lanternfish Larvae Count" url="#Pearly_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pearly_lanternfish_LarvaeCount>
+      <Pelagic_basslet_LarvaeCount units="count" name="Pelagic Basslet Larvae Count" url="#Pelagic_basslet_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pelagic_basslet_LarvaeCount>
+      <Perciformes_LarvaeCount units="count" name="Perciformes Larvae Count" url="#Perciformes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Perciformes_LarvaeCount>
+      <Petrale_sole_LarvaeCount units="count" name="Petrale Sole Larvae Count" url="#Petrale_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Petrale_sole_LarvaeCount>
+      <Photonectes_spp_LarvaeCount units="count" name="Photonectes Spp Larvae Count" url="#Photonectes_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Photonectes_spp_LarvaeCount>
+      <Pinpoint_lampfish_LarvaeCount units="count" name="Pinpoint Lampfish Larvae Count" url="#Pinpoint_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pinpoint_lampfish_LarvaeCount>
+      <Poachers_LarvaeCount units="count" name="Poachers Larvae Count" url="#Poachers_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Poachers_LarvaeCount>
+      <Pompano_dolphinfish_LarvaeCount units="count" name="Pompano Dolphinfish Larvae Count" url="#Pompano_dolphinfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pompano_dolphinfish_LarvaeCount>
+      <Popeye_blacksmelt_LarvaeCount units="count" name="Popeye Blacksmelt Larvae Count" url="#Popeye_blacksmelt_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Popeye_blacksmelt_LarvaeCount>
+      <Popeye_lampfish_LarvaeCount units="count" name="Popeye Lampfish Larvae Count" url="#Popeye_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Popeye_lampfish_LarvaeCount>
+      <Poromitra_megalops_LarvaeCount units="count" name="Poromitra Megalops Larvae Count" url="#Poromitra_megalops_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Poromitra_megalops_LarvaeCount>
+      <Poromitra_spp_LarvaeCount units="count" name="Poromitra Spp Larvae Count" url="#Poromitra_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Poromitra_spp_LarvaeCount>
+      <Pricklebacks_LarvaeCount units="count" name="Pricklebacks Larvae Count" url="#Pricklebacks_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pricklebacks_LarvaeCount>
+      <Puget_Sound_sculpin_LarvaeCount units="count" name="Puget Sound Sculpin Larvae Count" url="#Puget_Sound_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Puget_Sound_sculpin_LarvaeCount>
+      <Pygmy_poacher_LarvaeCount units="count" name="Pygmy Poacher Larvae Count" url="#Pygmy_poacher_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Pygmy_poacher_LarvaeCount>
+      <Queenfish_LarvaeCount units="count" name="Queenfish Larvae Count" url="#Queenfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Queenfish_LarvaeCount>
+      <Ragfish_LarvaeCount units="count" name="Ragfish Larvae Count" url="#Ragfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ragfish_LarvaeCount>
+      <Rathbunella_alleni_LarvaeCount units="count" name="Rathbunella Alleni Larvae Count" url="#Rathbunella_alleni_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Rathbunella_alleni_LarvaeCount>
+      <Red_brotula_LarvaeCount units="count" name="Red Brotula Larvae Count" url="#Red_brotula_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Red_brotula_LarvaeCount>
+      <Reef_finspot_LarvaeCount units="count" name="Reef Finspot Larvae Count" url="#Reef_finspot_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Reef_finspot_LarvaeCount>
+      <Rex_sole_LarvaeCount units="count" name="Rex Sole Larvae Count" url="#Rex_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Rex_sole_LarvaeCount>
+      <Ribbon_barracudina_LarvaeCount units="count" name="Ribbon Barracudina Larvae Count" url="#Ribbon_barracudina_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ribbon_barracudina_LarvaeCount>
+      <Ribbon_snake_mackerel_LarvaeCount units="count" name="Ribbon Snake Mackerel Larvae Count" url="#Ribbon_snake_mackerel_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ribbon_snake_mackerel_LarvaeCount>
+      <Ribbonfishes_LarvaeCount units="count" name="Ribbonfishes Larvae Count" url="#Ribbonfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ribbonfishes_LarvaeCount>
+      <Righteyed_Flounders_LarvaeCount units="count" name="Righteyed Flounders Larvae Count" url="#Righteyed_Flounders_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Righteyed_Flounders_LarvaeCount>
+      <Robust_blacksmelt_LarvaeCount units="count" name="Robust Blacksmelt Larvae Count" url="#Robust_blacksmelt_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Robust_blacksmelt_LarvaeCount>
+      <Rock_sole_LarvaeCount units="count" name="Rock Sole Larvae Count" url="#Rock_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Rock_sole_LarvaeCount>
+      <Rock_wrasse_LarvaeCount units="count" name="Rock Wrasse Larvae Count" url="#Rock_wrasse_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Rock_wrasse_LarvaeCount>
+      <Rockfishes_LarvaeCount units="count" name="Rockfishes Larvae Count" url="#Rockfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Rockfishes_LarvaeCount>
+      <Rockpool_blenny_LarvaeCount units="count" name="Rockpool Blenny Larvae Count" url="#Rockpool_blenny_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Rockpool_blenny_LarvaeCount>
+      <Ronquils_Bluebanded_Deepwater_Fanged_LarvaeCount units="count" name="Ronquils Bluebanded Deepwater Fanged Larvae Count" url="#Ronquils_Bluebanded_Deepwater_Fanged_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Ronquils_Bluebanded_Deepwater_Fanged_LarvaeCount>
+      <Rosylip_sculpin_LarvaeCount units="count" name="Rosylip Sculpin Larvae Count" url="#Rosylip_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Rosylip_sculpin_LarvaeCount>
+      <Roughback_sculpin_LarvaeCount units="count" name="Roughback Sculpin Larvae Count" url="#Roughback_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Roughback_sculpin_LarvaeCount>
+      <Roughcheek_sculpin_LarvaeCount units="count" name="Roughcheek Sculpin Larvae Count" url="#Roughcheek_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Roughcheek_sculpin_LarvaeCount>
+      <Roughjaw_frogfish_LarvaeCount units="count" name="Roughjaw Frogfish Larvae Count" url="#Roughjaw_frogfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Roughjaw_frogfish_LarvaeCount>
+      <Round_herring_LarvaeCount units="count" name="Round Herring Larvae Count" url="#Round_herring_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Round_herring_LarvaeCount>
+      <Roundnose_lanternfish_LarvaeCount units="count" name="Roundnose Lanternfish Larvae Count" url="#Roundnose_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Roundnose_lanternfish_LarvaeCount>
+      <Rubynose_brotula_LarvaeCount units="count" name="Rubynose Brotula Larvae Count" url="#Rubynose_brotula_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Rubynose_brotula_LarvaeCount>
+      <Salema_LarvaeCount units="count" name="Salema Larvae Count" url="#Salema_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Salema_LarvaeCount>
+      <Sand_sole_LarvaeCount units="count" name="Sand Sole Larvae Count" url="#Sand_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Sand_sole_LarvaeCount>
+      <Sanddabs_LarvaeCount units="count" name="Sanddabs Larvae Count" url="#Sanddabs_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Sanddabs_LarvaeCount>
+      <Sarcastic_fringehead_LarvaeCount units="count" name="Sarcastic Fringehead Larvae Count" url="#Sarcastic_fringehead_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Sarcastic_fringehead_LarvaeCount>
+      <Sargo_LarvaeCount units="count" name="Sargo Larvae Count" url="#Sargo_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Sargo_LarvaeCount>
+      <Scaleless_dragonfishes_LarvaeCount units="count" name="Scaleless Dragonfishes Larvae Count" url="#Scaleless_dragonfishes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Scaleless_dragonfishes_LarvaeCount>
+      <Scalyhead_sculpin_LarvaeCount units="count" name="Scalyhead Sculpin Larvae Count" url="#Scalyhead_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Scalyhead_sculpin_LarvaeCount>
+      <Sculpins_LarvaeCount units="count" name="Sculpins Larvae Count" url="#Sculpins_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Sculpins_LarvaeCount>
+      <Senorita_LarvaeCount units="count" name="Senorita Larvae Count" url="#Senorita_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Senorita_LarvaeCount>
+      <Sharpchin_barracudina_LarvaeCount units="count" name="Sharpchin Barracudina Larvae Count" url="#Sharpchin_barracudina_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Sharpchin_barracudina_LarvaeCount>
+      <Shiny_loosejaw_LarvaeCount units="count" name="Shiny Loosejaw Larvae Count" url="#Shiny_loosejaw_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Shiny_loosejaw_LarvaeCount>
+      <Shortbelly_rockfish_LarvaeCount units="count" name="Shortbelly Rockfish Larvae Count" url="#Shortbelly_rockfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Shortbelly_rockfish_LarvaeCount>
+      <Shortspine_combfish_LarvaeCount units="count" name="Shortspine Combfish Larvae Count" url="#Shortspine_combfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Shortspine_combfish_LarvaeCount>
+      <Shortspine_thornyhead_LarvaeCount units="count" name="Shortspine Thornyhead Larvae Count" url="#Shortspine_thornyhead_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Shortspine_thornyhead_LarvaeCount>
+      <Showy_bristlemouth_LarvaeCount units="count" name="Showy Bristlemouth Larvae Count" url="#Showy_bristlemouth_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Showy_bristlemouth_LarvaeCount>
+      <Silversides_LarvaeCount units="count" name="Silversides Larvae Count" url="#Silversides_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Silversides_LarvaeCount>
+      <Slender_barracudina_LarvaeCount units="count" name="Slender Barracudina Larvae Count" url="#Slender_barracudina_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Slender_barracudina_LarvaeCount>
+      <Slender_bristlemouth_LarvaeCount units="count" name="Slender Bristlemouth Larvae Count" url="#Slender_bristlemouth_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Slender_bristlemouth_LarvaeCount>
+      <Slender_hatchetfish_LarvaeCount units="count" name="Slender Hatchetfish Larvae Count" url="#Slender_hatchetfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Slender_hatchetfish_LarvaeCount>
+      <Slender_lanternfish_LarvaeCount units="count" name="Slender Lanternfish Larvae Count" url="#Slender_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Slender_lanternfish_LarvaeCount>
+      <Slender_snipefish_LarvaeCount units="count" name="Slender Snipefish Larvae Count" url="#Slender_snipefish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Slender_snipefish_LarvaeCount>
+      <Slender_sole_LarvaeCount units="count" name="Slender Sole Larvae Count" url="#Slender_sole_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Slender_sole_LarvaeCount>
+      <Slendertail_lanternfish_LarvaeCount units="count" name="Slendertail Lanternfish Larvae Count" url="#Slendertail_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Slendertail_lanternfish_LarvaeCount>
+      <Slimy_snailfish_LarvaeCount units="count" name="Slimy Snailfish Larvae Count" url="#Slimy_snailfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Slimy_snailfish_LarvaeCount>
+      <Slipskin_snailfish_LarvaeCount units="count" name="Slipskin Snailfish Larvae Count" url="#Slipskin_snailfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Slipskin_snailfish_LarvaeCount>
+      <SmallPlanktonVolume units="count" name="SmallPlanktonVolume" url="#SmallPlanktonVolume">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </SmallPlanktonVolume>
+      <Smalleye_squaretail_LarvaeCount units="count" name="Smalleye Squaretail Larvae Count" url="#Smalleye_squaretail_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Smalleye_squaretail_LarvaeCount>
+      <Smootheye_poacher_LarvaeCount units="count" name="Smootheye Poacher Larvae Count" url="#Smootheye_poacher_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Smootheye_poacher_LarvaeCount>
+      <Smoothhead_sculpin_LarvaeCount units="count" name="Smoothhead Sculpin Larvae Count" url="#Smoothhead_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Smoothhead_sculpin_LarvaeCount>
+      <Snake_Mackerels_LarvaeCount units="count" name="Snake Mackerels Larvae Count" url="#Snake_Mackerels_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Snake_Mackerels_LarvaeCount>
+      <Snubnose_blacksmelt_LarvaeCount units="count" name="Snubnose Blacksmelt Larvae Count" url="#Snubnose_blacksmelt_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Snubnose_blacksmelt_LarvaeCount>
+      <Snubnose_sculpin_LarvaeCount units="count" name="Snubnose Sculpin Larvae Count" url="#Snubnose_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Snubnose_sculpin_LarvaeCount>
+      <Southern_spearnose_LarvaeCount units="count" name="Southern Spearnose Larvae Count" url="#Southern_spearnose_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Southern_spearnose_LarvaeCount>
+      <Speckled_sanddab_LarvaeCount units="count" name="Speckled Sanddab Larvae Count" url="#Speckled_sanddab_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Speckled_sanddab_LarvaeCount>
+      <Splitnose_rockfish_LarvaeCount units="count" name="Splitnose Rockfish Larvae Count" url="#Splitnose_rockfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Splitnose_rockfish_LarvaeCount>
+      <Spotted_cusk-eel_LarvaeCount units="count" name="Spotted Cusk-eel Larvae Count" url="#Spotted_cusk-eel_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Spotted_cusk-eel_LarvaeCount>
+      <Spotted_turbot_LarvaeCount units="count" name="Spotted Turbot Larvae Count" url="#Spotted_turbot_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Spotted_turbot_LarvaeCount>
+      <Spurred_hatchetfish_LarvaeCount units="count" name="Spurred Hatchetfish Larvae Count" url="#Spurred_hatchetfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Spurred_hatchetfish_LarvaeCount>
+      <Staring_pearleye_LarvaeCount units="count" name="Staring Pearleye Larvae Count" url="#Staring_pearleye_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Staring_pearleye_LarvaeCount>
+      <Stomiiformes_LarvaeCount units="count" name="Stomiiformes Larvae Count" url="#Stomiiformes_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Stomiiformes_LarvaeCount>
+      <Stout_argentine_LarvaeCount units="count" name="Stout Argentine Larvae Count" url="#Stout_argentine_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Stout_argentine_LarvaeCount>
+      <Striped_mullet_LarvaeCount units="count" name="Striped Mullet Larvae Count" url="#Striped_mullet_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Striped_mullet_LarvaeCount>
+      <Sunbeam_lampfish_LarvaeCount units="count" name="Sunbeam Lampfish Larvae Count" url="#Sunbeam_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Sunbeam_lampfish_LarvaeCount>
+      <Swallowers_LarvaeCount units="count" name="Swallowers Larvae Count" url="#Swallowers_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Swallowers_LarvaeCount>
+      <Syngnathus_spp_LarvaeCount units="count" name="Syngnathus Spp Larvae Count" url="#Syngnathus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Syngnathus_spp_LarvaeCount>
+      <Synodus_spp_LarvaeCount units="count" name="Synodus Spp Larvae Count" url="#Synodus_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Synodus_spp_LarvaeCount>
+      <Taaningichthys_minimus_LarvaeCount units="count" name="Taaningichthys Minimus Larvae Count" url="#Taaningichthys_minimus_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Taaningichthys_minimus_LarvaeCount>
+      <Tapertail_LarvaeCount units="count" name="Tapertail Larvae Count" url="#Tapertail_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Tapertail_LarvaeCount>
+      <Thickhead_lanternfish_LarvaeCount units="count" name="Thickhead Lanternfish Larvae Count" url="#Thickhead_lanternfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Thickhead_lanternfish_LarvaeCount>
+      <Thornback_sculpin_LarvaeCount units="count" name="Thornback Sculpin Larvae Count" url="#Thornback_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Thornback_sculpin_LarvaeCount>
+      <Thornyheads_LarvaeCount units="count" name="Thornyheads Larvae Count" url="#Thornyheads_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Thornyheads_LarvaeCount>
+      <Threadfin_dragonfish_LarvaeCount units="count" name="Threadfin Dragonfish Larvae Count" url="#Threadfin_dragonfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Threadfin_dragonfish_LarvaeCount>
+      <Topside_lampfish_LarvaeCount units="count" name="Topside Lampfish Larvae Count" url="#Topside_lampfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Topside_lampfish_LarvaeCount>
+      <Topsmelt_LarvaeCount units="count" name="Topsmelt Larvae Count" url="#Topsmelt_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Topsmelt_LarvaeCount>
+      <Triplewart_seadevil_LarvaeCount units="count" name="Triplewart Seadevil Larvae Count" url="#Triplewart_seadevil_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Triplewart_seadevil_LarvaeCount>
+      <Tropical_hatchetfish_LarvaeCount units="count" name="Tropical Hatchetfish Larvae Count" url="#Tropical_hatchetfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Tropical_hatchetfish_LarvaeCount>
+      <Tubesnout_LarvaeCount units="count" name="Tubesnout Larvae Count" url="#Tubesnout_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Tubesnout_LarvaeCount>
+      <Turbots_LarvaeCount units="count" name="Turbots Larvae Count" url="#Turbots_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Turbots_LarvaeCount>
+      <Twospine_bigscale_LarvaeCount units="count" name="Twospine Bigscale Larvae Count" url="#Twospine_bigscale_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Twospine_bigscale_LarvaeCount>
+      <Unidentified_EggCount units="count" name="Unidentified Egg Count" url="#Unidentified_EggCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Unidentified_EggCount>
+      <Unidentified_LarvaeCount units="count" name="Unidentified Larvae Count" url="#Unidentified_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Unidentified_LarvaeCount>
+      <Vinciguerria_spp_LarvaeCount units="count" name="Vinciguerria Spp Larvae Count" url="#Vinciguerria_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Vinciguerria_spp_LarvaeCount>
+      <Whipnoses_LarvaeCount units="count" name="Whipnoses Larvae Count" url="#Whipnoses_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Whipnoses_LarvaeCount>
+      <Whiptail_ribbonfish_LarvaeCount units="count" name="Whiptail Ribbonfish Larvae Count" url="#Whiptail_ribbonfish_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Whiptail_ribbonfish_LarvaeCount>
+      <White_croaker_LarvaeCount units="count" name="White Croaker Larvae Count" url="#White_croaker_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </White_croaker_LarvaeCount>
+      <White_seabass_LarvaeCount units="count" name="White Seabass Larvae Count" url="#White_seabass_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </White_seabass_LarvaeCount>
+      <Wooly_sculpin_LarvaeCount units="count" name="Wooly Sculpin Larvae Count" url="#Wooly_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Wooly_sculpin_LarvaeCount>
+      <Yellow_snake_eel_LarvaeCount units="count" name="Yellow Snake Eel Larvae Count" url="#Yellow_snake_eel_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Yellow_snake_eel_LarvaeCount>
+      <Yellowchin_sculpin_LarvaeCount units="count" name="Yellowchin Sculpin Larvae Count" url="#Yellowchin_sculpin_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Yellowchin_sculpin_LarvaeCount>
+      <Yellowfin_croaker_LarvaeCount units="count" name="Yellowfin Croaker Larvae Count" url="#Yellowfin_croaker_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Yellowfin_croaker_LarvaeCount>
+      <Yellowfin_fringehead_LarvaeCount units="count" name="Yellowfin Fringehead Larvae Count" url="#Yellowfin_fringehead_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Yellowfin_fringehead_LarvaeCount>
+      <Yellowtail_LarvaeCount units="count" name="Yellowtail Larvae Count" url="#Yellowtail_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Yellowtail_LarvaeCount>
+      <Zaniolepis_spp_LarvaeCount units="count" name="Zaniolepis Spp Larvae Count" url="#Zaniolepis_spp_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Zaniolepis_spp_LarvaeCount>
+      <Zebra_goby_LarvaeCount units="count" name="Zebra Goby Larvae Count" url="#Zebra_goby_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Zebra_goby_LarvaeCount>
+      <Zebraperch_LarvaeCount units="count" name="Zebraperch Larvae Count" url="#Zebraperch_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Zebraperch_LarvaeCount>
+      <Zoarcoidei_LarvaeCount units="count" name="Zoarcoidei Larvae Count" url="#Zoarcoidei_LarvaeCount">
+        <link match="/lasdata/grids/erdCalcofiBio_grid"/>
+      </Zoarcoidei_LarvaeCount>
+    </variables>
+  </erdCalcofiBio>
+  <erdCalcofiSub
+    name = "CalCOFI Subsurface Physical Data"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://www.calcofi.org">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>erdCalcofiSub</id>
+        <title>CalCOFI Subsurface Physical Data</title>
+        <longitude>longitude</longitude>
+        <lon_domain>0:360</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ID name="ID" url="#ID">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </ID>
+      <line_number name="CalCOFI Line Number" url="#line_number">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </line_number>
+      <station_number name="CalCOFI Station Number" url="#station_number">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </station_number>
+      <chlorophyll units="mg m-3" name="Chlorophyll" url="#chlorophyll">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </chlorophyll>
+      <dark units="mg m-3 experiment-1" name="Dark" url="#dark">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </dark>
+      <light_percent units="mg m-3 experiment-1" name="Light Percent" url="#light_percent">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </light_percent>
+      <NH3 units="ugram-atoms L-1" name="Ammonia" url="#NH3">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </NH3>
+      <NO2 units="ugram-atoms L-1" name="Nitrite" url="#NO2">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </NO2>
+      <NO3 units="ugram-atoms L-1" name="Nitrate" url="#NO3">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </NO3>
+      <oxygen units="ml L-1" name="Oxygen" url="#oxygen">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </oxygen>
+      <PO4 units="ugram-atoms L-1" name="Phosphate" url="#PO4">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </PO4>
+      <pressure units="dbar" name="Pressure" url="#pressure">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </pressure>
+      <primary_productivity units="mg m-3 experiment-1" name="Mean Primary Production (C14 Assimilation)" url="#primary_productivity">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </primary_productivity>
+      <salinity units="psu" name="Salinity" url="#salinity">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </salinity>
+      <silicate units="ugram-atoms L-1" name="Silicate" url="#silicate">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </silicate>
+      <temperature units="degree_C" name="Sea Water Temperature" url="#temperature">
+        <link match="/lasdata/grids/erdCalcofiSub_grid"/>
+      </temperature>
+    </variables>
+  </erdCalcofiSub>
+  <erdCalcofiSur
+    name = "CalCOFI Surface Physical Data"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://www.calcofi.org">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>erdCalcofiSur</id>
+        <title>CalCOFI Surface Physical Data</title>
+        <longitude>longitude</longitude>
+        <lon_domain>0:360</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ID name="Sequence ID" url="#ID">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </ID>
+      <line_number name="CalCOFI Line Number" url="#line_number">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </line_number>
+      <station_number name="CalCOFI Station Number" url="#station_number">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </station_number>
+      <air_pressure units="millibars" name="Air Pressure" url="#air_pressure">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </air_pressure>
+      <chlorophyll units="mg m-2" name="integrated chlorophyll-a" url="#chlorophyll">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </chlorophyll>
+      <phaeopigment units="mg m-2" name="Integrated Phaeopigment" url="#phaeopigment">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </phaeopigment>
+      <primary_productivity units="mg m-2" name="Integrated Primary Productivity (C14 Assimilation)" url="#primary_productivity">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </primary_productivity>
+      <secchi_depth units="m" name="Secchi Disk Depth" url="#secchi_depth">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </secchi_depth>
+      <wind_direction units="degrees_true" name="Wind Direction" url="#wind_direction">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </wind_direction>
+      <wind_speed units="knots" name="Wind Speed" url="#wind_speed">
+        <link match="/lasdata/grids/erdCalcofiSur_grid"/>
+      </wind_speed>
+    </variables>
+  </erdCalcofiSur>
+  <nwioosCoral
+    name = "Coral Data Collected off West Coast of US (1980-2005)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/Coral%201980-2005.das.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosCoral</id>
+        <title>Coral Data Collected off West Coast of US (1980-2005)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <Year name="Year" url="#Year">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </Year>
+      <institution_id name="Institution ID" url="#institution_id">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </institution_id>
+      <institution name="Institution" url="#institution">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </institution>
+      <species_code name="Species Code" url="#species_code">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </species_code>
+      <taxa_scientific name="Taxa Scientific" url="#taxa_scientific">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </taxa_scientific>
+      <taxonomic_order name="Taxonomic Order" url="#taxonomic_order">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </taxonomic_order>
+      <order_abbreviation name="Order Abbreviation" url="#order_abbreviation">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </order_abbreviation>
+      <taxonomic_family name="Taxonomic Family" url="#taxonomic_family">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </taxonomic_family>
+      <family_abbreviation name="Family Abbreviation" url="#family_abbreviation">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </family_abbreviation>
+      <taxonomic_genus name="Taxonomic Genus" url="#taxonomic_genus">
+        <link match="/lasdata/grids/nwioosCoral_grid"/>
+      </taxonomic_genus>
+    </variables>
+  </nwioosCoral>
+  <erdGlobecBottle
+    name = "GLOBEC Rosette Bottle Data (2002) from the ERD OPeNDAP Server"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://globec.coas.oregonstate.edu/">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>erdGlobecBottle</id>
+        <title>GLOBEC Rosette Bottle Data (2002) from the ERD OPeNDAP Server</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ship name="Ship" url="#ship">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </ship>
+      <cruise_id name="Cruise ID" url="#cruise_id">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </cruise_id>
+      <cast name="Cast Number" url="#cast">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </cast>
+      <bottle_posn name="Bottle Number" url="#bottle_posn">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </bottle_posn>
+      <chl_a_total units="ug L-1" name="Chlorophyll-a" url="#chl_a_total">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </chl_a_total>
+      <chl_a_10um units="ug L-1" name="Chlorophyll-a after passing 10um screen" url="#chl_a_10um">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </chl_a_10um>
+      <phaeo_total units="ug L-1" name="Phaeopigment" url="#phaeo_total">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </phaeo_total>
+      <phaeo_10um units="ug L-1" name="Phaeopigment after passing 10um screen" url="#phaeo_10um">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </phaeo_10um>
+      <sal00 units="psu" name="Salinity from T0 and C0 sensors" url="#sal00">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </sal00>
+      <sal11 units="psu" name="Salinity from T1 and C1 sensors" url="#sal11">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </sal11>
+      <temperature0 units="degree_C" name="Temperature T0" url="#temperature0">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </temperature0>
+      <temperature1 units="degree_C" name="Temperature T1" url="#temperature1">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </temperature1>
+      <fluor_v units="volts" name="Fluorescence electronic data" url="#fluor_v">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </fluor_v>
+      <xmiss_v units="volts" name="Transmissometer data" url="#xmiss_v">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </xmiss_v>
+      <PO4 units="micromoles L-1" name="Phosphate" url="#PO4">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </PO4>
+      <N_N units="micromoles L-1" name="Nitrate + Nitrite combined" url="#N_N">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </N_N>
+      <NO3 units="micromoles L-1" name="Nitrate" url="#NO3">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </NO3>
+      <Si units="micromoles L-1" name="Silicate" url="#Si">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </Si>
+      <NO2 units="micromoles L-1" name="Nitrite" url="#NO2">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </NO2>
+      <NH4 units="micromoles L-1" name="Ammonium" url="#NH4">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </NH4>
+      <oxygen units="ml L-1" name="Oxygen" url="#oxygen">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </oxygen>
+      <par units="volts" name="Photosynthetically available radiation" url="#par">
+        <link match="/lasdata/grids/erdGlobecBottle_grid"/>
+      </par>
+    </variables>
+  </erdGlobecBottle>
+  <nwioosGroundfish
+    name = "Groundfish Data for U.S. West Coast (2003-2005)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/Groundfish%20Survey%202003-2005.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosGroundfish</id>
+        <title>Groundfish Data for U.S. West Coast (2003-2005)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <year name="year" url="#year">
+        <link match="/lasdata/grids/nwioosGroundfish_grid"/>
+      </year>
+      <haul_id name="Haul Identifier" url="#haul_id">
+        <link match="/lasdata/grids/nwioosGroundfish_grid"/>
+      </haul_id>
+      <scientific_name name="Scientific Name" url="#scientific_name">
+        <link match="/lasdata/grids/nwioosGroundfish_grid"/>
+      </scientific_name>
+      <common_name name="Common Name" url="#common_name">
+        <link match="/lasdata/grids/nwioosGroundfish_grid"/>
+      </common_name>
+      <position_description name="Position Description" url="#position_description">
+        <link match="/lasdata/grids/nwioosGroundfish_grid"/>
+      </position_description>
+      <catch_range_min units="kg km-2" name="Catch Range Min" url="#catch_range_min">
+        <link match="/lasdata/grids/nwioosGroundfish_grid"/>
+      </catch_range_min>
+      <catch_range_max units="kg km-2" name="Catch Range Max" url="#catch_range_max">
+        <link match="/lasdata/grids/nwioosGroundfish_grid"/>
+      </catch_range_max>
+      <map_legend units="kg km-2" name="Map Legend" url="#map_legend">
+        <link match="/lasdata/grids/nwioosGroundfish_grid"/>
+      </map_legend>
+    </variables>
+  </nwioosGroundfish>
+  <nwioosHudFishDetails
+    name = "HUD Fish Species Details"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/HUD%20Fish%20Species%20Details.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosHudFishDetails</id>
+        <title>HUD Fish Species Details</title>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <species_id name="Species ID" url="#species_id">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </species_id>
+      <common_name name="Common Name" url="#common_name">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </common_name>
+      <scientific_name name="Scientific Name" url="#scientific_name">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </scientific_name>
+      <life_stage name="Life Stage" url="#life_stage">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </life_stage>
+      <absolute_min_depth units="m" name="Absolute Min Depth" url="#absolute_min_depth">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </absolute_min_depth>
+      <preferred_min_depth units="m" name="Preferred Min Depth" url="#preferred_min_depth">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </preferred_min_depth>
+      <absolute_max_depth units="m" name="Absolute Max Depth" url="#absolute_max_depth">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </absolute_max_depth>
+      <preferred_max_depth units="m" name="Preferred Max Depth" url="#preferred_max_depth">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </preferred_max_depth>
+      <absolute_min_temp units="degree_C" name="Absolute Min Temperature" url="#absolute_min_temp">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </absolute_min_temp>
+      <preferred_min_temp units="degree_C" name="Preferred Min Temperature" url="#preferred_min_temp">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </preferred_min_temp>
+      <absolute_max_temp units="degree_C" name="Absolute Max Temperature" url="#absolute_max_temp">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </absolute_max_temp>
+      <preferred_max_temp units="degree_C" name="Preferred Max Temperature" url="#preferred_max_temp">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </preferred_max_temp>
+      <absolute_min_latitude units="degrees_north" name="Absolute Min Latitude" url="#absolute_min_latitude">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </absolute_min_latitude>
+      <preferred_min_latitude units="degrees_north" name="Preferred Min Latitude" url="#preferred_min_latitude">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </preferred_min_latitude>
+      <absolute_max_latitude units="degrees_north" name="Absolute Max Latitude" url="#absolute_max_latitude">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </absolute_max_latitude>
+      <preferred_max_latitude units="degrees_north" name="Preferred Max Latitude" url="#preferred_max_latitude">
+        <link match="/lasdata/grids/nwioosHudFishDetails_grid"/>
+      </preferred_max_latitude>
+    </variables>
+  </nwioosHudFishDetails>
+  <nwioosHudFishOccur
+    name = "HUD Fish Species Occurrence"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/HUD%20Fish%20Species%20Occurrence.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosHudFishOccur</id>
+        <title>HUD Fish Species Occurrence</title>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <common_name name="Common Name" url="#common_name">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </common_name>
+      <scientific_name name="Scientific Name" url="#scientific_name">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </scientific_name>
+      <life_stage name="Life Stage" url="#life_stage">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </life_stage>
+      <gender name="Gender" url="#gender">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </gender>
+      <habitat_association name="Habitat Association" url="#habitat_association">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </habitat_association>
+      <season name="Season" url="#season">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </season>
+      <level_1_habitat name="Level 1 Habitat" url="#level_1_habitat">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </level_1_habitat>
+      <level_2_habitat name="Level 2 Habitat" url="#level_2_habitat">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </level_2_habitat>
+      <level_3_habitat name="Level 3 Habitat" url="#level_3_habitat">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </level_3_habitat>
+      <level_4_habitat name="Level 4 Habitat" url="#level_4_habitat">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </level_4_habitat>
+      <activity name="Activity" url="#activity">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </activity>
+      <activity_association name="Activity Association" url="#activity_association">
+        <link match="/lasdata/grids/nwioosHudFishOccur_grid"/>
+      </activity_association>
+    </variables>
+  </nwioosHudFishOccur>
+  <nwioosHudPredPrey
+    name = "HUD Predators and Prey"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/HUD%20Predators%20and%20Prey.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosHudPredPrey</id>
+        <title>HUD Predators and Prey</title>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ecoregion name="Ecoregion" url="#ecoregion">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </ecoregion>
+      <season name="Season" url="#season">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </season>
+      <level_1_habitat name="Level 1 Habitat" url="#level_1_habitat">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </level_1_habitat>
+      <level_2_habitat name="Level 2 Habitat" url="#level_2_habitat">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </level_2_habitat>
+      <level_3_habitat name="Level 3 Habitat" url="#level_3_habitat">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </level_3_habitat>
+      <level_4_habitat name="Level 4 Habitat" url="#level_4_habitat">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </level_4_habitat>
+      <scientific_name name="Scientific Name" url="#scientific_name">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </scientific_name>
+      <gender name="Gender" url="#gender">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </gender>
+      <life_stage name="Life Stage" url="#life_stage">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </life_stage>
+      <prey_name name="Prey Name" url="#prey_name">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </prey_name>
+      <prey_gender name="Prey Gender" url="#prey_gender">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </prey_gender>
+      <prey_life_stage name="Prey Life Stage" url="#prey_life_stage">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </prey_life_stage>
+      <predator_name name="Predator Name" url="#predator_name">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </predator_name>
+      <predator_gender name="Predator Gender" url="#predator_gender">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </predator_gender>
+      <predator_life_stage name="Predator Life Stage" url="#predator_life_stage">
+        <link match="/lasdata/grids/nwioosHudPredPrey_grid"/>
+      </predator_life_stage>
+    </variables>
+  </nwioosHudPredPrey>
+  <nwioosHudRef
+    name = "HUD References"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/HUD%20References.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosHudRef</id>
+        <title>HUD References</title>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <season name="Season" url="#season">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </season>
+      <level_1_habitat name="Level 1 Habitat" url="#level_1_habitat">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </level_1_habitat>
+      <level_2_habitat name="Level 2 Habitat" url="#level_2_habitat">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </level_2_habitat>
+      <level_3_habitat name="Level 3 Habitat" url="#level_3_habitat">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </level_3_habitat>
+      <level_4_habitat name="Level 4 Habitat" url="#level_4_habitat">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </level_4_habitat>
+      <scientific_name name="Scientific Name" url="#scientific_name">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </scientific_name>
+      <gender name="Gender" url="#gender">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </gender>
+      <life_stage name="Life Stage" url="#life_stage">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </life_stage>
+      <reference_to name="Reference To" url="#reference_to">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </reference_to>
+      <reference_type name="Reference Type" url="#reference_type">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </reference_type>
+      <authors name="Authors" url="#authors">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </authors>
+      <publication_year name="Publication Year" url="#publication_year">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </publication_year>
+      <reference_name name="Reference Name" url="#reference_name">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </reference_name>
+      <editor name="Editor" url="#editor">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </editor>
+      <publication_name name="Publication Name" url="#publication_name">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </publication_name>
+      <publisher_city name="Publisher City" url="#publisher_city">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </publisher_city>
+      <publisher name="Publisher" url="#publisher">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </publisher>
+      <volume name="Volume" url="#volume">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </volume>
+      <number name="Number" url="#number">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </number>
+      <referenced_pages name="Referenced Pages" url="#referenced_pages">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </referenced_pages>
+      <thesis_type name="Thesis Type" url="#thesis_type">
+        <link match="/lasdata/grids/nwioosHudRef_grid"/>
+      </thesis_type>
+    </variables>
+  </nwioosHudRef>
+  <nwioosAdcp1995
+    name = "Hake Survey ADCP (1995)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/1995%20Hake%20Survey%20ADCP.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosAdcp1995</id>
+        <title>Hake Survey ADCP (1995)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <year name="year" url="#year">
+        <link match="/lasdata/grids/nwioosAdcp1995_grid"/>
+      </year>
+      <yearday name="yearday" url="#yearday">
+        <link match="/lasdata/grids/nwioosAdcp1995_grid"/>
+      </yearday>
+      <eastv units="m s-1" name="Eastward Sea Water Velocity" url="#eastv">
+        <link match="/lasdata/grids/nwioosAdcp1995_grid"/>
+      </eastv>
+      <northv units="m s-1" name="Northward Sea Water Velocity" url="#northv">
+        <link match="/lasdata/grids/nwioosAdcp1995_grid"/>
+      </northv>
+    </variables>
+  </nwioosAdcp1995>
+  <nwioosAdcp1998
+    name = "Hake Survey ADCP (1998)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/1998%20Hake%20Survey%20ADCP.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosAdcp1998</id>
+        <title>Hake Survey ADCP (1998)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <year name="year" url="#year">
+        <link match="/lasdata/grids/nwioosAdcp1998_grid"/>
+      </year>
+      <yearday name="yearday" url="#yearday">
+        <link match="/lasdata/grids/nwioosAdcp1998_grid"/>
+      </yearday>
+      <eastv units="m s-1" name="Eastward Sea Water Velocity" url="#eastv">
+        <link match="/lasdata/grids/nwioosAdcp1998_grid"/>
+      </eastv>
+      <northv units="m s-1" name="Northward Sea Water Velocity" url="#northv">
+        <link match="/lasdata/grids/nwioosAdcp1998_grid"/>
+      </northv>
+    </variables>
+  </nwioosAdcp1998>
+  <nwioosAdcp2001
+    name = "Hake Survey ADCP (2001)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/2001%20Hake%20Survey%20ADCP.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosAdcp2001</id>
+        <title>Hake Survey ADCP (2001)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <year name="year" url="#year">
+        <link match="/lasdata/grids/nwioosAdcp2001_grid"/>
+      </year>
+      <yearday name="yearday" url="#yearday">
+        <link match="/lasdata/grids/nwioosAdcp2001_grid"/>
+      </yearday>
+      <eastv units="m s-1" name="Eastward Sea Water Velocity" url="#eastv">
+        <link match="/lasdata/grids/nwioosAdcp2001_grid"/>
+      </eastv>
+      <northv units="m s-1" name="Northward Sea Water Velocity" url="#northv">
+        <link match="/lasdata/grids/nwioosAdcp2001_grid"/>
+      </northv>
+    </variables>
+  </nwioosAdcp2001>
+  <nwioosAdcp2003
+    name = "Hake Survey ADCP (2003)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/2003%20Hake%20Survey%20ADCP.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosAdcp2003</id>
+        <title>Hake Survey ADCP (2003)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <year name="year" url="#year">
+        <link match="/lasdata/grids/nwioosAdcp2003_grid"/>
+      </year>
+      <yearday name="yearday" url="#yearday">
+        <link match="/lasdata/grids/nwioosAdcp2003_grid"/>
+      </yearday>
+      <eastv units="m s-1" name="Eastward Sea Water Velocity" url="#eastv">
+        <link match="/lasdata/grids/nwioosAdcp2003_grid"/>
+      </eastv>
+      <northv units="m s-1" name="Northward Sea Water Velocity" url="#northv">
+        <link match="/lasdata/grids/nwioosAdcp2003_grid"/>
+      </northv>
+    </variables>
+  </nwioosAdcp2003>
+  <nwioosAdcp2005
+    name = "Hake Survey ADCP (2005)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/2005%20Hake%20Survey%20ADCP.info">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>nwioosAdcp2005</id>
+        <title>Hake Survey ADCP (2005)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <year name="year" url="#year">
+        <link match="/lasdata/grids/nwioosAdcp2005_grid"/>
+      </year>
+      <yearday name="yearday" url="#yearday">
+        <link match="/lasdata/grids/nwioosAdcp2005_grid"/>
+      </yearday>
+      <eastv units="m s-1" name="Eastward Sea Water Velocity" url="#eastv">
+        <link match="/lasdata/grids/nwioosAdcp2005_grid"/>
+      </eastv>
+      <northv units="m s-1" name="Northward Sea Water Velocity" url="#northv">
+        <link match="/lasdata/grids/nwioosAdcp2005_grid"/>
+      </northv>
+    </variables>
+  </nwioosAdcp2005>
+  <aadcArgos
+    name = "OBIS - ARGOS Satellite Tracking of Animals"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://data.aad.gov.au/">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>aadcArgos</id>
+        <title>OBIS - ARGOS Satellite Tracking of Animals</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ID name="ID" url="#ID">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </ID>
+      <BasisOfRecord name="BasisOfRecord" url="#BasisOfRecord">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </BasisOfRecord>
+      <BoundingBox name="BoundingBox" url="#BoundingBox">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </BoundingBox>
+      <CatalogNumber name="CatalogNumber" url="#CatalogNumber">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </CatalogNumber>
+      <Citation name="Citation" url="#Citation">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Citation>
+      <Class name="Class" url="#Class">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Class>
+      <CollectionCode name="CollectionCode" url="#CollectionCode">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </CollectionCode>
+      <Collector name="Collector" url="#Collector">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Collector>
+      <CollectorNumber name="CollectorNumber" url="#CollectorNumber">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </CollectorNumber>
+      <ContinentOcean name="ContinentOcean" url="#ContinentOcean">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </ContinentOcean>
+      <CoordinatePrecision units="m" name="CoordinatePrecision" url="#CoordinatePrecision">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </CoordinatePrecision>
+      <Country name="Country" url="#Country">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Country>
+      <County name="County" url="#County">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </County>
+      <DateLastModified name="DateLastModified" url="#DateLastModified">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </DateLastModified>
+      <DayCollected name="DayCollected" url="#DayCollected">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </DayCollected>
+      <DayIdentified name="DayIdentified" url="#DayIdentified">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </DayIdentified>
+      <DepthRange name="DepthRange" url="#DepthRange">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </DepthRange>
+      <EndDayCollected name="EndDayCollected" url="#EndDayCollected">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </EndDayCollected>
+      <EndJulianDay name="EndJulianDay" url="#EndJulianDay">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </EndJulianDay>
+      <EndLatitude units="degrees_north" name="EndLatitude" url="#EndLatitude">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </EndLatitude>
+      <EndLongitude units="degrees_east" name="EndLongitude" url="#EndLongitude">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </EndLongitude>
+      <EndMonthCollected name="EndMonthCollected" url="#EndMonthCollected">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </EndMonthCollected>
+      <EndTimeofDay units="hours" name="EndTimeofDay" url="#EndTimeofDay">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </EndTimeofDay>
+      <EndYearCollected name="EndYearCollected" url="#EndYearCollected">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </EndYearCollected>
+      <Family name="Family" url="#Family">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Family>
+      <FieldNumber name="FieldNumber" url="#FieldNumber">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </FieldNumber>
+      <GMLFeature name="GMLFeature" url="#GMLFeature">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </GMLFeature>
+      <Genus name="Genus" url="#Genus">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Genus>
+      <IdentifiedBy name="IdentifiedBy" url="#IdentifiedBy">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </IdentifiedBy>
+      <IndividualCount units="count" name="IndividualCount" url="#IndividualCount">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </IndividualCount>
+      <InstitutionCode name="InstitutionCode" url="#InstitutionCode">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </InstitutionCode>
+      <JulianDay name="JulianDay" url="#JulianDay">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </JulianDay>
+      <Kingdom name="Kingdom" url="#Kingdom">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Kingdom>
+      <LifeStage name="LifeStage" url="#LifeStage">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </LifeStage>
+      <Locality name="Locality" url="#Locality">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Locality>
+      <MaximumDepth units="m" name="MaximumDepth" url="#MaximumDepth">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </MaximumDepth>
+      <MaximumElevation units="m" name="MaximumElevation" url="#MaximumElevation">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </MaximumElevation>
+      <MinimumElevation units="m" name="MinimumElevation" url="#MinimumElevation">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </MinimumElevation>
+      <MonthCollected name="MonthCollected" url="#MonthCollected">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </MonthCollected>
+      <MonthIdentified name="MonthIdentified" url="#MonthIdentified">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </MonthIdentified>
+      <Notes name="Notes" url="#Notes">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Notes>
+      <ObservedIndividualCount units="count" name="ObservedIndividualCount" url="#ObservedIndividualCount">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </ObservedIndividualCount>
+      <ObservedWeight units="kg" name="ObservedWeight" url="#ObservedWeight">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </ObservedWeight>
+      <Order name="Order" url="#Order">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Order>
+      <Phylum name="Phylum" url="#Phylum">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Phylum>
+      <PreparationType name="PreparationType" url="#PreparationType">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </PreparationType>
+      <PreviousCatalogNumber name="PreviousCatalogNumber" url="#PreviousCatalogNumber">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </PreviousCatalogNumber>
+      <RecordURL name="RecordURL" url="#RecordURL">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </RecordURL>
+      <RelatedCatalogItem name="RelatedCatalogItem" url="#RelatedCatalogItem">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </RelatedCatalogItem>
+      <RelationshipType name="RelationshipType" url="#RelationshipType">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </RelationshipType>
+      <SampleSize name="SampleSize" url="#SampleSize">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </SampleSize>
+      <ScientificName name="ScientificName" url="#ScientificName">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </ScientificName>
+      <ScientificNameAuthor name="ScientificNameAuthor" url="#ScientificNameAuthor">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </ScientificNameAuthor>
+      <Sex name="Sex" url="#Sex">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Sex>
+      <Source name="Source" url="#Source">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Source>
+      <Species name="Species" url="#Species">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Species>
+      <StartDayCollected name="StartDayCollected" url="#StartDayCollected">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </StartDayCollected>
+      <StartJulianDay name="StartJulianDay" url="#StartJulianDay">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </StartJulianDay>
+      <StartLatitude units="degrees_north" name="StartLatitude" url="#StartLatitude">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </StartLatitude>
+      <StartLongitude units="degrees_east" name="StartLongitude" url="#StartLongitude">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </StartLongitude>
+      <StartMonthCollected name="StartMonthCollected" url="#StartMonthCollected">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </StartMonthCollected>
+      <StartTimeofDay units="hours" name="StartTimeofDay" url="#StartTimeofDay">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </StartTimeofDay>
+      <StartYearCollected name="StartYearCollected" url="#StartYearCollected">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </StartYearCollected>
+      <Start_EndCoordinatePrecision units="m" name="Start_EndCoordinatePrecision" url="#Start_EndCoordinatePrecision">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Start_EndCoordinatePrecision>
+      <StateProvince name="StateProvince" url="#StateProvince">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </StateProvince>
+      <Subgenus name="Subgenus" url="#Subgenus">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Subgenus>
+      <Subspecies name="Subspecies" url="#Subspecies">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Subspecies>
+      <Temperature units="degree_C" name="Temperature" url="#Temperature">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </Temperature>
+      <TimeOfDay units="hours" name="TimeOfDay" url="#TimeOfDay">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </TimeOfDay>
+      <TimeZone name="TimeZone" url="#TimeZone">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </TimeZone>
+      <TypeStatus name="TypeStatus" url="#TypeStatus">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </TypeStatus>
+      <YearCollected name="YearCollected" url="#YearCollected">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </YearCollected>
+      <YearIdentified name="YearIdentified" url="#YearIdentified">
+        <link match="/lasdata/grids/aadcArgos_grid"/>
+      </YearIdentified>
+    </variables>
+  </aadcArgos>
+  <fishbaseObis
+    name = "OBIS - FishBase (Philippine Server)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://filaman.ifm-geomar.de/home.htm">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>fishbaseObis</id>
+        <title>OBIS - FishBase (Philippine Server)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ID name="ID" url="#ID">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </ID>
+      <BasisOfRecord name="BasisOfRecord" url="#BasisOfRecord">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </BasisOfRecord>
+      <BoundingBox name="BoundingBox" url="#BoundingBox">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </BoundingBox>
+      <CatalogNumber name="CatalogNumber" url="#CatalogNumber">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </CatalogNumber>
+      <Citation name="Citation" url="#Citation">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Citation>
+      <Class name="Class" url="#Class">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Class>
+      <CollectionCode name="CollectionCode" url="#CollectionCode">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </CollectionCode>
+      <Collector name="Collector" url="#Collector">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Collector>
+      <CollectorNumber name="CollectorNumber" url="#CollectorNumber">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </CollectorNumber>
+      <ContinentOcean name="ContinentOcean" url="#ContinentOcean">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </ContinentOcean>
+      <CoordinatePrecision units="m" name="CoordinatePrecision" url="#CoordinatePrecision">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </CoordinatePrecision>
+      <Country name="Country" url="#Country">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Country>
+      <County name="County" url="#County">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </County>
+      <DateLastModified name="DateLastModified" url="#DateLastModified">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </DateLastModified>
+      <DayCollected name="DayCollected" url="#DayCollected">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </DayCollected>
+      <DayIdentified name="DayIdentified" url="#DayIdentified">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </DayIdentified>
+      <DepthRange name="DepthRange" url="#DepthRange">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </DepthRange>
+      <EndDayCollected name="EndDayCollected" url="#EndDayCollected">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </EndDayCollected>
+      <EndJulianDay name="EndJulianDay" url="#EndJulianDay">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </EndJulianDay>
+      <EndLatitude units="degrees_north" name="EndLatitude" url="#EndLatitude">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </EndLatitude>
+      <EndLongitude units="degrees_east" name="EndLongitude" url="#EndLongitude">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </EndLongitude>
+      <EndMonthCollected name="EndMonthCollected" url="#EndMonthCollected">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </EndMonthCollected>
+      <EndTimeofDay units="hours" name="EndTimeofDay" url="#EndTimeofDay">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </EndTimeofDay>
+      <EndYearCollected name="EndYearCollected" url="#EndYearCollected">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </EndYearCollected>
+      <Family name="Family" url="#Family">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Family>
+      <FieldNumber name="FieldNumber" url="#FieldNumber">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </FieldNumber>
+      <GMLFeature name="GMLFeature" url="#GMLFeature">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </GMLFeature>
+      <Genus name="Genus" url="#Genus">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Genus>
+      <IdentifiedBy name="IdentifiedBy" url="#IdentifiedBy">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </IdentifiedBy>
+      <IndividualCount units="count" name="IndividualCount" url="#IndividualCount">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </IndividualCount>
+      <InstitutionCode name="InstitutionCode" url="#InstitutionCode">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </InstitutionCode>
+      <JulianDay name="JulianDay" url="#JulianDay">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </JulianDay>
+      <Kingdom name="Kingdom" url="#Kingdom">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Kingdom>
+      <LifeStage name="LifeStage" url="#LifeStage">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </LifeStage>
+      <Locality name="Locality" url="#Locality">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Locality>
+      <MaximumDepth units="m" name="MaximumDepth" url="#MaximumDepth">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </MaximumDepth>
+      <MaximumElevation units="m" name="MaximumElevation" url="#MaximumElevation">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </MaximumElevation>
+      <MinimumElevation units="m" name="MinimumElevation" url="#MinimumElevation">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </MinimumElevation>
+      <MonthCollected name="MonthCollected" url="#MonthCollected">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </MonthCollected>
+      <MonthIdentified name="MonthIdentified" url="#MonthIdentified">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </MonthIdentified>
+      <Notes name="Notes" url="#Notes">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Notes>
+      <ObservedIndividualCount units="count" name="ObservedIndividualCount" url="#ObservedIndividualCount">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </ObservedIndividualCount>
+      <ObservedWeight units="kg" name="ObservedWeight" url="#ObservedWeight">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </ObservedWeight>
+      <Order name="Order" url="#Order">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Order>
+      <Phylum name="Phylum" url="#Phylum">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Phylum>
+      <PreparationType name="PreparationType" url="#PreparationType">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </PreparationType>
+      <PreviousCatalogNumber name="PreviousCatalogNumber" url="#PreviousCatalogNumber">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </PreviousCatalogNumber>
+      <RecordURL name="RecordURL" url="#RecordURL">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </RecordURL>
+      <RelatedCatalogItem name="RelatedCatalogItem" url="#RelatedCatalogItem">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </RelatedCatalogItem>
+      <RelationshipType name="RelationshipType" url="#RelationshipType">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </RelationshipType>
+      <SampleSize name="SampleSize" url="#SampleSize">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </SampleSize>
+      <ScientificName name="ScientificName" url="#ScientificName">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </ScientificName>
+      <ScientificNameAuthor name="ScientificNameAuthor" url="#ScientificNameAuthor">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </ScientificNameAuthor>
+      <Sex name="Sex" url="#Sex">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Sex>
+      <Source name="Source" url="#Source">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Source>
+      <Species name="Species" url="#Species">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Species>
+      <StartDayCollected name="StartDayCollected" url="#StartDayCollected">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </StartDayCollected>
+      <StartJulianDay name="StartJulianDay" url="#StartJulianDay">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </StartJulianDay>
+      <StartLatitude units="degrees_north" name="StartLatitude" url="#StartLatitude">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </StartLatitude>
+      <StartLongitude units="degrees_east" name="StartLongitude" url="#StartLongitude">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </StartLongitude>
+      <StartMonthCollected name="StartMonthCollected" url="#StartMonthCollected">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </StartMonthCollected>
+      <StartTimeofDay units="hours" name="StartTimeofDay" url="#StartTimeofDay">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </StartTimeofDay>
+      <StartYearCollected name="StartYearCollected" url="#StartYearCollected">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </StartYearCollected>
+      <Start_EndCoordinatePrecision units="m" name="Start_EndCoordinatePrecision" url="#Start_EndCoordinatePrecision">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Start_EndCoordinatePrecision>
+      <StateProvince name="StateProvince" url="#StateProvince">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </StateProvince>
+      <Subgenus name="Subgenus" url="#Subgenus">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Subgenus>
+      <Subspecies name="Subspecies" url="#Subspecies">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Subspecies>
+      <Temperature units="degree_C" name="Temperature" url="#Temperature">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </Temperature>
+      <TimeOfDay units="hours" name="TimeOfDay" url="#TimeOfDay">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </TimeOfDay>
+      <TimeZone name="TimeZone" url="#TimeZone">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </TimeZone>
+      <TypeStatus name="TypeStatus" url="#TypeStatus">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </TypeStatus>
+      <YearCollected name="YearCollected" url="#YearCollected">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </YearCollected>
+      <YearIdentified name="YearIdentified" url="#YearIdentified">
+        <link match="/lasdata/grids/fishbaseObis_grid"/>
+      </YearIdentified>
+    </variables>
+  </fishbaseObis>
+  <rutgersGombis
+    name = "OBIS - Gulf of Maine Bottom Trawl Survey Data (NEFSC,NMFS,NOAA)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://www.nefsc.noaa.gov">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>rutgersGombis</id>
+        <title>OBIS - Gulf of Maine Bottom Trawl Survey Data (NEFSC,NMFS,NOAA)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ID name="ID" url="#ID">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </ID>
+      <BasisOfRecord name="BasisOfRecord" url="#BasisOfRecord">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </BasisOfRecord>
+      <BoundingBox name="BoundingBox" url="#BoundingBox">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </BoundingBox>
+      <CatalogNumber name="CatalogNumber" url="#CatalogNumber">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </CatalogNumber>
+      <Citation name="Citation" url="#Citation">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Citation>
+      <Class name="Class" url="#Class">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Class>
+      <CollectionCode name="CollectionCode" url="#CollectionCode">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </CollectionCode>
+      <Collector name="Collector" url="#Collector">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Collector>
+      <CollectorNumber name="CollectorNumber" url="#CollectorNumber">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </CollectorNumber>
+      <ContinentOcean name="ContinentOcean" url="#ContinentOcean">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </ContinentOcean>
+      <CoordinatePrecision units="m" name="CoordinatePrecision" url="#CoordinatePrecision">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </CoordinatePrecision>
+      <Country name="Country" url="#Country">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Country>
+      <County name="County" url="#County">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </County>
+      <DateLastModified name="DateLastModified" url="#DateLastModified">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </DateLastModified>
+      <DayCollected name="DayCollected" url="#DayCollected">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </DayCollected>
+      <DayIdentified name="DayIdentified" url="#DayIdentified">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </DayIdentified>
+      <DepthRange name="DepthRange" url="#DepthRange">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </DepthRange>
+      <EndDayCollected name="EndDayCollected" url="#EndDayCollected">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </EndDayCollected>
+      <EndJulianDay name="EndJulianDay" url="#EndJulianDay">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </EndJulianDay>
+      <EndLatitude units="degrees_north" name="EndLatitude" url="#EndLatitude">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </EndLatitude>
+      <EndLongitude units="degrees_east" name="EndLongitude" url="#EndLongitude">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </EndLongitude>
+      <EndMonthCollected name="EndMonthCollected" url="#EndMonthCollected">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </EndMonthCollected>
+      <EndTimeofDay units="hours" name="EndTimeofDay" url="#EndTimeofDay">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </EndTimeofDay>
+      <EndYearCollected name="EndYearCollected" url="#EndYearCollected">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </EndYearCollected>
+      <Family name="Family" url="#Family">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Family>
+      <FieldNumber name="FieldNumber" url="#FieldNumber">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </FieldNumber>
+      <GMLFeature name="GMLFeature" url="#GMLFeature">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </GMLFeature>
+      <Genus name="Genus" url="#Genus">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Genus>
+      <IdentifiedBy name="IdentifiedBy" url="#IdentifiedBy">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </IdentifiedBy>
+      <IndividualCount units="count" name="IndividualCount" url="#IndividualCount">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </IndividualCount>
+      <InstitutionCode name="InstitutionCode" url="#InstitutionCode">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </InstitutionCode>
+      <JulianDay name="JulianDay" url="#JulianDay">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </JulianDay>
+      <Kingdom name="Kingdom" url="#Kingdom">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Kingdom>
+      <LifeStage name="LifeStage" url="#LifeStage">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </LifeStage>
+      <Locality name="Locality" url="#Locality">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Locality>
+      <MaximumDepth units="m" name="MaximumDepth" url="#MaximumDepth">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </MaximumDepth>
+      <MaximumElevation units="m" name="MaximumElevation" url="#MaximumElevation">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </MaximumElevation>
+      <MinimumElevation units="m" name="MinimumElevation" url="#MinimumElevation">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </MinimumElevation>
+      <MonthCollected name="MonthCollected" url="#MonthCollected">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </MonthCollected>
+      <MonthIdentified name="MonthIdentified" url="#MonthIdentified">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </MonthIdentified>
+      <Notes name="Notes" url="#Notes">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Notes>
+      <ObservedIndividualCount units="count" name="ObservedIndividualCount" url="#ObservedIndividualCount">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </ObservedIndividualCount>
+      <ObservedWeight units="kg" name="ObservedWeight" url="#ObservedWeight">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </ObservedWeight>
+      <Order name="Order" url="#Order">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Order>
+      <Phylum name="Phylum" url="#Phylum">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Phylum>
+      <PreparationType name="PreparationType" url="#PreparationType">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </PreparationType>
+      <PreviousCatalogNumber name="PreviousCatalogNumber" url="#PreviousCatalogNumber">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </PreviousCatalogNumber>
+      <RecordURL name="RecordURL" url="#RecordURL">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </RecordURL>
+      <RelatedCatalogItem name="RelatedCatalogItem" url="#RelatedCatalogItem">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </RelatedCatalogItem>
+      <RelationshipType name="RelationshipType" url="#RelationshipType">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </RelationshipType>
+      <SampleSize name="SampleSize" url="#SampleSize">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </SampleSize>
+      <ScientificName name="ScientificName" url="#ScientificName">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </ScientificName>
+      <ScientificNameAuthor name="ScientificNameAuthor" url="#ScientificNameAuthor">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </ScientificNameAuthor>
+      <Sex name="Sex" url="#Sex">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Sex>
+      <Source name="Source" url="#Source">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Source>
+      <Species name="Species" url="#Species">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Species>
+      <StartDayCollected name="StartDayCollected" url="#StartDayCollected">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </StartDayCollected>
+      <StartJulianDay name="StartJulianDay" url="#StartJulianDay">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </StartJulianDay>
+      <StartLatitude units="degrees_north" name="StartLatitude" url="#StartLatitude">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </StartLatitude>
+      <StartLongitude units="degrees_east" name="StartLongitude" url="#StartLongitude">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </StartLongitude>
+      <StartMonthCollected name="StartMonthCollected" url="#StartMonthCollected">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </StartMonthCollected>
+      <StartTimeofDay units="hours" name="StartTimeofDay" url="#StartTimeofDay">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </StartTimeofDay>
+      <StartYearCollected name="StartYearCollected" url="#StartYearCollected">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </StartYearCollected>
+      <Start_EndCoordinatePrecision units="m" name="Start_EndCoordinatePrecision" url="#Start_EndCoordinatePrecision">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Start_EndCoordinatePrecision>
+      <StateProvince name="StateProvince" url="#StateProvince">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </StateProvince>
+      <Subgenus name="Subgenus" url="#Subgenus">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Subgenus>
+      <Subspecies name="Subspecies" url="#Subspecies">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Subspecies>
+      <Temperature units="degree_C" name="Temperature" url="#Temperature">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </Temperature>
+      <TimeOfDay units="hours" name="TimeOfDay" url="#TimeOfDay">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </TimeOfDay>
+      <TimeZone name="TimeZone" url="#TimeZone">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </TimeZone>
+      <TypeStatus name="TypeStatus" url="#TypeStatus">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </TypeStatus>
+      <YearCollected name="YearCollected" url="#YearCollected">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </YearCollected>
+      <YearIdentified name="YearIdentified" url="#YearIdentified">
+        <link match="/lasdata/grids/rutgersGombis_grid"/>
+      </YearIdentified>
+    </variables>
+  </rutgersGombis>
+  <rutgersGhmp
+    name = "OBIS - Gwaii Haanas Marine Plants (OBIS Canada)"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://gcmd.nasa.gov/KeywordSearch/Metadata.do?Portal=caobis&MetadataType=0&KeywordPath=&MetadataView=Full&EntryId=OBIS.Gwaii_MarPlants">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>rutgersGhmp</id>
+        <title>OBIS - Gwaii Haanas Marine Plants (OBIS Canada)</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ID name="ID" url="#ID">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </ID>
+      <BasisOfRecord name="BasisOfRecord" url="#BasisOfRecord">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </BasisOfRecord>
+      <BoundingBox name="BoundingBox" url="#BoundingBox">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </BoundingBox>
+      <CatalogNumber name="CatalogNumber" url="#CatalogNumber">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </CatalogNumber>
+      <Citation name="Citation" url="#Citation">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Citation>
+      <Class name="Class" url="#Class">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Class>
+      <CollectionCode name="CollectionCode" url="#CollectionCode">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </CollectionCode>
+      <Collector name="Collector" url="#Collector">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Collector>
+      <CollectorNumber name="CollectorNumber" url="#CollectorNumber">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </CollectorNumber>
+      <ContinentOcean name="ContinentOcean" url="#ContinentOcean">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </ContinentOcean>
+      <CoordinatePrecision units="m" name="CoordinatePrecision" url="#CoordinatePrecision">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </CoordinatePrecision>
+      <Country name="Country" url="#Country">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Country>
+      <County name="County" url="#County">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </County>
+      <DateLastModified name="DateLastModified" url="#DateLastModified">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </DateLastModified>
+      <DayCollected name="DayCollected" url="#DayCollected">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </DayCollected>
+      <DayIdentified name="DayIdentified" url="#DayIdentified">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </DayIdentified>
+      <DepthRange name="DepthRange" url="#DepthRange">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </DepthRange>
+      <EndDayCollected name="EndDayCollected" url="#EndDayCollected">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </EndDayCollected>
+      <EndJulianDay name="EndJulianDay" url="#EndJulianDay">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </EndJulianDay>
+      <EndLatitude units="degrees_north" name="EndLatitude" url="#EndLatitude">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </EndLatitude>
+      <EndLongitude units="degrees_east" name="EndLongitude" url="#EndLongitude">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </EndLongitude>
+      <EndMonthCollected name="EndMonthCollected" url="#EndMonthCollected">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </EndMonthCollected>
+      <EndTimeofDay units="hours" name="EndTimeofDay" url="#EndTimeofDay">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </EndTimeofDay>
+      <EndYearCollected name="EndYearCollected" url="#EndYearCollected">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </EndYearCollected>
+      <Family name="Family" url="#Family">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Family>
+      <FieldNumber name="FieldNumber" url="#FieldNumber">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </FieldNumber>
+      <GMLFeature name="GMLFeature" url="#GMLFeature">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </GMLFeature>
+      <Genus name="Genus" url="#Genus">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Genus>
+      <IdentifiedBy name="IdentifiedBy" url="#IdentifiedBy">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </IdentifiedBy>
+      <IndividualCount units="count" name="IndividualCount" url="#IndividualCount">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </IndividualCount>
+      <InstitutionCode name="InstitutionCode" url="#InstitutionCode">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </InstitutionCode>
+      <JulianDay name="JulianDay" url="#JulianDay">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </JulianDay>
+      <Kingdom name="Kingdom" url="#Kingdom">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Kingdom>
+      <LifeStage name="LifeStage" url="#LifeStage">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </LifeStage>
+      <Locality name="Locality" url="#Locality">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Locality>
+      <MaximumDepth units="m" name="MaximumDepth" url="#MaximumDepth">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </MaximumDepth>
+      <MaximumElevation units="m" name="MaximumElevation" url="#MaximumElevation">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </MaximumElevation>
+      <MinimumElevation units="m" name="MinimumElevation" url="#MinimumElevation">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </MinimumElevation>
+      <MonthCollected name="MonthCollected" url="#MonthCollected">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </MonthCollected>
+      <MonthIdentified name="MonthIdentified" url="#MonthIdentified">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </MonthIdentified>
+      <Notes name="Notes" url="#Notes">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Notes>
+      <ObservedIndividualCount units="count" name="ObservedIndividualCount" url="#ObservedIndividualCount">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </ObservedIndividualCount>
+      <ObservedWeight units="kg" name="ObservedWeight" url="#ObservedWeight">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </ObservedWeight>
+      <Order name="Order" url="#Order">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Order>
+      <Phylum name="Phylum" url="#Phylum">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Phylum>
+      <PreparationType name="PreparationType" url="#PreparationType">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </PreparationType>
+      <PreviousCatalogNumber name="PreviousCatalogNumber" url="#PreviousCatalogNumber">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </PreviousCatalogNumber>
+      <RecordURL name="RecordURL" url="#RecordURL">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </RecordURL>
+      <RelatedCatalogItem name="RelatedCatalogItem" url="#RelatedCatalogItem">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </RelatedCatalogItem>
+      <RelationshipType name="RelationshipType" url="#RelationshipType">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </RelationshipType>
+      <SampleSize name="SampleSize" url="#SampleSize">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </SampleSize>
+      <ScientificName name="ScientificName" url="#ScientificName">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </ScientificName>
+      <ScientificNameAuthor name="ScientificNameAuthor" url="#ScientificNameAuthor">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </ScientificNameAuthor>
+      <Sex name="Sex" url="#Sex">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Sex>
+      <Source name="Source" url="#Source">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Source>
+      <Species name="Species" url="#Species">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Species>
+      <StartDayCollected name="StartDayCollected" url="#StartDayCollected">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </StartDayCollected>
+      <StartJulianDay name="StartJulianDay" url="#StartJulianDay">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </StartJulianDay>
+      <StartLatitude units="degrees_north" name="StartLatitude" url="#StartLatitude">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </StartLatitude>
+      <StartLongitude units="degrees_east" name="StartLongitude" url="#StartLongitude">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </StartLongitude>
+      <StartMonthCollected name="StartMonthCollected" url="#StartMonthCollected">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </StartMonthCollected>
+      <StartTimeofDay units="hours" name="StartTimeofDay" url="#StartTimeofDay">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </StartTimeofDay>
+      <StartYearCollected name="StartYearCollected" url="#StartYearCollected">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </StartYearCollected>
+      <Start_EndCoordinatePrecision units="m" name="Start_EndCoordinatePrecision" url="#Start_EndCoordinatePrecision">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Start_EndCoordinatePrecision>
+      <StateProvince name="StateProvince" url="#StateProvince">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </StateProvince>
+      <Subgenus name="Subgenus" url="#Subgenus">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Subgenus>
+      <Subspecies name="Subspecies" url="#Subspecies">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Subspecies>
+      <Temperature units="degree_C" name="Temperature" url="#Temperature">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </Temperature>
+      <TimeOfDay units="hours" name="TimeOfDay" url="#TimeOfDay">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </TimeOfDay>
+      <TimeZone name="TimeZone" url="#TimeZone">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </TimeZone>
+      <TypeStatus name="TypeStatus" url="#TypeStatus">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </TypeStatus>
+      <YearCollected name="YearCollected" url="#YearCollected">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </YearCollected>
+      <YearIdentified name="YearIdentified" url="#YearIdentified">
+        <link match="/lasdata/grids/rutgersGhmp_grid"/>
+      </YearIdentified>
+    </variables>
+  </rutgersGhmp>
+  <rutgersSeamap
+    name = "OBIS - SEAMAP - marine mammals, birds and turtles"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://obis.env.duke.edu">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>rutgersSeamap</id>
+        <title>OBIS - SEAMAP - marine mammals, birds and turtles</title>
+        <longitude>longitude</longitude>
+        <lon_domain>-180:180</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <ID name="ID" url="#ID">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </ID>
+      <BasisOfRecord name="BasisOfRecord" url="#BasisOfRecord">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </BasisOfRecord>
+      <BoundingBox name="BoundingBox" url="#BoundingBox">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </BoundingBox>
+      <CatalogNumber name="CatalogNumber" url="#CatalogNumber">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </CatalogNumber>
+      <Citation name="Citation" url="#Citation">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Citation>
+      <Class name="Class" url="#Class">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Class>
+      <CollectionCode name="CollectionCode" url="#CollectionCode">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </CollectionCode>
+      <Collector name="Collector" url="#Collector">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Collector>
+      <CollectorNumber name="CollectorNumber" url="#CollectorNumber">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </CollectorNumber>
+      <ContinentOcean name="ContinentOcean" url="#ContinentOcean">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </ContinentOcean>
+      <CoordinatePrecision units="m" name="CoordinatePrecision" url="#CoordinatePrecision">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </CoordinatePrecision>
+      <Country name="Country" url="#Country">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Country>
+      <County name="County" url="#County">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </County>
+      <DateLastModified name="DateLastModified" url="#DateLastModified">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </DateLastModified>
+      <DayCollected name="DayCollected" url="#DayCollected">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </DayCollected>
+      <DayIdentified name="DayIdentified" url="#DayIdentified">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </DayIdentified>
+      <DepthRange name="DepthRange" url="#DepthRange">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </DepthRange>
+      <EndDayCollected name="EndDayCollected" url="#EndDayCollected">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </EndDayCollected>
+      <EndJulianDay name="EndJulianDay" url="#EndJulianDay">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </EndJulianDay>
+      <EndLatitude units="degrees_north" name="EndLatitude" url="#EndLatitude">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </EndLatitude>
+      <EndLongitude units="degrees_east" name="EndLongitude" url="#EndLongitude">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </EndLongitude>
+      <EndMonthCollected name="EndMonthCollected" url="#EndMonthCollected">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </EndMonthCollected>
+      <EndTimeofDay units="hours" name="EndTimeofDay" url="#EndTimeofDay">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </EndTimeofDay>
+      <EndYearCollected name="EndYearCollected" url="#EndYearCollected">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </EndYearCollected>
+      <Family name="Family" url="#Family">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Family>
+      <FieldNumber name="FieldNumber" url="#FieldNumber">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </FieldNumber>
+      <GMLFeature name="GMLFeature" url="#GMLFeature">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </GMLFeature>
+      <Genus name="Genus" url="#Genus">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Genus>
+      <IdentifiedBy name="IdentifiedBy" url="#IdentifiedBy">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </IdentifiedBy>
+      <IndividualCount units="count" name="IndividualCount" url="#IndividualCount">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </IndividualCount>
+      <InstitutionCode name="InstitutionCode" url="#InstitutionCode">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </InstitutionCode>
+      <JulianDay name="JulianDay" url="#JulianDay">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </JulianDay>
+      <Kingdom name="Kingdom" url="#Kingdom">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Kingdom>
+      <LifeStage name="LifeStage" url="#LifeStage">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </LifeStage>
+      <Locality name="Locality" url="#Locality">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Locality>
+      <MaximumDepth units="m" name="MaximumDepth" url="#MaximumDepth">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </MaximumDepth>
+      <MaximumElevation units="m" name="MaximumElevation" url="#MaximumElevation">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </MaximumElevation>
+      <MinimumElevation units="m" name="MinimumElevation" url="#MinimumElevation">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </MinimumElevation>
+      <MonthCollected name="MonthCollected" url="#MonthCollected">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </MonthCollected>
+      <MonthIdentified name="MonthIdentified" url="#MonthIdentified">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </MonthIdentified>
+      <Notes name="Notes" url="#Notes">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Notes>
+      <ObservedIndividualCount units="count" name="ObservedIndividualCount" url="#ObservedIndividualCount">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </ObservedIndividualCount>
+      <ObservedWeight units="kg" name="ObservedWeight" url="#ObservedWeight">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </ObservedWeight>
+      <Order name="Order" url="#Order">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Order>
+      <Phylum name="Phylum" url="#Phylum">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Phylum>
+      <PreparationType name="PreparationType" url="#PreparationType">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </PreparationType>
+      <PreviousCatalogNumber name="PreviousCatalogNumber" url="#PreviousCatalogNumber">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </PreviousCatalogNumber>
+      <RecordURL name="RecordURL" url="#RecordURL">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </RecordURL>
+      <RelatedCatalogItem name="RelatedCatalogItem" url="#RelatedCatalogItem">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </RelatedCatalogItem>
+      <RelationshipType name="RelationshipType" url="#RelationshipType">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </RelationshipType>
+      <SampleSize name="SampleSize" url="#SampleSize">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </SampleSize>
+      <ScientificName name="ScientificName" url="#ScientificName">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </ScientificName>
+      <ScientificNameAuthor name="ScientificNameAuthor" url="#ScientificNameAuthor">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </ScientificNameAuthor>
+      <Sex name="Sex" url="#Sex">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Sex>
+      <Source name="Source" url="#Source">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Source>
+      <Species name="Species" url="#Species">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Species>
+      <StartDayCollected name="StartDayCollected" url="#StartDayCollected">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </StartDayCollected>
+      <StartJulianDay name="StartJulianDay" url="#StartJulianDay">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </StartJulianDay>
+      <StartLatitude units="degrees_north" name="StartLatitude" url="#StartLatitude">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </StartLatitude>
+      <StartLongitude units="degrees_east" name="StartLongitude" url="#StartLongitude">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </StartLongitude>
+      <StartMonthCollected name="StartMonthCollected" url="#StartMonthCollected">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </StartMonthCollected>
+      <StartTimeofDay units="hours" name="StartTimeofDay" url="#StartTimeofDay">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </StartTimeofDay>
+      <StartYearCollected name="StartYearCollected" url="#StartYearCollected">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </StartYearCollected>
+      <Start_EndCoordinatePrecision units="m" name="Start_EndCoordinatePrecision" url="#Start_EndCoordinatePrecision">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Start_EndCoordinatePrecision>
+      <StateProvince name="StateProvince" url="#StateProvince">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </StateProvince>
+      <Subgenus name="Subgenus" url="#Subgenus">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Subgenus>
+      <Subspecies name="Subspecies" url="#Subspecies">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Subspecies>
+      <Temperature units="degree_C" name="Temperature" url="#Temperature">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </Temperature>
+      <TimeOfDay units="hours" name="TimeOfDay" url="#TimeOfDay">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </TimeOfDay>
+      <TimeZone name="TimeZone" url="#TimeZone">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </TimeZone>
+      <TypeStatus name="TypeStatus" url="#TypeStatus">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </TypeStatus>
+      <YearCollected name="YearCollected" url="#YearCollected">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </YearCollected>
+      <YearIdentified name="YearIdentified" url="#YearIdentified">
+        <link match="/lasdata/grids/rutgersSeamap_grid"/>
+      </YearIdentified>
+    </variables>
+  </rutgersSeamap>
+  <pmelTao
+    name = "TAO Array Data from the PMEL DAPPER Server"
+    url = "http://coastwatch.pfel.noaa.gov/erddap/tabledap/"
+    doc = "http://www.pmel.noaa.gov/tao/">
+    <properties>
+      <ui>
+        <default>file:ui.xml#dapper_demo</default>
+      </ui>
+      <tabledap_access>
+        <server>ERD TableDAP</server>
+        <id>pmelTao</id>
+        <title>TAO Array Data from the PMEL DAPPER Server</title>
+        <longitude>longitude</longitude>
+        <lon_domain>0:360</lon_domain>
+        <latitude>latitude</latitude>
+        <altitude>altitude</altitude>
+        <altitude_units>meters</altitude_units>
+        <positive>up</positive>
+        <time>time</time>
+        <time_units>sec since 1970-01-01T00:00:00Z</time_units>
+        <time_type>double</time_type>
+      </tabledap_access>
+      <product_server>
+        <ui_timeout>120000</ui_timeout>
+        <ps_timeout>120000</ps_timeout>
+        <use_cache>false</use_cache>
+      </product_server>
+    </properties>
+    <variables>
+      <station_id name="Station ID" url="#station_id">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </station_id>
+      <sea_surface_temperature units="degree_C" name="Sea Surface Temperature" url="#sea_surface_temperature">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </sea_surface_temperature>
+      <sea_surface_temperature_quality name="Sea Surface Temperature Quality" url="#sea_surface_temperature_quality">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </sea_surface_temperature_quality>
+      <air_temperature units="degree_C" name="Air Temperature" url="#air_temperature">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </air_temperature>
+      <air_temperature_quality name="Air Temperature Quality" url="#air_temperature_quality">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </air_temperature_quality>
+      <relative_humidity units="percent" name="Relative Humidity" url="#relative_humidity">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </relative_humidity>
+      <relative_humidity_quality name="Relative Humidity Quality" url="#relative_humidity_quality">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </relative_humidity_quality>
+      <relative_humidity_source name="Relative Humidity Source" url="#relative_humidity_source">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </relative_humidity_source>
+      <wind_to_direction units="degrees_true" name="Wind To Direction" url="#wind_to_direction">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </wind_to_direction>
+      <wind_direction_quality name="wind direction quality" url="#wind_direction_quality">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </wind_direction_quality>
+      <wind_direction_source name="wind direction source" url="#wind_direction_source">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </wind_direction_source>
+      <wind_speed units="m s-1" name="Wind Speed" url="#wind_speed">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </wind_speed>
+      <wind_speed_quality name="Wind Speed Quality" url="#wind_speed_quality">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </wind_speed_quality>
+      <wind_speed_source name="Wind Speed Source" url="#wind_speed_source">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </wind_speed_source>
+      <eastward_wind units="m s-1" name="Eastward Wind" url="#eastward_wind">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </eastward_wind>
+      <northward_wind units="m s-1" name="Northward Wind" url="#northward_wind">
+        <link match="/lasdata/grids/pmelTao_grid"/>
+      </northward_wind>
+    </variables>
+  </pmelTao>
+</datasets>
+<grids>
+  <cscWT_grid>
+    <link match="/lasdata/axes/cscWT_X"/>
+    <link match="/lasdata/axes/cscWT_Y"/>
+    <link match="/lasdata/axes/cscWT_Z"/>
+    <link match="/lasdata/axes/cscWT_T"/>
+  </cscWT_grid>
+  <gomoosBuoy_grid>
+    <link match="/lasdata/axes/gomoosBuoy_X"/>
+    <link match="/lasdata/axes/gomoosBuoy_Y"/>
+    <link match="/lasdata/axes/gomoosBuoy_Z"/>
+    <link match="/lasdata/axes/gomoosBuoy_T"/>
+  </gomoosBuoy_grid>
+  <nosCoopsWind_grid>
+    <link match="/lasdata/axes/nosCoopsWind_X"/>
+    <link match="/lasdata/axes/nosCoopsWind_Y"/>
+    <link match="/lasdata/axes/nosCoopsWind_T"/>
+  </nosCoopsWind_grid>
+  <erdCalcofiBio_grid>
+    <link match="/lasdata/axes/erdCalcofiBio_X"/>
+    <link match="/lasdata/axes/erdCalcofiBio_Y"/>
+    <link match="/lasdata/axes/erdCalcofiBio_Z"/>
+    <link match="/lasdata/axes/erdCalcofiBio_T"/>
+  </erdCalcofiBio_grid>
+  <erdCalcofiSub_grid>
+    <link match="/lasdata/axes/erdCalcofiSub_X"/>
+    <link match="/lasdata/axes/erdCalcofiSub_Y"/>
+    <link match="/lasdata/axes/erdCalcofiSub_Z"/>
+    <link match="/lasdata/axes/erdCalcofiSub_T"/>
+  </erdCalcofiSub_grid>
+  <erdCalcofiSur_grid>
+    <link match="/lasdata/axes/erdCalcofiSur_X"/>
+    <link match="/lasdata/axes/erdCalcofiSur_Y"/>
+    <link match="/lasdata/axes/erdCalcofiSur_Z"/>
+    <link match="/lasdata/axes/erdCalcofiSur_T"/>
+  </erdCalcofiSur_grid>
+  <nwioosCoral_grid>
+    <link match="/lasdata/axes/nwioosCoral_X"/>
+    <link match="/lasdata/axes/nwioosCoral_Y"/>
+    <link match="/lasdata/axes/nwioosCoral_Z"/>
+  </nwioosCoral_grid>
+  <erdGlobecBottle_grid>
+    <link match="/lasdata/axes/erdGlobecBottle_X"/>
+    <link match="/lasdata/axes/erdGlobecBottle_Y"/>
+    <link match="/lasdata/axes/erdGlobecBottle_Z"/>
+    <link match="/lasdata/axes/erdGlobecBottle_T"/>
+  </erdGlobecBottle_grid>
+  <nwioosGroundfish_grid>
+    <link match="/lasdata/axes/nwioosGroundfish_X"/>
+    <link match="/lasdata/axes/nwioosGroundfish_Y"/>
+  </nwioosGroundfish_grid>
+  <nwioosHudFishDetails_grid>
+  </nwioosHudFishDetails_grid>
+  <nwioosHudFishOccur_grid>
+  </nwioosHudFishOccur_grid>
+  <nwioosHudPredPrey_grid>
+  </nwioosHudPredPrey_grid>
+  <nwioosHudRef_grid>
+  </nwioosHudRef_grid>
+  <nwioosAdcp1995_grid>
+    <link match="/lasdata/axes/nwioosAdcp1995_X"/>
+    <link match="/lasdata/axes/nwioosAdcp1995_Y"/>
+    <link match="/lasdata/axes/nwioosAdcp1995_Z"/>
+  </nwioosAdcp1995_grid>
+  <nwioosAdcp1998_grid>
+    <link match="/lasdata/axes/nwioosAdcp1998_X"/>
+    <link match="/lasdata/axes/nwioosAdcp1998_Y"/>
+    <link match="/lasdata/axes/nwioosAdcp1998_Z"/>
+  </nwioosAdcp1998_grid>
+  <nwioosAdcp2001_grid>
+    <link match="/lasdata/axes/nwioosAdcp2001_X"/>
+    <link match="/lasdata/axes/nwioosAdcp2001_Y"/>
+    <link match="/lasdata/axes/nwioosAdcp2001_Z"/>
+  </nwioosAdcp2001_grid>
+  <nwioosAdcp2003_grid>
+    <link match="/lasdata/axes/nwioosAdcp2003_X"/>
+    <link match="/lasdata/axes/nwioosAdcp2003_Y"/>
+    <link match="/lasdata/axes/nwioosAdcp2003_Z"/>
+  </nwioosAdcp2003_grid>
+  <nwioosAdcp2005_grid>
+    <link match="/lasdata/axes/nwioosAdcp2005_X"/>
+    <link match="/lasdata/axes/nwioosAdcp2005_Y"/>
+    <link match="/lasdata/axes/nwioosAdcp2005_Z"/>
+  </nwioosAdcp2005_grid>
+  <aadcArgos_grid>
+    <link match="/lasdata/axes/aadcArgos_X"/>
+    <link match="/lasdata/axes/aadcArgos_Y"/>
+  </aadcArgos_grid>
+  <fishbaseObis_grid>
+    <link match="/lasdata/axes/fishbaseObis_X"/>
+    <link match="/lasdata/axes/fishbaseObis_Y"/>
+  </fishbaseObis_grid>
+  <rutgersGombis_grid>
+    <link match="/lasdata/axes/rutgersGombis_X"/>
+    <link match="/lasdata/axes/rutgersGombis_Y"/>
+  </rutgersGombis_grid>
+  <rutgersGhmp_grid>
+    <link match="/lasdata/axes/rutgersGhmp_X"/>
+    <link match="/lasdata/axes/rutgersGhmp_Y"/>
+  </rutgersGhmp_grid>
+  <rutgersSeamap_grid>
+    <link match="/lasdata/axes/rutgersSeamap_X"/>
+    <link match="/lasdata/axes/rutgersSeamap_Y"/>
+  </rutgersSeamap_grid>
+  <pmelTao_grid>
+    <link match="/lasdata/axes/pmelTao_X"/>
+    <link match="/lasdata/axes/pmelTao_Y"/>
+    <link match="/lasdata/axes/pmelTao_Z"/>
+    <link match="/lasdata/axes/pmelTao_T"/>
+  </pmelTao_grid>
+</grids>
+<axes>
+  <cscWT_X type="x" units="degrees_east">
+    <arange start="-98" step="0.1" size="281"/>
+  </cscWT_X>
+  <cscWT_Y type="y" units="degrees_north">
+    <arange start="24" step="0.1" size="151"/>
+  </cscWT_Y>
+  <cscWT_T type="t" units="hour">
+    <arange start="2007-01-01 00:00:00" step="1" size="10032"/>
+  </cscWT_T>
+  <gomoosBuoy_X type="x" units="degrees_east">
+    <arange start="-71" step="0.1" size="61"/>
+  </gomoosBuoy_X>
+  <gomoosBuoy_Y type="y" units="degrees_north">
+    <arange start="42" step="0.1" size="31"/>
+  </gomoosBuoy_Y>
+  <gomoosBuoy_Z type="z" units="meters">
+    <arange start="-250" step="1" size="250"/>
+  </gomoosBuoy_Z>
+  <gomoosBuoy_T type="t" units="hour">
+    <arange start="2000-07-10 16:00:00" step="1" size="66800"/>
+  </gomoosBuoy_T>
+  <nosCoopsWind_X type="x" units="degrees_east">
+    <arange start="-178" step="0.1" size="3571"/>
+  </nosCoopsWind_X>
+  <nosCoopsWind_Y type="y" units="degrees_north">
+    <arange start="-47" step="0.1" size="1181"/>
+  </nosCoopsWind_Y>
+  <nosCoopsWind_T type="t" units="hour">
+    <arange start="1991-05-01 00:00:00" step="1" size="147408"/>
+  </nosCoopsWind_T>
+  <erdCalcofiBio_X type="x" units="degrees_east">
+    <arange start="233" step="0.1" size="121"/>
+  </erdCalcofiBio_X>
+  <erdCalcofiBio_Y type="y" units="degrees_north">
+    <arange start="27" step="0.1" size="111"/>
+  </erdCalcofiBio_Y>
+  <erdCalcofiBio_Z type="z" units="meters">
+    <arange start="-268" step="1" size="263"/>
+  </erdCalcofiBio_Z>
+  <erdCalcofiBio_T type="t" units="hour">
+    <arange start="1984-01-04 21:00:00" step="1" size="182989"/>
+  </erdCalcofiBio_T>
+  <erdCalcofiSub_X type="x" units="degrees_east">
+    <arange start="195" step="0.1" size="591"/>
+  </erdCalcofiSub_X>
+  <erdCalcofiSub_Y type="y" units="degrees_north">
+    <arange start="18" step="0.1" size="331"/>
+  </erdCalcofiSub_Y>
+  <erdCalcofiSub_Z type="z" units="meters">
+    <arange start="-5351" step="1" size="5352"/>
+  </erdCalcofiSub_Z>
+  <erdCalcofiSub_T type="t" units="hour">
+    <arange start="1949-02-28 22:00:00" step="1" size="428793"/>
+  </erdCalcofiSub_T>
+  <erdCalcofiSur_X type="x" units="degrees_east">
+    <arange start="195" step="0.1" size="591"/>
+  </erdCalcofiSur_X>
+  <erdCalcofiSur_Y type="y" units="degrees_north">
+    <arange start="18" step="0.1" size="331"/>
+  </erdCalcofiSur_Y>
+  <erdCalcofiSur_Z type="z" units="meters">
+    <arange start="-2625" step="1" size="2626"/>
+  </erdCalcofiSur_Z>
+  <erdCalcofiSur_T type="t" units="hour">
+    <arange start="1949-02-28 22:00:00" step="1" size="428793"/>
+  </erdCalcofiSur_T>
+  <nwioosCoral_X type="x" units="degrees_east">
+    <arange start="-126" step="0.1" size="91"/>
+  </nwioosCoral_X>
+  <nwioosCoral_Y type="y" units="degrees_north">
+    <arange start="32" step="0.1" size="171"/>
+  </nwioosCoral_Y>
+  <nwioosCoral_Z type="z" units="meters">
+    <arange start="-1543" step="1" size="1533"/>
+  </nwioosCoral_Z>
+  <erdGlobecBottle_X type="x" units="degrees_east">
+    <arange start="-126" step="0.1" size="21"/>
+  </erdGlobecBottle_X>
+  <erdGlobecBottle_Y type="y" units="degrees_north">
+    <arange start="41" step="0.1" size="41"/>
+  </erdGlobecBottle_Y>
+  <erdGlobecBottle_T type="t" units="hour">
+    <arange start="2002-07-31 00:00:00" step="1" size="457"/>
+  </erdGlobecBottle_T>
+  <nwioosGroundfish_X type="x" units="degrees_east">
+    <arange start="-126" step="0.1" size="91"/>
+  </nwioosGroundfish_X>
+  <nwioosGroundfish_Y type="y" units="degrees_north">
+    <arange start="32" step="0.1" size="171"/>
+  </nwioosGroundfish_Y>
+  <nwioosAdcp1995_X type="x" units="degrees_east">
+    <arange start="-134" step="0.1" size="161"/>
+  </nwioosAdcp1995_X>
+  <nwioosAdcp1995_Y type="y" units="degrees_north">
+    <arange start="32" step="0.1" size="241"/>
+  </nwioosAdcp1995_Y>
+  <nwioosAdcp1995_Z type="z" units="meters">
+    <arange start="-494" step="1" size="473"/>
+  </nwioosAdcp1995_Z>
+  <nwioosAdcp1998_X type="x" units="degrees_east">
+    <arange start="-132" step="0.1" size="111"/>
+  </nwioosAdcp1998_X>
+  <nwioosAdcp1998_Y type="y" units="degrees_north">
+    <arange start="36" step="0.1" size="171"/>
+  </nwioosAdcp1998_Y>
+  <nwioosAdcp1998_Z type="z" units="meters">
+    <arange start="-406" step="1" size="385"/>
+  </nwioosAdcp1998_Z>
+  <nwioosAdcp2001_X type="x" units="degrees_east">
+    <arange start="-129" step="0.1" size="81"/>
+  </nwioosAdcp2001_X>
+  <nwioosAdcp2001_Y type="y" units="degrees_north">
+    <arange start="36" step="0.1" size="141"/>
+  </nwioosAdcp2001_Y>
+  <nwioosAdcp2001_Z type="z" units="meters">
+    <arange start="-494" step="1" size="473"/>
+  </nwioosAdcp2001_Z>
+  <nwioosAdcp2003_X type="x" units="degrees_east">
+    <arange start="-134" step="0.1" size="131"/>
+  </nwioosAdcp2003_X>
+  <nwioosAdcp2003_Y type="y" units="degrees_north">
+    <arange start="36" step="0.1" size="191"/>
+  </nwioosAdcp2003_Y>
+  <nwioosAdcp2003_Z type="z" units="meters">
+    <arange start="-489" step="1" size="474"/>
+  </nwioosAdcp2003_Z>
+  <nwioosAdcp2005_X type="x" units="degrees_east">
+    <arange start="-126" step="0.1" size="51"/>
+  </nwioosAdcp2005_X>
+  <nwioosAdcp2005_Y type="y" units="degrees_north">
+    <arange start="35" step="0.1" size="141"/>
+  </nwioosAdcp2005_Y>
+  <nwioosAdcp2005_Z type="z" units="meters">
+    <arange start="-497" step="1" size="473"/>
+  </nwioosAdcp2005_Z>
+  <aadcArgos_X type="x" units="degrees_east">
+    <arange start="-180" step="0.1" size="3601"/>
+  </aadcArgos_X>
+  <aadcArgos_Y type="y" units="degrees_north">
+    <arange start="-90" step="0.1" size="1801"/>
+  </aadcArgos_Y>
+  <fishbaseObis_X type="x" units="degrees_east">
+    <arange start="-180" step="0.1" size="3601"/>
+  </fishbaseObis_X>
+  <fishbaseObis_Y type="y" units="degrees_north">
+    <arange start="-90" step="0.1" size="1801"/>
+  </fishbaseObis_Y>
+  <rutgersGombis_X type="x" units="degrees_east">
+    <arange start="-180" step="0.1" size="3601"/>
+  </rutgersGombis_X>
+  <rutgersGombis_Y type="y" units="degrees_north">
+    <arange start="-90" step="0.1" size="1801"/>
+  </rutgersGombis_Y>
+  <rutgersGhmp_X type="x" units="degrees_east">
+    <arange start="-180" step="0.1" size="3601"/>
+  </rutgersGhmp_X>
+  <rutgersGhmp_Y type="y" units="degrees_north">
+    <arange start="-90" step="0.1" size="1801"/>
+  </rutgersGhmp_Y>
+  <rutgersSeamap_X type="x" units="degrees_east">
+    <arange start="-180" step="0.1" size="3601"/>
+  </rutgersSeamap_X>
+  <rutgersSeamap_Y type="y" units="degrees_north">
+    <arange start="-90" step="0.1" size="1801"/>
+  </rutgersSeamap_Y>
+  <pmelTao_X type="x" units="degrees_east">
+    <arange start="164" step="0.1" size="1021"/>
+  </pmelTao_X>
+  <pmelTao_Y type="y" units="degrees_north">
+    <arange start="-9" step="0.1" size="191"/>
+  </pmelTao_Y>
+  <pmelTao_T type="t" units="hour">
+    <arange start="1979-01-01 12:00:00" step="1" size="252241"/>
+  </pmelTao_T>
+</axes>

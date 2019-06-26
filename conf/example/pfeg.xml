@@ -1,0 +1,106 @@
+<datasets>
+  <pfeg
+    name = "NOAA Time Series (Example of data from a Dapper Server)"
+    url = "http://las.pfeg.noaa.gov/dods/ndbcMet/ndbcMet_time_series.cdp"
+    doc = "">
+
+    <properties>
+    <ui>
+      <default>file:ui.xml#dapper_demo</default>
+    </ui>
+       <database_access>        
+           <positive>down</positive>
+           <time>location.profile.TIME</time>
+           <depth_units>meters</depth_units>
+           <db_table>ndbcMet_time_series.cdp</db_table>
+           <depth>location.DEPTH</depth>
+           <db_title>NOAA Time Series</db_title>
+           <missing>NaN</missing>
+           <lon_domain>0:360</lon_domain>
+           <time_units>msec since 1970-01-01 00:00:00</time_units>
+           <longitude>location.LON</longitude>
+           <db_name>ndbcMet</db_name>
+           <db_server>PFEG Server</db_server>
+           <time_type>double</time_type>
+           <db_type>dapper</db_type>
+           <latitude>location.LAT</latitude>
+       </database_access>
+       <product_server>
+           <ui_timeout>1000</ui_timeout>
+           <ps_timeout>3600</ps_timeout>
+           <use_cache>false</use_cache>
+       </product_server>
+     </properties>
+
+    <variables>
+      <pfeg_mwd units="degrees_true" name="mean wave direction" url="#MWD">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_mwd>
+      <pfeg_WVHT units="meters" name="wave height" url="#WVHT">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_WVHT>
+      <pfeg_WSPV units="m/sec" name="merid. wind speed" url="#WSPV">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_WSPV>
+      <pfeg_WTMP units="degree_c" name="sst" url="#WTMP">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_WTMP>
+      <pfeg_TIDE units="m" name="water level" url="#TIDE">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_TIDE>
+      <pfeg_WD units="degrees_true" name="wind direction" url="#WD">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_WD>
+      <pfeg_APD units="seconds" name="average wave period" url="#APD">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_APD>
+      <pfeg_PTDY units="hpa" name="pressure tendency" url="#PTDY">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_PTDY>
+      <pfeg_GST units="m/sec" name="gust speed" url="#GST">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_GST>
+      <pfeg_VIS units="km" name="station visibility" url="#VIS">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_VIS>
+      <pfeg_DPD units="seconds" name="dominant wave period" url="#DPD">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_DPD>
+      <pfeg_ATMP units="degree_c" name="air temperature" url="#ATMP">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_ATMP>
+      <pfeg_DEWP units="degree_c" name="dewpoint temperature" url="#DEWP">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_DEWP>
+      <pfeg_WSPU units="m/s" name="zonal wind speed" url="#WSPU">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_WSPU>
+      <pfeg_WSPD units="m/s" name="wind speed" url="#WSPD">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_WSPD>
+      <pfeg_BAR units="hpa" name="sea level pressure" url="#BAR">
+        <link match="/lasdata/grids/pfeg_grid"/>
+      </pfeg_BAR>
+    </variables>
+  </pfeg>
+</datasets>
+
+<grids>
+  <pfeg_grid>
+    <link match="/lasdata/axes/pfeg_x"/>
+    <link match="/lasdata/axes/pfeg_y"/>
+    <link match="/lasdata/axes/pfeg_time"/>
+  </pfeg_grid>
+</grids>
+
+<axes>
+  <pfeg_y units="degrees_north" type="y">
+    <arange start="32.43" step="1" size="10"/>
+  </pfeg_y>
+  <pfeg_x units="degrees_east" type="x">
+    <arange start="230" step="1" size="10"/>
+  </pfeg_x>
+  <pfeg_time units="hour" type="t">
+   <arange start="1982-01-18" step="1" size="212335"/>
+  </pfeg_time>
+</axes>

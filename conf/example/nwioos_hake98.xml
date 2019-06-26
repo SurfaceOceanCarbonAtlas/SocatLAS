@@ -1,0 +1,67 @@
+<datasets>
+  <hake98
+    name = "1998 Hake Survey ADCP (Example of data from a DRDS Server)"
+    url = "http://nwioos.coas.oregonstate.edu:8080/dods/drds/1998%20Hake%20Survey%20ADCP"
+    doc = "">
+
+    <properties><ui>
+      <default>file:ui.xml#nwioos_demo</default>
+    </ui>
+
+    <database_access name="nwioos_drds">
+      <db_type>drds</db_type>
+      <db_server>NWIOOS Server</db_server>
+      <db_name>1998 Hake Survey ADCP</db_name>
+      <db_title>1998 Hake Survey ADCP</db_title>
+      <db_host>localhost</db_host>
+      <db_table>ADCP98</db_table>
+      <longitude>X</longitude>
+      <lon_domain>-180:180</lon_domain>
+      <latitude>Y</latitude>
+      <depth>Z</depth>
+      <depth_units>meters</depth_units>
+      <time>yearday</time>
+      <time_type>double</time_type>
+      <time_units>days since 1998-01-01 00:00:00</time_units>
+      <hours_1970></hours_1970>
+      <missing>-9999.0</missing>
+      <positive>down</positive>
+    </database_access>
+
+    </properties>
+
+    <variables>
+      <hake_98_ev units="m/sec" name="Eastward Velocity" url="#EV">
+        <link match="/lasdata/grids/hake_98_grid"/>
+      </hake_98_ev>
+      <hake_98_nv units="m/sec" name="Northward Velocity" url="#NV">
+        <link match="/lasdata/grids/hake_98_grid"/>
+      </hake_98_nv>
+    </variables>
+  </hake98>
+</datasets>
+
+<grids>
+  <hake_98_grid>
+    <link match="/lasdata/axes/hake_98_x"/>
+    <link match="/lasdata/axes/hake_98_y"/>
+    <link match="/lasdata/axes/hake_98_depth"/>
+    <link match="/lasdata/axes/hake_98_time"/>
+  </hake_98_grid>
+</grids>
+
+<axes>
+  <hake_98_y units="degrees_north" type="y">
+    <arange start="15" step="1" size="60"/>
+  </hake_98_y>
+  <hake_98_x units="degrees_east" type="x">
+    <arange start="180" step="1" size="75"/>
+  </hake_98_x>
+  <hake_98_depth units="meters" type="z">
+    <arange start="22" step="8" size="60"/>
+  </hake_98_depth>
+  <hake_98_time units="hour" type="t" display_lo="1998-07-07 00:00:00" default="first">
+     <!-- Julian day 188 through 238 -->
+   <arange start="1998-07-07 00:00:00" step="1" size="1224"/>
+  </hake_98_time>
+</axes>

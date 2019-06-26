@@ -1,0 +1,107 @@
+ <datasets>
+  <NOAA_NCEP_EMC_CMB_Ocean_Analysis_ml
+   name="NCEP Monthly Pacific Ocean Analysis Data at Multiple Depths served by IRI"
+   doc="http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NCEP/.EMC/.CMB/.Pacific/.monthly/" url="http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NCEP/.EMC/.CMB/.Pacific/.monthly/dods">
+   <variables>
+         <IRI-otemp2027 name="Ocean Temperature monthly mean" units="degC" url="#temp" >
+             <link match="/lasdata/grids/IRI-grid-lon21-lat22-level23-time44"/>
+         </IRI-otemp2027>
+         <IRI-salt2031 name="Salinity monthly mean" units="deviation from .035" url="#sal" >
+             <link match="/lasdata/grids/IRI-grid-lon21-lat22-level23-time44"/>
+         </IRI-salt2031>
+         <IRI-tc2038 name="Temperature Correction monthly mean" units="DegC/hour" url="#tcor" >
+             <link match="/lasdata/grids/IRI-grid-lon21-lat22-level23-time44"/>
+         </IRI-tc2038>
+         <IRI-ucur2040 name="U component of ocean current monthly mean" units="cm/sec" url="#u" >
+             <link match="/lasdata/grids/IRI-grid-lon21-lat22-level23-time44"/>
+         </IRI-ucur2040>
+         <IRI-vcur2042 name="V component of ocean current monthly mean" units="cm/sec" url="#v" >
+             <link match="/lasdata/grids/IRI-grid-lon21-lat22-level23-time44"/>
+         </IRI-vcur2042>
+      </variables>
+      <composite>
+         <water_vectors name="water vectors">
+             <properties>
+             <ui>
+             <default>file:ui.xml#VecVariable</default>
+             </ui>
+                </properties>
+             <link match="/lasdata/datasets/NOAA_NCEP_EMC_CMB_Ocean_Analysis_ml/variables/IRI-ucur2040"/>
+             <link match="/lasdata/datasets/NOAA_NCEP_EMC_CMB_Ocean_Analysis_ml/variables/IRI-vcur2042"/>
+         </water_vectors>
+      </composite>
+  </NOAA_NCEP_EMC_CMB_Ocean_Analysis_ml>
+  <NOAA_NCEP_EMC_CMB_Ocean_Analysis
+   name="NCEP Monthly Pacific Ocean Analysis Single Layer Data served by IRI"
+   doc="http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NCEP/.EMC/.CMB/.Pacific/.monthly/" url="http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NCEP/.EMC/.CMB/.Pacific/.monthly/dods">
+   <variables>
+        <IRI-H name="Sea Level Anomaly monthly mean" units="cm" url="#H" >
+             <link match="/lasdata/grids/IRI-grid-lon21-lat22-time44"/>
+         </IRI-H>
+         <IRI-D20eq name="Depth of 20C monthly mean" units="m" url="#D20eq" >
+             <link match="/lasdata/grids/IRI-grid-lon21-lat22-time44"/>
+         </IRI-D20eq>
+         <IRI-taux2034 name="E-W Stress monthly mean" units="dyne/cm**2" url="#taux" >
+             <link match="/lasdata/grids/IRI-grid-lon21-lat22-time44"/>
+         </IRI-taux2034>
+         <IRI-tauy2036 name="N-S Stress monthly mean" units="dyne/cm**2" url="#tauy" >
+             <link match="/lasdata/grids/IRI-grid-lon21-lat22-time44"/>
+         </IRI-tauy2036>
+      </variables>
+  </NOAA_NCEP_EMC_CMB_Ocean_Analysis>
+ </datasets>
+ <grids>
+  <IRI-grid-lon21-lat22-time44>
+     <link match="/lasdata/axes/IRI-lon21"/>
+     <link match="/lasdata/axes/IRI-lat22"/>
+     <link match="/lasdata/axes/IRI-time44"/>
+  </IRI-grid-lon21-lat22-time44>
+ </grids>
+ <grids>
+  <IRI-grid-lon21-lat22-level23-time44>
+     <link match="/lasdata/axes/IRI-lon21"/>
+     <link match="/lasdata/axes/IRI-lat22"/>
+     <link match="/lasdata/axes/IRI-level23"/>
+     <link match="/lasdata/axes/IRI-time44"/>
+  </IRI-grid-lon21-lat22-level23-time44>
+ </grids>
+ <axes>
+   <IRI-time44 type="t" units="month">
+     <arange start="1980-01-15" step="1" size="301"/>
+   </IRI-time44>
+   <IRI-lon21 type="x" units = "degrees_east">
+      <arange start="122.25" step="1.50" size="112"/>
+   </IRI-lon21>
+   <IRI-lat22 type="y" units = "degrees_north">
+      <arange start="-35.00" step="1.00" size="81"/>
+   </IRI-lat22>
+   <IRI-level23 type="z" units = "m">
+      <v> 5.00 </v>
+      <v> 15.00 </v>
+      <v> 25.00 </v>
+      <v> 35.00 </v>
+      <v> 45.00 </v>
+      <v> 55.00 </v>
+      <v> 65.00 </v>
+      <v> 75.00 </v>
+      <v> 85.00 </v>
+      <v> 95.00 </v>
+      <v> 106.25 </v>
+      <v> 120.00 </v>
+      <v> 136.25 </v>
+      <v> 155.00 </v>
+      <v> 177.50 </v>
+      <v> 205.00 </v>
+      <v> 240.00 </v>
+      <v> 285.00 </v>
+      <v> 345.00 </v>
+      <v> 430.00 </v>
+      <v> 550.00 </v>
+      <v> 720.00 </v>
+      <v> 967.50 </v>
+      <v> 1327.50 </v>
+      <v> 1821.00 </v>
+      <v> 2443.50 </v>
+      <v> 3126.50 </v>
+   </IRI-level23>
+ </axes>

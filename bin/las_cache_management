@@ -1,0 +1,32 @@
+#!/bin/csh -f
+#
+echo ""
+echo "This script will delete all las/server/output/* files"
+echo "which have not been accessed in more than age days or"
+echo "which are larger than size bytes."
+echo ""
+echo "The current list of directories managed inlcudes the"
+echo "server/output/ directories under:"
+echo ""
+
+# INSERT YOUR OWN DIRECTORIES, ONE FOR EACH SERVER
+#
+#echo "/usr/local2/web/htdocs/lasxml_1/"
+#echo "/usr/local2/web/htdocs/lasxml_2/"
+
+echo ""
+echo -n "Enter age [days]:    "
+set age = $<                         # get input
+echo ""
+echo -n "Enter size [bytes]:  "
+set size = $<                         # get input
+
+# INSERT YOUR OWN DIRECTORIES, ONE FOR EACH SERVER
+#
+#echo "/usr/local2/web/htdocs/lasxml_1/"
+#find /usr/local2/web/htdocs/lasxml_1/server/output/ -atime +$age -exec rm {} \;
+#find /usr/local2/web/htdocs/lasxml_1/server/output/ -size +$size -exec rm {} \;
+
+#echo "/usr/local2/web/htdocs/lasxml_2/"
+#find /usr/local2/web/htdocs/lasxml_2/server/output/ -atime +$age -exec rm {} \;
+#find /usr/local2/web/htdocs/lasxml_2/server/output/ -size +$size -exec rm {} \;

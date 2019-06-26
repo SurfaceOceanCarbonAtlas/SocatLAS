@@ -1,0 +1,89 @@
+<datasets>
+ <coads_climatology_cdf name="COADS climatology" 
+                        url="file:coads_climatology" 
+                        doc="">
+
+  <!-- Default properties for this dataset -->
+  <properties>
+   <ferret>
+    <land_type>shade</land_type> <!-- filled continents -->
+   </ferret>
+  </properties>
+
+  <variables>
+   <airt name="AIR TEMPERATURE" units="DEG C">
+    <link match="/lasdata/grids/coads_climatology_cdf_COADSX_COADSY_TIME_grid"/>
+   </airt>
+   <speh name="SPECIFIC HUMIDITY" units="G/KG">
+    <link match="/lasdata/grids/coads_climatology_cdf_COADSX_COADSY_TIME_grid"/>
+   </speh>
+   <sst name="SEA SURFACE TEMPERATURE" units="Deg C">
+    <link match="/lasdata/grids/coads_climatology_cdf_COADSX_COADSY_TIME_grid"/>
+   </sst>
+   <uwnd name="ZONAL WIND" units="M/S">
+    <link match="/lasdata/grids/coads_climatology_cdf_COADSX_COADSY_TIME_grid"/>
+    <properties>
+     <ferret>
+      <palette>light_centered</palette>
+      <fill_levels>20c</fill_levels>
+     </ferret>
+    </properties>
+   </uwnd>
+   <wspd name="WIND SPEED" units="M/S">
+    <link match="/lasdata/grids/coads_climatology_cdf_COADSX_COADSY_TIME_grid"/>
+   </wspd>
+   <vwnd name="MERIDIONAL WIND" units="M/S">
+    <link match="/lasdata/grids/coads_climatology_cdf_COADSX_COADSY_TIME_grid"/>
+    <properties>
+     <ferret>
+      <palette>light_centered</palette>
+      <fill_levels>20c</fill_levels>
+     </ferret>
+    </properties>
+   </vwnd>
+   <slp name="SEA LEVEL PRESSURE" units="MB">
+    <link match="/lasdata/grids/coads_climatology_cdf_COADSX_COADSY_TIME_grid"/>
+   </slp>
+  </variables>
+  <composite>
+   <wind_vectors name="wind vectors">
+    <properties>
+    <ui>
+     <default>file:ui.xml#VecVariable</default>
+    </ui>
+   </properties>
+    <link match="/lasdata/datasets/coads_climatology_cdf/variables/uwnd"/>
+    <link match="/lasdata/datasets/coads_climatology_cdf/variables/vwnd"/>
+   </wind_vectors>
+  </composite>
+ </coads_climatology_cdf>
+</datasets>
+<grids>
+ <coads_climatology_cdf_COADSX_COADSY_TIME_grid>
+  <link match="/lasdata/axes/coads_climatology_cdf_COADSX"/>
+  <link match="/lasdata/axes/coads_climatology_cdf_COADSY"/>
+  <link match="/lasdata/axes/coads_climatology_cdf_TIME"/>
+ </coads_climatology_cdf_COADSX_COADSY_TIME_grid>
+</grids>
+<axes>
+ <coads_climatology_cdf_COADSX type="x" units="degrees_east">
+  <arange start="21" step="2" size="180"/>
+ </coads_climatology_cdf_COADSX>
+ <coads_climatology_cdf_COADSY type="y" units="degrees_north">
+  <arange start="-89" step="2" size="90"/>
+ </coads_climatology_cdf_COADSY>
+ <coads_climatology_cdf_TIME type="t" units="month">
+  <v label="Jan">15-Jan</v>
+  <v label="Feb">15-Feb</v>
+  <v label="Mar">15-Mar</v>
+  <v label="Apr">15-Apr</v>
+  <v label="May">15-May</v>
+  <v label="Jun">15-Jun</v>
+  <v label="Jul">15-Jul</v>
+  <v label="Aug">15-Aug</v>
+  <v label="Sep">15-Sep</v>
+  <v label="Oct">15-Oct</v>
+  <v label="Nov">15-Nov</v>
+  <v label="Dec">15-Dec</v>
+ </coads_climatology_cdf_TIME>
+</axes>

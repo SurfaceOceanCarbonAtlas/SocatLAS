@@ -1,0 +1,146 @@
+    <menus>
+
+        <menu type="constraint" name="insitu_demo_CruiseText">
+	    <item values="CruiseNum">Cruise Number</item>
+	</menu>
+        <menu type="constraint" name="insitu_demo_CruiseOps">
+	    <item values="=">=</item>
+	    <item values="!=">!=</item>
+	</menu>
+	<menu type="constraint" name="insitu_demo_Cruises">
+	    <item values="22">Twenty Two (11/13/1987-12/16/1987)</item>
+	    <item values="23">Twenty Three (02/24/1985-02/20/1987)</item>
+	    <item values="24">Twenty Four (12/07/1977-04/21/1978)</item>
+        </menu>
+
+        <menu type="constraint" name="insitu_demo_2_CountryText">
+	    <item values="country">Country</item>
+	</menu>
+        <menu type="constraint" name="insitu_demo_2_CountryOps">
+	    <item values="=">=</item>
+	    <item values="!=">!=</item>
+	</menu>
+	<menu type="constraint" name="insitu_demo_2_Countries">
+	    <item values="AU">Australia</item>
+	    <item values="JP">Japan</item>
+<!-- Korea and New Zealand have all missing values for SST
+	    <item values="KR">Korea</item>
+	    <item values="NZ">New Zealand</item>
+-->
+	    <item values="US">United States</item>
+        </menu>
+
+        <menu type="constraint" name="insitu_demo_2_PlatformText">
+	    <item values="type">Platform</item>
+	</menu>
+        <menu type="constraint" name="insitu_demo_2_PlatformOps">
+	    <item values="=">=</item>
+	    <item values="!=">!=</item>
+	</menu>
+	<menu type="constraint" name="insitu_demo_2_Platforms">
+	    <item values="ARGO FLOAT">ARGO float</item>
+	    <item values="DRIFTING BUOY">Drifting buoy</item>
+	    <item values="MOORED BUOY">Moored buoy</item>
+	    <item values="SHIP">Ship</item>
+        </menu>
+
+    </menus>
+    
+    <maps>
+
+        <map type="ops" name="insitu_demo_Operations">
+	    <ifmenu view="xy" href="#Ops_insituProfileXY"/>
+	    <ifmenu view="xz" href="#Ops_insituProfileXZ"/>
+	    <ifmenu view="xt" href="#Ops_insituProfileXT"/>
+	    <ifmenu view="yz" href="#Ops_insituProfileYZ"/>
+	    <ifmenu view="yt" href="#Ops_insituProfileYT"/>
+	    <ifmenu view="zt" href="#Ops_insituProfileZT"/>
+	    <ifmenu view="xyzt" href="#Ops_insituProfileXYZT"/>
+            <ifmenu view="z" href="#Ops_CruiseProfileZ"/>
+	    <constraint type="variable"/>
+	    <constraint type="text" name="insitu_demo_Cruise">
+	        <menu href="#insitu_demo_CruiseText"/>
+	        <menu href="#insitu_demo_CruiseOps"/>
+	        <menu href="#insitu_demo_Cruises"/>
+	    </constraint>
+	</map>  
+
+        <map type="ops" name="insitu_demo_2_Operations">
+	    <ifmenu view="xy" href="#Ops_insituProfileXY"/>
+	    <ifmenu view="xz" href="#Ops_insituProfileXZ"/>
+	    <ifmenu view="xt" href="#Ops_insituProfileXT"/>
+	    <ifmenu view="yz" href="#Ops_insituProfileYZ"/>
+	    <ifmenu view="yt" href="#Ops_insituProfileYT"/>
+	    <ifmenu view="zt" href="#Ops_insituProfileZT"/>
+	    <ifmenu view="xyzt" href="#Ops_insituProfileXYZT"/>
+            <ifmenu view="z" href="#Ops_CruiseProfileZ"/>
+	    <constraint type="variable"/>
+	    <constraint type="text" name="insitu_demo_2_Countries">
+	        <menu href="#insitu_demo_2_CountryText"/>
+	        <menu href="#insitu_demo_2_CountryOps"/>
+	        <menu href="#insitu_demo_2_Countries"/>
+	    </constraint>
+	    <constraint type="text" name="insitu_demo_2_Platforms">
+	        <menu href="#insitu_demo_2_PlatformText"/>
+	        <menu href="#insitu_demo_2_PlatformOps"/>
+	        <menu href="#insitu_demo_2_Platforms"/>
+	    </constraint>
+	</map>  
+
+        <map type="ops" name="nwioos_demo_Operations">
+	    <ifmenu view="xy" href="#Ops_DRDSinsituProfileXY"/>
+	    <ifmenu view="xz" href="#Ops_insituProfileXZ"/>
+	    <ifmenu view="xt" href="#Ops_insituProfileXT"/>
+	    <ifmenu view="yz" href="#Ops_insituProfileYZ"/>
+	    <ifmenu view="yt" href="#Ops_insituProfileYT"/>
+	    <ifmenu view="zt" href="#Ops_insituProfileZT"/>
+	    <ifmenu view="xyzt" href="#Ops_insituProfileXYZT"/>
+            <ifmenu view="z" href="#Ops_CruiseProfileZ"/>
+	    <constraint type="variable"/>
+	</map>  
+
+        <map type="ops" name="Dapper_Operations">
+            <ifmenu view="xy" href="#Ops_DapperinsituProfileXY"/>
+            <ifmenu view="xz" href="#Ops_insituProfileXZ"/>
+            <ifmenu view="xt" href="#Ops_insituProfileXT"/>
+            <ifmenu view="yz" href="#Ops_insituProfileYZ"/>
+            <ifmenu view="yt" href="#Ops_insituProfileYT"/>
+            <ifmenu view="zt" href="#Ops_insituProfileZT"/>
+            <ifmenu view="xyzt" href="#Ops_insituProfileXYZT"/>
+            <ifmenu view="z" href="#Ops_CruiseProfileZ"/>
+            <constraint type="variable"/>
+        </map>
+
+    </maps>
+    
+    <defaults>
+
+	<default name="insitu_demo">
+            <map href="#insitu_demo_Operations"/>
+            <map href="#insituProfileViews"/>
+            <map href="#insituLiveMap"/>
+            <map href="#insituColorOptions"/>
+	</default>
+
+	<default name="insitu_demo_2">
+            <map href="#insitu_demo_2_Operations"/>
+            <map href="#insituProfileViews"/>
+            <map href="#insituLiveMap"/>
+            <map href="#insituColorOptions"/>
+	</default>
+
+	<default name="nwioos_demo">
+            <map href="#nwioos_demo_Operations"/>
+            <map href="#insituProfileViews"/>
+            <map href="#insituLiveMap"/>
+            <map href="#insituColorOptions"/>
+	</default>
+
+	<default name="dapper_demo">
+            <map href="#Dapper_Operations"/>
+            <map href="#insituProfileViews"/>
+            <map href="#insituLiveMap"/>
+            <map href="#insituColorOptions"/>
+	</default>
+
+    </defaults>

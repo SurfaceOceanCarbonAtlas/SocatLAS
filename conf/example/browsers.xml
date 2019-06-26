@@ -1,0 +1,38 @@
+<!--  
+This file contains information about browsers and how they work with the map applet.
+
+The agent attribute is the User-Agent string that gets passed from the browser to the
+HTTP server.
+
+The applet attribute should be set to true if the browser works correctly with the client-
+side map applet and should be set to false if the browser does not work correctly with
+the client-side map applet.
+
+This information is serialized to the Browser table in the database.
+-->
+<las_browsers>
+   <browser agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.4) Gecko/20030624 Netscape/7.1 (ax)" applet="true"/>
+   <browser agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)" applet="true"/>
+   <browser agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/125.5.5 (KHTML, like Gecko) Safari/125.12" applet="false"/>
+   <browser agent="Mozilla/4.0 (compatible; MSIE 5.23; Mac_PowerPC)" applet="false"/>
+   <browser agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.4) Gecko/20030624 Netscape/7.1" applet="false"/>
+   <browser agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.7.5) Gecko/20041201 Camino/0.8.2" applet="false"/>
+   <browser agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0" applet="false"/>
+   <browser agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0" applet="true"/>
+   <!-- Even though this browser is a Win/Mozilla combo,
+        it does not work with the applet.  Reject it. -->
+   <browser agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0" applet="false"/>
+   <browser agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1) Opera 7.54u1  [en]" applet="true"/>
+   <browser agent="Mozilla/4.79 [en] (Windows NT 5.0; U)" applet="true"/>
+   <browser agent="Mozilla/4.8 [en] (Windows NT 5.0; U)" applet="true"/>
+   <browser agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/125.5.5 (KHTML, like Gecko) Safari/125.11" 	applet="false"/>
+   <browser agent="Mozilla/4.0 (compatible; MSIE 5.13; Mac_PowerPC)" applet="false"/>
+   <browser agent="Mozilla/5.0 (Macintosh; U; PPC; en-US; rv:1.0.1) Gecko/20020823 Netscape/7.0" applet="false"/>
+   <browser agent="Mozilla/5.0 (Macintosh; U; PPC; en-US; rv:0.9.4) Gecko/20011130 Netscape6/6.2.1" applet="false"/>
+   <browser agent="Mozilla/4.79 (Macintosh; U; PPC)" applet="true"/>
+   <browser agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.8) Gecko/20061201 Firefox/2.0.0.8 (Ubuntu-feisty)" applet="true"/>
+   <browser agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.10) Gecko/20061201 Firefox/2.0.0.10 (Ubuntu-feisty)" applet="true"/>
+   <browser agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.11) Gecko/20061201 Firefox/2.0.0.11 (Ubuntu-feisty)" applet="true"/>
+   <browser agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.14) Gecko/20061201 Firefox/2.0.0.14 (Ubuntu-feisty)" applet="true"/>
+   <browser agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.6) Gecko/2009020911 Ubuntu/8.10 (intrepid) Firefox/3.0.6" applet="true"/>
+</las_browsers>

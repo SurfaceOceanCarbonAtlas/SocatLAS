@@ -1,0 +1,36 @@
+    <insitu_poly_xy name="insitu_poly_xy" class="LAS::Server::Ferret" method="insitu_poly_xy"/>
+    <insitu_poly_xt name="insitu_poly_xt" class="LAS::Server::Ferret" method="insitu_poly_xt"/>
+    <insitu_poly_yt name="insitu_poly_yt" class="LAS::Server::Ferret" method="insitu_poly_yt"/>
+    <insitu_pie_xy name="insitu_pie_xy" class="LAS::Server::Ferret" method="insitu_pie_xy"/>
+    <insitu_pie_xz name="insitu_pie_xz" class="LAS::Server::Ferret" method="insitu_pie_xz"/>
+    <insitu_pie_xt name="insitu_pie_xt" class="LAS::Server::Ferret" method="insitu_pie_xt"/>
+    <insitu_pie_yz name="insitu_pie_yz" class="LAS::Server::Ferret" method="insitu_pie_yz"/>
+    <insitu_pie_yt name="insitu_pie_yt" class="LAS::Server::Ferret" method="insitu_pie_yt"/>
+    <insitu_pie_zt name="insitu_pie_zt" class="LAS::Server::Ferret" method="insitu_pie_zt"/>
+    <insitu_gaussian_xy name="insitu_gaussian_xy" class="LAS::Server::Ferret" method="insitu_gaussian_xy"/>
+    <insitu_gaussian_xz name="insitu_gaussian_xz" class="LAS::Server::Ferret" method="insitu_gaussian_xz"/>
+    <insitu_gaussian_xt name="insitu_gaussian_xt" class="LAS::Server::Ferret" method="insitu_gaussian_xt"/>
+    <insitu_gaussian_yz name="insitu_gaussian_yz" class="LAS::Server::Ferret" method="insitu_gaussian_yz"/>
+    <insitu_gaussian_yt name="insitu_gaussian_yt" class="LAS::Server::Ferret" method="insitu_gaussian_yt"/>
+    <insitu_gaussian_zt name="insitu_gaussian_zt" class="LAS::Server::Ferret" method="insitu_gaussian_zt"/>
+    <insitu_waterfall_xz name="insitu_waterfall_xz" class="LAS::Server::Ferret" method="insitu_waterfall_xz"/>
+    <insitu_waterfall_yz name="insitu_waterfall_yz" class="LAS::Server::Ferret" method="insitu_waterfall_yz"/>
+    <insitu_waterfall_zt name="insitu_waterfall_zt" class="LAS::Server::Ferret" method="insitu_waterfall_zt"/>
+    <insitu_profile_list name="insitu_profile_list" class="LAS::Server::Ferret" method="insitu_profile_list"/>
+    <insitu_single_profile name="insitu_single_profile" class="LAS::Server::Ferret" method="insitu_single_profile"/>
+    <insitu_meta_xy name="insitu_meta_xy" class="LAS::Server::Ferret" method="insitu_meta_xy"/>
+    <insitu_meta_xz name="insitu_meta_xz" class="LAS::Server::Ferret" method="insitu_meta_xz"/>
+    <insitu_meta_yz name="insitu_meta_yz" class="LAS::Server::Ferret" method="insitu_meta_yz"/>
+    <insitu_data name="insitu_data" class="LAS::Server::Ferret" method="insitu_data"/>
+    <insitu_data_cdf name="insitu_data" class="LAS::Server::Ferret" method="insitu_data_cdf"/>
+    <insitu_data_dods name="insitu_data_dods" class="LAS::Server::Ferret" method="insitu_data_dods"/>
+    <insitu_tsum name="insitu_tsum" class="LAS::Server::Ferret" method="insitu_tsum"/>
+    <insitu_tave name="insitu_tave" class="LAS::Server::Ferret" method="insitu_tave"/>
+    <insitu_property name="insitu_data" class="LAS::Server::Ferret" method="insitu_property">
+     <arg type="variable"/>
+     <arg type="variable"/>
+     <arg type="region"/>
+    </insitu_property>
+    <insitu_property_depth name="insitu_data" class="LAS::Server::Ferret" method="insitu_property_depth"/>
+    <insitu_poly_dz name="insitu_poly_dist_z" class="LAS::Server::Ferret" method="insitu_poly_dist_z"/>
+    <insitu_cruise_list name="insitu_cruise_list" class="LAS::Server::Ferret" method="insitu_cruise_list"/>

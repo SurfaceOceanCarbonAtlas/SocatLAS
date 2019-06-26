@@ -1,0 +1,40 @@
+
+	<menus>
+        <menu type="constraint" name="Hybrid_ZText">
+	      <item values="Native_Z_section">Z slices in Native Z Coordinates</item>
+	    </menu>
+         <menu type="constraint" name="Hybrid_ZOps">
+ 	       <item values="=">=</item> 
+	    </menu>
+	    <menu type="constraint" name="Hybrid_ZVal">
+            <item values="yes">yes</item>
+            <item values="no">no</item>
+        </menu> 
+    </menus>
+    
+    <maps>
+        <map type="ops" name="Hybrid_Z_Operations">
+	    <ifmenu mode="comparison" href="#Ops_StdCompare"/>
+	    <ifmenu view="x,y,z,t" href="#Ops_Std1D"/>
+	    <ifmenu view="xz,xt,yz,yt,zt" href="#Ops_Std2D"/>
+	    <ifmenu view="xy" href="#Ops_Std2D_xy"/>
+	    <ifmenu view="xyz,xyt,yzt,xzt" href="#Ops_Std3D"/>
+	    <ifmenu view="xyzt" href="#Ops_Std4D"/>
+	   <!-- <constraint type="variable"/> -->
+	    <constraint type="text" required="true" name="Hybrid_Z_Native">
+	        <menu href="#Hybrid_ZText"/>
+	         <menu href="#Hybrid_ZOps"/>
+	        <menu href="#Hybrid_ZVal"/>
+	    </constraint>
+    </maps>
+    
+    <defaults>
+
+	<default name="Hybrid_Z">
+            <map href="#Hybrid_Z_Operations"/>
+            <map href="#DefaultViews"/>
+            <map href="#DefaultOptions"/>
+	        <map href="#DefaultAnalysis"/>
+	</default>
+
+    </defaults>
