@@ -36,8 +36,10 @@ IF `IS_ELEMENT_OF_STR(var_attnames, "axis")` THEN
 ENDIF
 
 ! Put the name in quotes in caes it's a pseudo-var such as K
+LET getshape = '($vname)'
+IF `STRINDEX("($vname)", "(") GT 0` THEN LET getshape = ($vname)
 
-DEFINE SYMBOL shape = `'($vname)',RETURN=shape`; pause
+DEFINE SYMBOL shape = `getshape,RETURN=shape`
 IF ($shape"0|E>0|POINT>0|*>1") THEN
    DEFINE SYMBOL ishape = ($shape"|X>i|Y>j|Z>k|T>l|*>nothing")
    IF ($ishape"nothing>1|*>0") THEN 
