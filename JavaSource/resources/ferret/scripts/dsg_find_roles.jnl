@@ -35,7 +35,7 @@ IF `IS_ELEMENT_OF_STR(var_attnames, "axis")` THEN
 
 ENDIF
 
-! Put the name in quotes in caes it's a pseudo-var such as K
+! Put the name in quotes in case it's a pseudo-var such as K
 LET getshape = '($vname)'
 IF `STRINDEX("($vname)", "(") GT 0` THEN LET getshape = ($vname)
 
