@@ -23,6 +23,7 @@ IF `IS_ELEMENT_OF_STR_N(global_attnames, "featureType") ` THEN
 ENDIF
 
 ! cf_role and sample_dimension are not included in DSG point datasets.
+! rowsize isn't either. Set one up which is 1 for each point
 
 IF ($feature_type"0|point>1|*>0") THEN 
 
@@ -30,6 +31,19 @@ IF ($feature_type"0|point>1|*>0") THEN
    DEFINE SYMBOL nfeatures =`nfeatures`
    IF ($data_0_x_var"0|*>1") THEN DEFINE SYMBOL data_x_var = ($data_0_x_var)
    IF ($data_0_y_var"0|*>1") THEN DEFINE SYMBOL data_y_var = ($data_0_y_var)
+
+! Define an E-direction "rowsize" variable that's 1 for each point
+
+   LET getshape = '($data_0_var)'
+   DEFINE SYMBOL shape = `getshape,RETURN=shape`
+   IF ($shape"point>1|*>0") THEN
+      LET rowvar = 1
+   ELSE
+      DEFINE SYMBOL ishape = ($shape"|X>i|Y>j|Z>k|T>l|E>m|F>n")
+      LET npts = `($data_0_var),return=($ishape)size`
+      LET rowvar = 1 + 0* _e[e=1:`npts`]
+   ENDIF
+   DEFINE SYMBOL rowvar = rowvar
 
    EXIT/SCRIPT
 ENDIF

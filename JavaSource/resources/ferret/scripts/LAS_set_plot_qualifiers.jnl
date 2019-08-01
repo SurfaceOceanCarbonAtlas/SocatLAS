@@ -200,6 +200,9 @@ ENDIF ! end of options for twoDplot
 !                  Do not set a /COLOR qualifier for multi-line plots  
 !                  Default is blue for line, vector, contour plots. 
 !                  Line-color is red for difference plots. 
+!
+!                  IF there is already a /color in the qualifers don't add /COLOR
+!                  unless the ferret_line_color symbol is set to override everything
 !                  
 IF `($line_drawn"0|*>1") EQ 0` THEN \
 DEFINE SYMBOL line_drawn = `($oneDplot"0|*>1") OR ($itsa_vector_plot"0|*>1") OR ($plot_type"0|CONTOUR>1|*>0")`
@@ -210,7 +213,9 @@ IF `($line_drawn"0") AND ($itsa_multi_lineplot"0|*>1") EQ 0 AND ($nstations"1") 
    IF ($ferret_line_color"0|multi>1|*>0") THEN 
       DEFINE SYMBOL qualifiers = ($qualifiers)/COLOR
    ELSE
-      DEFINE SYMBOL qualifiers = ($qualifiers)/COLOR=($ferret_line_color%blue|default>blue|black|red|blue|green|lightblue|purple|*%)
+      LET has_color = STRINDEX("`UPCASE("($qualifiers)")`", "/COLOR")
+      IF `has_color EQ 0` THEN DEFINE SYMBOL qualifiers = ($qualifiers)/COLOR=($ferret_line_color%blue|default>blue|black|red|blue|green|lightblue|purple|*%)
+      IF ($ferret_line_color%0|*>1%) THEN DEFINE SYMBOL qualifiers = ($qualifiers)/COLOR=($ferret_line_color)
    ENDIF
 
 ENDIF ! skipped color setting if its a multi-line plot

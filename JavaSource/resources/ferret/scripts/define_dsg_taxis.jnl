@@ -6,15 +6,25 @@
 DEFINE SYMBOL shape = `($data_t_var),RETURN=shape`
 DEFINE SYMBOL indx = ($shape"0|POINT>0|X>i|Z>k|T>l|E>m|*>0")
 
-LET t1 = ($data_t_var)[($indx)=@MIN]
-LET t2 = ($data_t_var)[($indx)=@MAX]
-IF ($indx"|m>0|*>1") THEN
-   LET tmin = `t1[e=@min]`
-   LET tmax = `t2[e=@max]`
+IF ($indx"0|0|*>1") THEN
+   LET t1 = ($data_t_var)[($indx)=@MIN]
+   LET t2 = ($data_t_var)[($indx)=@MAX]
+   IF ($indx"|m>0|*>1") THEN
+      LET tmin = `t1[e=@min]`
+      LET tmax = `t2[e=@max]`
+   ELSE
+     LET tmin = `t1`
+     LET tmax = `t2`
+   ENDIF
 ELSE
-   LET tmin = `t1`
-   LET tmax = `t2`
+
+! single point in time
+   LET t1 = ($data_t_var)
+   LET t2 = t1
+   LET tmin = t1
+   LET tmax = t1
 ENDIF
+
 
 ! Adjust if start and end times are too close together
 LET oneday = 1

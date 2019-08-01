@@ -369,10 +369,14 @@ IF `($data_count"0") GE 3` THEN ! color by 3rd variable
    IF `($its_trajectory_corr"0|*>1") EQ 0` THEN\  
      LET/TITLE="($ferret_title_1)" zvar = XSEQUENCE(($ferret_plot_var_2)) 
 
-! Is it a varible on the E axis of a DSG file?
+! Is it a varible on the E axis of a DSG file ?
+! Or, if it comes back as shape=point, is it the feature-variable?
 
    DEFINE SYMBOL vshape = `($ferret_plot_var_2),RETURN=shape`
-   IF `($vshape"0|E>1|*>0)` THEN
+
+   IF `($ferret_plot_var_2%0|($feature_variable"0")>1|*>0%) OR \
+    ($vshape"POINT>1|*>0") AND ($nfeatures"0") EQ 1 OR \
+    ($vshape"E>1|*>0)` THEN
 
 ! Is it a Profile or Trajectory dataset?
       IF `($rowvar"0|*>1") EQ 0` THEN GO LAS_setup_dsg
@@ -396,6 +400,7 @@ IF `($data_count"0") GE 3` THEN ! color by 3rd variable
      ENDIF
 
    ENDIF
+
    ! what about woce flags??
 
    DEFINE SYMBOL zvar = zvar
@@ -475,9 +480,24 @@ IF `($its_listing"0|1|*>0") EQ 0 AND ($ferret_plot_key"0|date_key>1|*>0")` THEN
       LET tunits = SUBSTRING("`($ferret_plot_var_($color_vnum)).units`",1,`since_loc`)
       DEFINE SYMBOL tunits = `tunits`
    ENDIF
-   DEFINE AXIS/T=`tmin`:`tmax`:1/T0="`($ferret_plot_var_($color_vnum)).time_origin`"/units=($tunits) time_axis 
-   IF ($tunits"0|seconds>1|*>0") THEN \
-   DEFINE AXIS/T=`tmin`:`tmax`:3600/T0="`($ferret_plot_var_($color_vnum)).time_origin`"/units=($tunits) time_axis 
+
+   IF ($dsg_t_var"0|*>1") THEN  ! dsg dataset: get the time data
+
+      let tvar = XSEQUENCE(($dsg_t_var))
+      LET tmin = tvar[i=@MIN]
+      LET tmax = tvar[i=@MAX]
+      DEFINE AXIS/T=`tmin`:`tmax`:1/T0="`($dsg_t_var).time_origin`"/units=($tunits) time_axis 
+        IF ($tunits"0|seconds>1|*>0") THEN \
+      DEFINE AXIS/T=`tmin`:`tmax`:3600/T0="`($dsg_t_var).time_origin`"/units=($tunits) time_axis 
+
+   ELSE
+
+      DEFINE AXIS/T=`tmin`:`tmax`:1/T0="`($ferret_plot_var_($color_vnum)).time_origin`"/units=($tunits) time_axis 
+      IF ($tunits"0|seconds>1|*>0") THEN \
+      DEFINE AXIS/T=`tmin`:`tmax`:3600/T0="`($ferret_plot_var_($color_vnum)).time_origin`"/units=($tunits) time_axis 
+
+   ENDIF
+
    DEFINE SYMBOL datekey = 1
 
    DEFINE SYMBOL ferret_key_annotate = 0
@@ -498,6 +518,10 @@ DEFINE SYMBOL yvar = yvar
 
 IF ($feature_type"0|*>1") THEN 
    GO setup_dsg_constraints
+
+! constraints_mask will be applied later, in prop_prop_plot.
+   LET constraints_mask = text_mask * var_mask
+
 ELSE
 
    LET npts = `xvar,return=isize`

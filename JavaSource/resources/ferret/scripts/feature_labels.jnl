@@ -23,14 +23,14 @@ ENDIF
 ! ($ngood_data) and perhaps ($nbad_data) have already been computed.
 
 
-DEFINE SYMBOL prof_traj_shown = ($nfeatures)
+IF `($prof_traj_shown"0|*>1") EQ 0` THEN DEFINE SYMBOL prof_traj_shown = ($nfeatures)
 
 IF `($have_feature_mask"0|*>1") EQ 0` THEN
    DEFINE SYMBOL maskdir =  `feature_mask,RETURN=shape`
    IF ($maskdir"0|POINT>1|*>0") THEN 
       DEFINE SYMBOL prof_traj_shown = 1
    ELSE
-      IF ($prof_traj_shown"1|*>0") THEN DEFINE SYMBOL prof_traj_shown = `feature_mask[($maskdir)=@sum]`
+      IF `($prof_traj_shown) EQ ($nfeatures)` THEN DEFINE SYMBOL prof_traj_shown = `feature_mask[($maskdir)=@sum]`
    ENDIF
 ENDIF
 

@@ -284,7 +284,7 @@ IF `ntimes EQ 1 OR t1 EQ t2` THEN
    
    LET tt5 = t[gt=taxis_all]
    LET plot_var = reshape(var,tt5)
-   PLOT/symbol=19/siz=0.12/color=blue/thick/nolab reshape(var,tt5)
+   PLOT/symbol=19/siz=0.12/color/thick/nolab reshape(var,tt5)
 
    DEFINE SYMBOL data_0_var = plot_var
    DEFINE SYMBOL result_type = tline
@@ -312,10 +312,12 @@ ENDIF
 ! Multi-station plot of one variable
 IF `($data_count) EQ 1` THEN
 
-   DEFINE VIEW/AXES/X=0.08:0.99/YLIM=`vylo+0.05`:0.96 full_view
+   DEFINE VIEW/AXES/X=0.06:0.99/YLIM=`vylo+0.05`:0.96 full_view
    SET VIEW full_view
-   PLOT($qualifiers)($axset) ($data_var)
-paus
+   PLOT($qualifiers)/KEY/set ($data_var)
+     PPL YLAB " "
+     PPL PLOT
+
 ELSE
 
 
@@ -332,6 +334,7 @@ ELSE
       GO dsg_feature_name
       DEFINE SYMBOL first_feature_id = `feature_name[m=1]`
       DEFINE SYMBOL note_($note_num)_lab = NOTE: multiple stations and multiple variables requested: showing first station
+      DEFINE SYMBOL prof_traj_shown = 1
    ENDIF
 
    DEFINE SYMBOL iv = 0

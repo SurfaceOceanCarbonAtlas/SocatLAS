@@ -19,7 +19,10 @@ IF `($data_1_var"0|*>1") EQ 0` THEN
   EXIT/PROGRAM
 ENDIF
 
-LET n_in_mask = constraints_mask[i=@ngd]
+
+let nmasked_var = XSEQUENCE(constraints_mask)
+LET n_in_mask = nmasked_var[i=@ngd]
+
 IF `n_in_mask eq 0` THEN 
   DEFINE SYMBOL put_label = 1 
   EXIT/SCRIPT
@@ -66,6 +69,14 @@ DEFINE SYMBOL fersym_command = PLOT/VS/NOLAB/NOKEY/ribbon/miss=blank/PALETTE=($f
 
 ! Start the plot. Draw an underlay of dashed-line plot for time series and map trajctory plots
 
+
+IF `itsa_tim_prop` THEN
+   LET tmin = p[L=@min]
+   LET tmax = p[L=@max]
+   LET t1 = `tmin[e=@min]`
+   LET t2 = `tmax[e=@max]`
+ENDIF
+
 IF `( ($features_shown) LE ($feature_max_labels) ) AND ( ($DATA_COUNT) eq 3 )` THEN
 
    set data/fmask=subset_mask 1
@@ -75,10 +86,10 @@ IF `( ($features_shown) LE ($feature_max_labels) ) AND ( ($DATA_COUNT) eq 3 )` T
       PLOT/VS/SYM=dot($hlim)($vlim)/RIBBON/NOKEY/NOLAB/PALETTE=white {0,1}, {0,1}, {0,1}  ! underlay to draw the axes... (Need /hlim, /vlim for expanded axes?)
 
    IF `itsa_tim_prop AND ($connect_dots"0|0|1|*>1")` THEN \
-     PLOT/NOLAB/DASH=(0.1,0.04,0.1,0.04)/color=6 yvar
+     PLOT/t=`t1`:`t2`/NOLAB/DASH=(0.1,0.04,0.1,0.04)/color=6 q
 
    IF `itsa_map_plot AND ($connect_dots"0|0|1|*>1")` THEN \
-     PLOT/OVER/NOLAB/VS/RIBBON/DASH=(0.1,0.04,0.1,0.04)/pal=gray xvar, yvar, 0*yvar
+     PLOT/OVER/NOLAB/VS/RIBBON/DASH=(0.1,0.04,0.1,0.04)/pal=gray p,q, 0*q
 
    PPL COLOR,6,100,0,100  !restore default line-6 color
 

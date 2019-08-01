@@ -92,7 +92,7 @@ DEFINE SYMBOL win_asp = /ASPECT=.8
 
 IF `itsa_tim_prop` THEN 
    DEFINE SYMBOL win_asp = /ASPECT=0.75
-   SET DATA/feature=time 1
+   SET DATA/feature=time/FMASK=subset_mask 1
    DEFINE SYMBOL connect_dots = 1
    DEFINE SYMBOL do_rsquare = 0
 ENDIF
@@ -201,7 +201,7 @@ IF `itsa_map_plot` THEN
 
    IF ($dm_labels"0|*>1") THEN DEFINE SYMBOL special_label_y = ppl yfor (($dm_labels))
    
-   PLOT/VS/SET p, q
+   PLOT/VS/SET($qualifiers) p, q
    GO LAS_is_range (($XAXIS_MIN)) (($XAXIS_MAX))
    DEFINE SYMBOL region_x_lo = `ax_lo`
    DEFINE SYMBOL region_x_hi = `ax_hi`
@@ -211,7 +211,13 @@ IF `itsa_map_plot` THEN
    DEFINE SYMBOL region_y_hi = `ax_hi`
    DEFINE SYMBOL region_x_range = `ABS(ax_hi-ax_lo)`
 
-   go basemap x=($region_x_lo):($region_x_hi) y=($region_y_lo):($region_y_hi) " " white
+   DEFINE SYMBOL base_x_region = x=($region_x_lo):($region_x_hi)
+   DEFINE SYMBOL base_y_region = y=($region_y_lo):($region_y_hi)
+
+   IF ($constr_x_min"0") THEN  DEFINE SYMBOL base_x_region = x=($constr_x_min):($constr_x_max)
+   IF ($constr_y_min"0") THEN  DEFINE SYMBOL base_y_region = y=($constr_y_min):($constr_y_max)
+
+   go basemap ($base_x_region) ($base_y_region) " " white
 
    DEFINE SYMBOL land_palette = gray_light
    GO LAS_fland ($land_palette)
@@ -219,6 +225,7 @@ IF `itsa_map_plot` THEN
    DEFINE SYMBOL lon_units = degrees_east
 
    DEFINE SYMBOL qualifiers = ($qualifiers)/OVER
+
 ELSE
 
    DEFINE SYMBOL shape = `p,RETURN=shape`
@@ -237,23 +244,6 @@ ELSE
 
 ENDIF
 
-
-LET compute_good = ($xvar)* ($yvar)
-
-DEFINE SYMBOL shape = `compute_good,RETURN=shape`
-let allgood = compute_good[($shape"x")=@ngd]
-let allbad = compute_good[($shape"x")=@nbd]
-DEFINE SYMBOL ngood_data = `allgood[e=@sum]`
-DEFINE SYMBOL nbad_data = `allbad[e=@sum]`
-
-DEFINE SYMBOL plot_arg = ($xvar), ($yvar)
-IF `($data_count"0") GT 2` THEN 
-   LET compute_good =  ($xvar)* ($yvar)* ($zvar)
-   DEFINE SYMBOL ngood_data = `allgood[e=@sum]`
-   DEFINE SYMBOL nbad_data = `allbad[e=@sum]`
-ENDIF
-
-!  
 DEFINE SYMBOL xvar = xvar
 DEFINE SYMBOL yvar = yvar
 LET p = ($xvar) 

@@ -47,15 +47,17 @@ ELSE
       ENDIF
    ENDIF
 ENDIF
+
 ! Annotate if the selection resulted in no data  ngood_data is defined for insitu datasets
 
+
 IF `($ngood_data"-1|*>1") NE -1` THEN
-   IF `($ngood_data) EQ 0` THEN annotate/norm/x=0.02/y=0.92/halign=-1/siz=0.1 "No Valid Data in the selection"
+   IF `($ngood_data) EQ 0` THEN annotate/norm/x=0.52/y=0.92/halign=0/siz=0.14 "No Valid Data in the selection"
 ELSE
    IF `($ferret_annotations"0|*>1") AND ($plotvar_is_basemap"0|*>1") EQ 0 AND ($no_novalid_lab"0|*>1") NE 1` THEN
       stat the_plot_var
       IF `($stat_ngood"0|0|*>1") EQ 0` THEN \
-       annotate/norm/x=0.02/y=0.92/halign=-1/siz=0.1 "No Valid Data in the selection"
+       annotate/norm/x=0.52/y=0.92/halign=0/siz=0.14 "No Valid Data in the selection"
   ENDIF
 ENDIF
 

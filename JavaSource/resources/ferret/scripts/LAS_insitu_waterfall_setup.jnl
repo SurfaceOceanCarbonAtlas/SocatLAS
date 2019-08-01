@@ -110,7 +110,7 @@ ELSE
    KEYMARK 0
 ENDIF
 
-IF ($ribbon"1|0|1|*>1") THEN
+IF `($ribbon"1|0|1|*>1") AND ($ngood_data"0|0|*>1") GT 0`  THEN
    DEFINE SYMBOL  qualifiers = ($qualifiers)/KEY
 ELSE
    DEFINE SYMBOL  qualifiers = ($qualifiers)/NOKEY

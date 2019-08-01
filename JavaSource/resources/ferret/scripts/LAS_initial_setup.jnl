@@ -12,11 +12,6 @@
 
 SET MODE VERIFY:ALWAYS
 
-! Put into the debug output what PyFerret/Ferret is running, and when.
-
-SHOW SYMBOL ferret_version, ferret_platform, program_name, current_date
-SHOW MEMORY
-
 DEFINE SYMBOL initialize_script_arg = ($1"2")
 
 ! Make sure to do the SET REDIRECT just once.
@@ -26,7 +21,12 @@ DEFINE SYMBOL initial_setup_done = 1
 
 ! Put the output into the log file so that FshowGO will list
 ! the tree of GO script calls.
-SET REDIRECT/APPEND/TEE/file="($result_debug_filename)" STDOUT,STDERR
+SET REDIRECT/CLOBBER/TEE/file="($result_debug_filename)" STDOUT,STDERR
+
+! Put into the debug output what PyFerret/Ferret is running, and when.
+
+SHOW SYMBOL ferret_version, ferret_platform, program_name, current_date
+SHOW MEMORY
 
 IF `($initialize_script_arg) EQ 0` THEN EXIT/SCRIPT
 
