@@ -267,8 +267,26 @@ IF `color_by_feature` THEN
    GO LAS_pp_colorby_feature
 
 !   put_label has been set if all data is missing or constraints return no data.
+ELIF ($ferret_thumb) THEN 
+   IF `itsa_tim_prop ` THEN
+      PLOT/color=red/sym=17/title=" "/set y_plot_var
+	 ppl ylab "($ferret_title_1)"
+	 go unlabel ($labnum_x)
+	 go unlabel ($labnum_e)
+	 go unlabel ($labnum_dset)
+	 go unlabel ($labnum_datitl)
+      PPL PLOT
+   ELSE
+      PLOT/VS/color=red/sym=17/title=" "/set x_plot_var, y_plot_var
+	 ppl xlab "($ferret_title_0)"
+	 ppl ylab "($ferret_title_1)"
+	 go unlabel ($labnum_x)
+	 go unlabel ($labnum_e)
+	 go unlabel ($labnum_dset)
+	 go unlabel ($labnum_datitl)
+      PPL PLOT
+   ENDIF
 ELSE
-
    IF ($color_by"0|*>1") THEN 
 
 ! Get color-plot qualifiers
@@ -343,7 +361,7 @@ ELSE
    PPL ($plot_end_command)
    
 ENDIF  ! color-by-feature or not...
-
+pause
 ! This allows for auto-levels on prop-prop plots.
 IF ($color_by"0|*>1") THEN
    LET data_range = MINMAX(constraints_mask*zvar)
