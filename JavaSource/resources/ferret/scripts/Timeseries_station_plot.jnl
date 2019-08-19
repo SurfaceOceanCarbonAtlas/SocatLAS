@@ -355,12 +355,14 @@ DEFINE SYMBOL nstations = `nstations`
    PPL PLOT
 ENDIF
 
-! Add labels at the top for the location of overlaid lines
-! and for URLs if they exist  
+! Add annotations for the x-y-z selection, year if needed
 
-GO labels_above_plot
+IF ($labnum_x%0|*>1%) THEN DEFINE SYMBOL longitude_lab = ($lab($labnum_x))
+IF ($labnum_y%0|*>1%) THEN DEFINE SYMBOL latitude_lab = ($lab($labnum_y))
+IF ($labnum_z%0|*>1%) THEN DEFINE SYMBOL depth_lab = ($lab($labnum_z))
+IF ($labnum_year%0|*>1%) THEN DEFINE SYMBOL year_lab = ($lab($labnum_year))
 
-! Add timeseries information on the top
+! Add annotations for timeseries-feature information
 
 GO feature_labels  
 
