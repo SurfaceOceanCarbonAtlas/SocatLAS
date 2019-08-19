@@ -137,6 +137,10 @@ IF `( ($features_shown) LE ($feature_max_labels) ) AND ( ($DATA_COUNT) eq 3 )` T
    LET yplt_var = XSEQUENCE(($yvar))
    LET zplt_var = XSEQUENCE(ids_on_obs)
 
+   LET xplt_var = ($xvar)
+   LET yplt_var = ($yvar)
+   LET zplt_var = ($zvar)
+
    DEFINE SYMBOL plot_arg = xplt_var, yplt_var, zplt_var
 
    LET ishape = 1
@@ -158,7 +162,7 @@ IF `( ($features_shown) LE ($feature_max_labels) ) AND ( ($DATA_COUNT) eq 3 )` T
     SET DATA/fmask=mask_for_shape 1;\
      ;\
      DEFINE SYMBOL color_command = GO polymark ($poly_command)/LEVELS=(`c1`,`cn+1`,1) ($plot_arg), ($shape($ishape)), ($poly_scale) ;\
-     IF ($py_syms"0") THEN DEFINE SYMBOL color_command = ($pysym_command)/sym=($pyshape($ishape))/LEVELS=(`c1`,`cn+1`,1) ($plot_arg);\
+     IF ($py_syms"0") THEN DEFINE SYMBOL color_command = ($pysym_command)/sym=($pyshape($ishape))/E=`c1`:`cn`/LEVELS=(`c1`,`cn+1`,1) ($plot_arg);\
      ;\
      ($color_command); \
      ;\
@@ -178,8 +182,6 @@ ELSE ! all features, do as a PLOT not a POLY command, much faster
    DEFINE SYMBOL ngood_data = `p[i=@ngd]`
 ENDIF
 
-
-   
 ! If location(s) of a crossover has been sent, mark them.
 ! This might be one point, or two, comma-separated.
 

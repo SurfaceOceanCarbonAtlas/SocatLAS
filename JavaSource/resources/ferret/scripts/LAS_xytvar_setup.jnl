@@ -22,6 +22,7 @@ DEFINE SYMBOL yvar = yvar
 LET p = ($xvar) 
 LET q = ($yvar)
 
+
 ! Are the variables longitude and latitude (when the dataset is not of trajectory type)
 ! If so then connect the dots and do not draw the regression line
 
@@ -31,11 +32,13 @@ DEFINE SYMBOL plotunits = none`($ferret_plot_var),return=units`
 LET itsa_lon_prop = ($ferret_prop_var"0|($dsg_x_var)>1|*>0")
 LET itsa_lat_prop = ($ferret_prop_var"0|($dsg_y_var)>1|*>0")
 LET itsa_tim_prop = ($ferret_prop_var"0|($dsg_t_var)>1|*>0")
+LET itsa_dep_prop = ($ferret_prop_var"0|($dsg_z_var%0%)>1|*>0")
 
 
 LET itsa_lon_plot = ($ferret_plot_var"0|($dsg_x_var)>1|*>0")
 LET itsa_lat_plot = ($ferret_plot_var"0|($dsg_y_var)>1|*>0")
 LET itsa_tim_plot = ($ferret_plot_var"0|($dsg_t_var)>1|*>0")
+LET itsa_dep_plot = ($ferret_plot_var"0|($dsg_z_var%0%)>1|*>0")
 
 LET itsa_map_plot = `itsa_lon_prop AND itsa_lat_plot` 
 
@@ -122,6 +125,8 @@ IF `IS_ELEMENT_OF_STR_N(attnames, "standard_name")` THEN
    IF `STRINDEX("($posdirec)", "sea_floor_depth") GT 0` THEN DEFINE SYMBOL reverse_vert = 1
 ENDIF
 
+
+
 ! If this symbol is set during this script, then
 ! the script will make a blank plot and exit.
 
@@ -159,19 +164,29 @@ IF ($isbad"0|bad>1|*>0")  THEN
 ENDIF
 
 IF ($bad_title"0|*>1") THEN
-   PLOT/VS/NOLAB/SYM=dot {0,1}, {0,1}
+   PLOT/VS/SYM=dot/SET {0,1}, {0,1}
+      ppl xlab ($ferret_title_1)
+      ppl ylab ($ferret_title_0)
+      ppl tics 0,0,0,0
+      ppl axatic 0,0
+      ppl axlint 0,0
+      sh sym lab*
+      go unlabel ($labnum_x)
+   PPL PLOT
+
    IF ($ferret_thumb"0|0|*>1") THEN  
       LET ylab_bad = `($ppl$ylen)-3*($miss_lab_siz)`
-      LABEL/NOUSER 0.2, `ylab_bad-0.4`, -1, 0, ($miss_lab_siz), @AS($bad_title)<NL>($bad_verb) All-Missing
+      LABEL/NOUSER 0.2, `ylab_bad-3*($miss_lab_siz)`, -1, 0, ($miss_lab_siz), @AS($bad_title)<NL>($bad_verb) All-Missing
       DEFINE SYMBOL no_novalid_lab = 1
       CANCEL SYMBOL bad_title
    ELSE
       LET ylab_bad = `($ppl$ylen)-2*($miss_lab_siz)`
-      LABEL/NOUSER 0.2, `ylab_bad-0.2`, -1, 0, ($miss_lab_siz), @AS($bad_title) ($bad_verb) All-Missing
+      LABEL/NOUSER 0.2, `ylab_bad-3*($miss_lab_siz)`, -1, 0, ($miss_lab_siz), @AS($bad_title) ($bad_verb) All-Missing
       DEFINE SYMBOL no_novalid_lab = 1
       CANCEL SYMBOL bad_title
    ENDIF
    DEFINE SYMBOL ngood_data = -1   ! Dont do another label in LAS_results.
+   
    EXIT/SCRIPT
 ENDIF
 
@@ -194,19 +209,31 @@ ENDIF
 IF `itsa_map_plot` THEN
 
    DEFINE SYMBOL do_rsquare = 0
-   DEFINE SYMBOL connect_dots = 1
+   IF ($feature_type"0|trajectory>1|*>0") THEN DEFINE SYMBOL connect_dots = 1
    
-   show symbol ferret_title*
    CANCEL SYMBOL ferret_title_1  ! dont need a vertical axis label
 
    IF ($dm_labels"0|*>1") THEN DEFINE SYMBOL special_label_y = ppl yfor (($dm_labels))
    
-   PLOT/VS/SET($qualifiers) p, q
-   GO LAS_is_range (($XAXIS_MIN)) (($XAXIS_MAX))
+!   PLOT/VS/SET($qualifiers) p, q
+   
+!   GO LAS_is_range (($XAXIS_MIN)) (($XAXIS_MAX))
+
+   STAT/brief p
+   LET amin = ($stat_min"0|bad>0|*")
+   LET amax = ($stat_max"0|bad>0|*")
+   GO LAS_is_range `amin` `amax`
+
    DEFINE SYMBOL region_x_lo = `ax_lo`
    DEFINE SYMBOL region_x_hi = `ax_hi`
    DEFINE SYMBOL region_x_range = `ABS(ax_hi-ax_lo)`
-   GO LAS_is_range (($YAXIS_MIN)) (($YAXIS_MAX))
+
+   STAT/brief q
+   LET amin = ($stat_min"0|bad>0|*")
+   LET amax = ($stat_max"0|bad>0|*")
+
+   GO LAS_is_range `amin` `amax`
+
    DEFINE SYMBOL region_y_lo = `ax_lo`
    DEFINE SYMBOL region_y_hi = `ax_hi`
    DEFINE SYMBOL region_x_range = `ABS(ax_hi-ax_lo)`
@@ -228,17 +255,18 @@ IF `itsa_map_plot` THEN
 
 ELSE
 
-   DEFINE SYMBOL shape = `p,RETURN=shape`
-   LET amin = p[($shape"X")=@min]
-   LET amax = p[($shape"X")=@max]
+   STAT/brief p
+   LET amin = ($stat_min"0|bad>0|*")
+   LET amax = ($stat_max"0|bad>0|*")
+   GO LAS_is_range `amin` `amax`
 
    GO LAS_is_range `amin[e=@min]` `amax[e=@max]`
    DEFINE SYMBOL hlim = /HLIM=`ax_lo`:`ax_hi`
    
-   LET amin = q[($shape"X")=@min]
-   LET amax = q[($shape"X")=@max]
-
-   GO LAS_is_range `amin[e=@min]` `amax[e=@max]`
+   STAT/brief q
+   LET amin = ($stat_min"0|bad>0|*")
+   LET amax = ($stat_max"0|bad>0|*")
+   GO LAS_is_range `amin` `amax`
 
    DEFINE SYMBOL vlim = /VLIM=`ax_lo`:`ax_hi`
 

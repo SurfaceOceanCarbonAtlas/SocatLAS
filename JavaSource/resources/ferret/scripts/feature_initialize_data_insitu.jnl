@@ -25,7 +25,6 @@ IF ($fview"0|T>1|*>0") THEN DEFINE SYMBOL use_as = /feature=timeseries
 
 IF ($data_($num)_var"0|1|*>1") THEN DEFINE SYMBOL data_var ($data_($num)_var)
 IF ($data_($num)_title"0|1|*>1") THEN DEFINE SYMBOL data_title ($data_($num)_title)
-DEFINE SYMBOL dset($num) = `($data_var),RETURN=dsetnum`
 
 ! Remove any quotes surrounding data_title string
 GO LAS_unquote_string data_title
@@ -87,6 +86,8 @@ LET global_attnames = ..attnames
 IF `IS_ELEMENT_OF_STR(global_attnames, "title") GT 0` THEN
   DEFINE SYMBOL dataset_title_att = `..title`
 ENDIF
+
+DEFINE SYMBOL dset($num) = `($data_var),RETURN=dsetnum`
 
 
 GO feature_initialize_plot_settings

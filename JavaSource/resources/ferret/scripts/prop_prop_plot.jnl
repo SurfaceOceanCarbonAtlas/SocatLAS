@@ -181,34 +181,43 @@ IF `its_watch_circle EQ 0` THEN
    ENDIF
 ENDIF
 
+IF `($ngood_data"0|*") EQ -1` THEN 
+   GO LAS_results box
+   EXIT/SCRIPT
+ENDIF
+
 DEFINE SYMBOL xvar = constraints_mask*xvar
 DEFINE SYMBOL yvar = constraints_mask*yvar
-IF `($data_count"0") GT 2` THEN  DEFINE SYMBOL zvar = constraints_mask*zvar
+LET x_plot_var = ($xvar)
+LET y_plot_var = ($yvar)
+IF `($data_count"0") GT 2` THEN 
+   DEFINE SYMBOL zvar = constraints_mask*zvar
+   LET z_plot_var = ($zvar)
+ENDIF
 
 
 ! compute # points plotted after mask applied
 
 LET compute_good =  ($xvar)* ($yvar)
-DEFINE SYMBOL shape = `compute_good,RETURN=shape`
-LET allgood = compute_good[($shape"x")=@ngd]
-LET allbad = compute_good[($shape"x")=@nbd]
 
-say `allgood,return=shape`
 
 IF `($data_count"0") GT 2` THEN 
-   LET compute_good =  ($xvar)* ($yvar)* ($zvar)
-   DEFINE SYMBOL ngood_data = `allgood[e=@sum]`
-   DEFINE SYMBOL nbad_data = `allbad[e=@sum]`
-ELSE
-   DEFINE SYMBOL ngood_data = `allgood[e=@sum]`
-   DEFINE SYMBOL nbad_data = `allbad[e=@sum]`
+   DEFINE SYMBOL ztyp = `($zvar),return=dtype`
+   IF `($ztyp"0|FLOAT>1|*>0") AND ($zshape"0|POINT>0|($shape)>1|*>0")` THEN \
+      LET compute_good =  ($xvar)* ($yvar)* ($zvar)
 ENDIF
+STAT compute_good
+DEFINE SYMBOL shape = `compute_good,RETURN=shape`
+DEFINE SYMBOL ngood_data = ($stat_ngood)
+DEFINE SYMBOL nbad_data  = ($stat_nbad)
 
 IF ($put_label"0|*>1") THEN DEFINE SYMBOL all_missing = 1
 IF `($ngood_data) EQ 0` THEN DEFINE SYMBOL all_missing = 1
 
 DEFINE SYMBOL plot_arg = ($xvar), ($yvar)
 DEFINE SYMBOL plot_arg = x_plot_var, y_plot_var
+sh sym xvar, yvar, zvar
+sh var xvar,yvar
 
 IF `($data_count"0") GT 2` THEN DEFINE SYMBOL plot_arg = x_plot_var, y_plot_var, z_plot_var
 
@@ -361,7 +370,7 @@ ELSE
    PPL ($plot_end_command)
    
 ENDIF  ! color-by-feature or not...
-pause
+
 ! This allows for auto-levels on prop-prop plots.
 IF ($color_by"0|*>1") THEN
    LET data_range = MINMAX(constraints_mask*zvar)
@@ -386,15 +395,14 @@ IF `itsa_map_plot or itsa_tim_prop` THEN DEFINE SYMBOL do_rsquare = 0
 
 ! ~ 85 points gives a confidence of 0.8
 
-IF `($ngood_data"0") LT 85` THEN 
+IF `($do_rsquare"1|0|*>1) AND ($ngood_data"0") LT 85` THEN 
    DEFINE SYMBOL do_rsquare = 0
    IF ($program_name"0|PyFerret>1|*>0") THEN SET TEXT/COLOR=blue moveable
    DEFINE SYMBOL rsqlab = Too few points to compute
    LET wid = `LABWID("($rsqlab)", 0.1)`
    LABEL/NOUSER -0.5,-0.42,-1, 0, 0.1, Too few points to compute
    LABEL/NOUSER -0.5,-0.6,-1, 0, 0.1,  regression line
-ENDIF   
-
+ENDIF
 
 DEFINE SYMBOL  line_color = blue  ! regression line
 IF ($polycolor%0|blue>1|*>0%) THEN DEFINE SYMBOL  line_color = red
