@@ -30,14 +30,6 @@ Used to customize the DateWidget menus.
 <!-- My GWT code and Google Maps JS -->
 <script type="text/javascript" language="javascript" src="JavaScript/components/gov.noaa.pmel.tmap.las.Inventory/gov.noaa.pmel.tmap.las.Inventory.nocache.js"></script>
 
-<!-- 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuDmYxBHYWYirxLdkdqazxC1_9271dDmg&sensor=false"></script>
-
-Below is a newly generated key after turning this on for roland.schweitzer@gmail.com.
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKPzUaZ0rsZXmzi9nn8_5acCDhxBRDWew&sensor=false"></script>
-
--->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"/></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
