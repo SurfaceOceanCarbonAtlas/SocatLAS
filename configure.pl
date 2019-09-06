@@ -115,7 +115,7 @@ while (! $java){
             or die "Can't run $java";
         my $line;
         while(<STATUS>){
-            if (/^java/){
+            if (/ version /){
                 $line = $_;
                 last;
             }
