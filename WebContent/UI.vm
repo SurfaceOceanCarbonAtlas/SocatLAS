@@ -27,16 +27,18 @@
          <meta content="http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv" name="WMS-SERVER" id="wms-server" />
          <meta content="GEBCO_LATEST" name="WMS-LAYER" id="wms-layer" />
 
+   -->
+
          <meta content="http://www.cmar.csiro.au/geoserver/ows" name="WMS-SERVER" id="wms-server" />
          <meta content="ea-be:World_Bright-Earth-e-Atlas-basemap" name="WMS-LAYER" id="wms-layer" />
 
+   <!--
+
          <meta content="http://data.fao.org/maps/ows" name="WMS-SERVER" id="wms-server" />
          <meta content="COMMON:dark_bluemarble" name="WMS-LAYER" id="wms-layer" />
+
    -->
 
-    <meta content="http://vmap0.tiles.osgeo.org/wms/vmap0" name="WMS-SERVER" id="wms-server" />
-    <meta content="basic" name="WMS-LAYER" id="wms-layer" />
-    
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <!--                                           -->
     <!-- Any title is fine                         -->
