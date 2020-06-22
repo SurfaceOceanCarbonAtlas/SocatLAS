@@ -475,8 +475,7 @@ my @Scripts = qw(build.xml
                  JavaSource/resources/kml/KMLBackendConfig.xml
                  JavaSource/resources/database/DatabaseBackendConfig.xml
                  WebContent/WEB-INF/web.xml
-                 JavaSource/log4j.xml
-                 JavaSource/log4j2.xml
+                 JavaSource/log4j2.properties
                  WebContent/TestLinks.html
                  );
 my $mode = 0644;
@@ -678,26 +677,105 @@ if ( getYesOrNo("Do you want to install the example data set configuration") ) {
     $sample_out[1] = $serverConf."/productserver.xml";
     $sample_in[2] = "conf/example/sample_ui.xml";
     $sample_out[2]= $serverConf."/ui.xml";
-    $sample_in[3] = "conf/example/coads.xml";
-    $sample_out[3] = $serverConf."/coads.xml";
-    $sample_in[4] = "conf/example/DODS_IRI_NOAA_NCEP_EMC_CMB_Pac_ocean.xml";
-    $sample_out[4] = $serverConf."/DODS_IRI_NOAA_NCEP_EMC_CMB_Pac_ocean.xml";
-    $sample_in[5] = "conf/example/levitus.xml";
-    $sample_out[5] = $serverConf."/levitus.xml";
-    $sample_in[6] = "conf/example/ocean_atlas_subset.xml";
-    $sample_out[6] = $serverConf."/ocean_atlas_subset.xml";
-    $sample_in[7] = "conf/example/options.xml";
-    $sample_out[7] = $serverConf."/options.xml";
-    $sample_in[8] = "conf/example/trajectory_ui.xml";
-    $sample_out[8] = $serverConf."/trajectory_ui.xml";
-    $sample_in[9] = "conf/example/profile_ui.xml";
-    $sample_out[9] = $serverConf."/profile_ui.xml";
-    $sample_in[10] = "conf/example/timeseries_ui.xml";
-    $sample_out[10] = $serverConf."/timeseries_ui.xml";
-    $sample_in[11] = "conf/example/timeseries_only_ui.xml";
-    $sample_out[11] = $serverConf."/timeseries_only_ui.xml";
-    $sample_in[12] = "conf/example/point_ui.xml";
-    $sample_out[12] = $serverConf."/point_ui.xml";
+    $sample_in[3] = "conf/example/options.xml";
+    $sample_out[3] = $serverConf."/options.xml";
+    $sample_in[4] = "conf/example/trajectory_ui.xml";
+    $sample_out[4] = $serverConf."/trajectory_ui.xml";
+    $sample_in[5] = "conf/example/profile_ui.xml";
+    $sample_out[5] = $serverConf."/profile_ui.xml";
+    $sample_in[6] = "conf/example/timeseries_ui.xml";
+    $sample_out[6] = $serverConf."/timeseries_ui.xml";
+    $sample_in[7] = "conf/example/timeseries_only_ui.xml";
+    $sample_out[7] = $serverConf."/timeseries_only_ui.xml";
+    $sample_in[8] = "conf/example/point_ui.xml";
+    $sample_out[8] = $serverConf."/point_ui.xml";
+
+    $sample_in[9] = "conf/example/SOCAT_dist2land.xml";
+    $sample_out[9] = $serverConf."/SOCAT_dist2land.xml";
+    $sample_in[10] = "conf/example/ContinentalMarginDefSOCAT_cat.xml";
+    $sample_out[10] = $serverConf."/ContinentalMarginDefSOCAT_cat.xml";
+
+    $sample_in[11] = "conf/example/CruiseDataSOCAT_cat.xml";
+    $sample_out[11] = $serverConf."/CruiseDataSOCAT_cat.xml";
+
+    $sample_in[12] = "conf/example/GriddedSOCAT_cat.xml";
+    $sample_out[12] = $serverConf."/GriddedSOCAT_cat.xml";
+
+    $sample_in[13] = "conf/example/SOCATv1r5_gridded_decadal.xml";
+    $sample_out[13] = $serverConf."/SOCATv1r5_gridded_decadal.xml";
+    $sample_in[14] = "conf/example/SOCATv1r5_gridded_yearly.xml";
+    $sample_out[14] = $serverConf."/SOCATv1r5_gridded_yearly.xml";
+    $sample_in[15] = "conf/example/SOCATv1r5_gridded_monthly.xml";
+    $sample_out[15] = $serverConf."/SOCATv1r5_gridded_monthly.xml";
+    $sample_in[16] = "conf/example/SOCATv1r5_quarter_coastal.xml";
+    $sample_out[16] = $serverConf."/SOCATv1r5_quarter_coastal.xml";
+
+    $sample_in[17] = "conf/example/SOCATv2_gridded_decadal.xml";
+    $sample_out[17] = $serverConf."/SOCATv2_gridded_decadal.xml";
+    $sample_in[18] = "conf/example/SOCATv2_gridded_yearly.xml";
+    $sample_out[18] = $serverConf."/SOCATv2_gridded_yearly.xml";
+    $sample_in[19] = "conf/example/SOCATv2_gridded_monthly.xml";
+    $sample_out[19] = $serverConf."/SOCATv2_gridded_monthly.xml";
+    $sample_in[20] = "conf/example/SOCATv2_quarter_coastal.xml";
+    $sample_out[20] = $serverConf."/SOCATv2_quarter_coastal.xml";
+
+    $sample_in[21] = "conf/example/SOCATv3_ERDDAP.xml";
+    $sample_out[21] = $serverConf."/SOCATv3_ERDDAP.xml";
+    $sample_in[22] = "conf/example/SOCATv3_gridded_decadal.xml";
+    $sample_out[22] = $serverConf."/SOCATv3_gridded_decadal.xml";
+    $sample_in[23] = "conf/example/SOCATv3_gridded_yearly.xml";
+    $sample_out[23] = $serverConf."/SOCATv3_gridded_yearly.xml";
+    $sample_in[24] = "conf/example/SOCATv3_gridded_monthly.xml";
+    $sample_out[24] = $serverConf."/SOCATv3_gridded_monthly.xml";
+    $sample_in[25] = "conf/example/SOCATv3_quarter_coastal.xml";
+    $sample_out[25] = $serverConf."/SOCATv3_quarter_coastal.xml";
+
+    $sample_in[26] = "conf/example/SOCATv4_ERDDAP.xml";
+    $sample_out[26] = $serverConf."/SOCATv4_ERDDAP.xml";
+    $sample_in[27] = "conf/example/SOCATv4_gridded_decadal.xml";
+    $sample_out[27] = $serverConf."/SOCATv4_gridded_decadal.xml";
+    $sample_in[28] = "conf/example/SOCATv4_gridded_yearly.xml";
+    $sample_out[28] = $serverConf."/SOCATv4_gridded_yearly.xml";
+    $sample_in[29] = "conf/example/SOCATv4_gridded_monthly.xml";
+    $sample_out[29] = $serverConf."/SOCATv4_gridded_monthly.xml";
+    $sample_in[30] = "conf/example/SOCATv4_quarter_coastal.xml";
+    $sample_out[30] = $serverConf."/SOCATv4_quarter_coastal.xml";
+
+    $sample_in[31] = "conf/example/SOCATv5_ERDDAP.xml";
+    $sample_out[31] = $serverConf."/SOCATv5_ERDDAP.xml";
+    $sample_in[32] = "conf/example/SOCATv5_gridded_decadal.xml";
+    $sample_out[32] = $serverConf."/SOCATv5_gridded_decadal.xml";
+    $sample_in[33] = "conf/example/SOCATv5_gridded_yearly.xml";
+    $sample_out[33] = $serverConf."/SOCATv5_gridded_yearly.xml";
+    $sample_in[34] = "conf/example/SOCATv5_gridded_monthly.xml";
+    $sample_out[34] = $serverConf."/SOCATv5_gridded_monthly.xml";
+    $sample_in[35] = "conf/example/SOCATv5_quarter_coastal.xml";
+    $sample_out[35] = $serverConf."/SOCATv5_quarter_coastal.xml";
+
+    $sample_in[36] = "conf/example/SOCATv6_ERDDAP.xml";
+    $sample_out[36] = $serverConf."/SOCATv6_ERDDAP.xml";
+    $sample_in[37] = "conf/example/SOCATv6_gridded_decadal.xml";
+    $sample_out[37] = $serverConf."/SOCATv6_gridded_decadal.xml";
+    $sample_in[38] = "conf/example/SOCATv6_gridded_yearly.xml";
+    $sample_out[38] = $serverConf."/SOCATv6_gridded_yearly.xml";
+    $sample_in[39] = "conf/example/SOCATv6_gridded_monthly.xml";
+    $sample_out[39] = $serverConf."/SOCATv6_gridded_monthly.xml";
+    $sample_in[40] = "conf/example/SOCATv6_quarter_coastal.xml";
+    $sample_out[40] = $serverConf."/SOCATv6_quarter_coastal.xml";
+
+    $sample_in[41] = "conf/example/SOCATv2019_ERDDAP.xml";
+    $sample_out[41] = $serverConf."/SOCATv2019_ERDDAP.xml";
+    $sample_in[42] = "conf/example/SOCATv2019_gridded_decadal.xml";
+    $sample_out[42] = $serverConf."/SOCATv2019_gridded_decadal.xml";
+    $sample_in[43] = "conf/example/SOCATv2019_gridded_yearly.xml";
+    $sample_out[43] = $serverConf."/SOCATv2019_gridded_yearly.xml";
+    $sample_in[44] = "conf/example/SOCATv2019_gridded_monthly.xml";
+    $sample_out[44] = $serverConf."/SOCATv2019_gridded_monthly.xml";
+    $sample_in[45] = "conf/example/SOCATv2019_quarter_coastal.xml";
+    $sample_out[45] = $serverConf."/SOCATv2019_quarter_coastal.xml";
+
+    $sample_in[46] = "conf/example/SOCATvLatest_ERDDAP.xml";
+    $sample_out[46] = $serverConf."/SOCATvLatest_ERDDAP.xml";
 
     for ( my $i = 0; $i <= $#sample_in; $i++ ) {
        if ( -f $sample_out[$i] ) {
@@ -717,11 +795,6 @@ if ( getYesOrNo("Do you want to install the example data set configuration") ) {
        }
     }
  
-    mkdir "WebContent/docs";
-   
-    if (!copy("conf/example/levitus_monthly.html","WebContent/docs/levitus_monthly.html")){
-       print "Couldn't copy levitus_monthly.html.\n";
-    }
  }
 
     print "Building addXML and the servlet war file.\n";

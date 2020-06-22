@@ -846,7 +846,7 @@ public class RPCServiceImpl extends RemoteServiceServlet implements RPCService {
      * Get the values of an ERDDAP "subset" variable to use as a way to select which DSG items are selected from the ERRDDAP server.
      * A query looks something like this:
      * 
-     * http://dunkel.pmel.noaa.gov:8660/erddap/tabledap/OSMCV4_DUO_SURFACE_TRAJECTORY.json?platform_type&distinct()
+     * http://XXXXX/erddap/tabledap/OSMCV4_DUO_SURFACE_TRAJECTORY.json?platform_type&distinct()
      * 
      */
     @Override

@@ -83,7 +83,21 @@
     <filter-name>RequestInputFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  <!-- End of LAS input filters -->
+
+  <!-- Add attribute user_name to authenticated sessions for SOCAT QC -->
+    <!-- Comment out the following to remove login (bock)
+    -->
+    <filter>
+      <filter-name>AddUsernameFilter</filter-name>
+      <filter-class>gov.noaa.pmel.tmap.las.filter.AddUsernameFilter</filter-class>
+    </filter>
+    <filter-mapping>
+      <filter-name>AddUsernameFilter</filter-name>
+      <url-pattern>*.do</url-pattern>
+      <url-pattern>*.vm</url-pattern>
+    </filter-mapping>
+
+<!-- End of LAS input filters -->
   <!-- Unless there is an illegal parameter, LAS will pass the request along the filter chain to this filter which will handle every other request.         
        This struts filter does not forward to this is the end of the filter chain.        Static content will not be served unless it's location is specified in the struts.xml
        
@@ -171,18 +185,55 @@
       <transport-guarantee>CONFIDENTIAL</transport-guarantee>
     </user-data-constraint>
   </security-constraint>
+
+  <!-- for SOCAT QC -->
+  <!-- Comment out the following to remove login (bock)
+  -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>SOCATFlags database</web-resource-name>
+      <url-pattern>*.do</url-pattern>
+      <url-pattern>*.vm</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>socatreviewer</role-name>
+    </auth-constraint>
+  </security-constraint>
+
   <!-- can only have one login-config for extire context. -->
+  <!--
   <login-config>
     <auth-method>BASIC</auth-method>
     <realm-name>THREDDS Data Server</realm-name>
   </login-config>
+  -->
+
+  <!-- for SOCAT QC -->
+  <!-- Comment out the following to remove login (bock)
+  -->
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <realm-name>socatreviewer</realm-name>
+      <form-login-config>
+        <form-login-page>/socatlogin.html</form-login-page>
+        <form-error-page>/socatloginerror.html</form-error-page>
+      </form-login-config>
+  </login-config>
+
   <!-- Define security roles. -->
   <security-role>
     <description>The configuration role allows users to configure the THREDDS server.</description>
     <role-name>tdsConfig</role-name>
   </security-role>
+
   <security-role>
     <description>User who can access restricted datasets.</description>
     <role-name>restrictedDatasetUser</role-name>
   </security-role>
+
+  <security-role>
+    <description>SOCAT reviewer who can add flag events to SOCATFlags.</description>
+    <role-name>socatreviewer</role-name>
+  </security-role>
+
 </web-app>

@@ -12,7 +12,7 @@
                  iosp_base_dir="resources/iosp"
                  opendap_base_url = "http://@SERVLET_ROOT_URL@/thredds/dodsC/output">
         <arg>-cimport sys; import pyferret; (errval, errmsg) = pyferret.init(sys.argv[1:], True)</arg>
-        <arg>-nodisplay</arg>
+        <arg>-png</arg>
         <arg>-server</arg>
         <arg>-script</arg>
 

@@ -47,8 +47,8 @@ public class DatasetButton extends Composite {
     int offset = 0;
 
     public DatasetButton() {
-        choose = new PushButton("Data Set");
-        choose.setTitle("Select a Data Set.");
+        choose = new PushButton("Data Collections");
+        choose.setTitle("Select a data collection to examine.");
         choose.addStyleDependentName("SMALLER");
         choose.addClickHandler(openClick);
         datasetPanel = new PopupPanel(false);

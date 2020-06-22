@@ -588,9 +588,6 @@ public class ThumbnailPropProp implements EntryPoint {
             
     };
     private void fetchMetadata() {
-        /* 
-         * http://dunkel.pmel.noaa.gov:8660/erddap/tabledap/socatV3_c6c1_d431_8194.htmlTable?expocode,vessel_name,investigators,qc_flag&expocode=%2201AA20110928%22&distinct()
-            */
         String metadata = thumbnail_properties.get("metadata");        
         String id0 = xAllDatasetVariables.keySet().iterator().next();
         String trajectory_id = idConstraint.getRhs();

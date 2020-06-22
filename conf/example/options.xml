@@ -139,16 +139,11 @@ the current variable; you must have at least one &lt;b&gt;$&lt;/b&gt; in your ex
     <option>
       <help>Sets the size of a LAS plot</help>
       <title>Plot size</title>
-      <!-- values should be xsize*ysize/960000. -->
       <menu type="options" name="size">
-        <item values="0.5">default</item>
-        <item values="0.06667">small</item>
-        <item values="0.25">medium</item>
-        <item values="0.8333">large</item>
-        <!-- item values="0.5">800x600</item> -->
-        <!-- item values="0.06667">300x200</item> -->
-        <!-- item values="0.25">600x400</item> -->
-        <!-- item values="0.8333">1000x800</item> -->
+        <item values="1.5625">extralarge</item>
+        <item values="1.0000">large</item>
+        <item values="0.2500">medium</item>
+        <item values="0.0625">small</item>
       </menu>
     </option>
   </optiondef>
@@ -159,8 +154,9 @@ the current variable; you must have at least one &lt;b&gt;$&lt;/b&gt; in your ex
       <title>Image format</title>
       <menu type="options" name="image_format">
         <item values="default">Default</item>
-        <item values="gif">GIF</item>
-        <!-- <item values="ps">PostScript</item> -->
+        <!-- <item values="gif">GIF</item> -->
+        <!-- <item values="png">PNG</item> -->
+        <!-- <item values="pdf">PDF</item> -->
       </menu>
     </option>
   </optiondef>
@@ -315,7 +311,7 @@ at the edges of the plot (WMS-style plots). By default margins are shown.
       <menu type="options" name="palette">
         <item values="default">Default</item>
 
-        <item values="viridis">CM viridis (blue to green) -- default</item>
+        <item values="viridis">CM viridis (blue to green)</item>
         <item values="plasma">CM plasma (lighter purple to yellow)</item>
         <item values="inferno">CM inferno (purple to orange to yellow)</item>
         <item values="magma">CM magma (purple to yellow)</item>
@@ -555,7 +551,7 @@ http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/C
       <title>Palette (2nd variable)</title>
       <menu type="options" name="palette2">
 
-        <item values="viridis">CM viridis (blue to green) -- default</item>
+        <item values="viridis">CM viridis (blue to green)</item>
         <item values="plasma">CM plasma (lighter purple to yellow)</item>
         <item values="inferno">CM inferno (purple to orange to yellow)</item>
         <item values="magma">CM magma (purple to yellow)</item>
@@ -778,16 +774,11 @@ i.e. 48 - start time: 24 hours before selected timestep
     <option>
       <help>Sets the size of a LAS plot</help>
       <title>Plot size</title>
-      <!-- values should be xsize*ysize/960000. -->
       <menu type="options" name="size_SS">
-        <item values="0.2">default</item>
-        <item values="0.06667">small</item>
-        <item values="0.25">medium</item>
-        <item values="0.8333">large</item>
-        <!-- item values="0.5">800x600</item> -->
-        <!-- item values="0.06667">300x200</item> -->
-        <!-- item values="0.25">600x400</item> -->
-        <!-- item values="0.8333">1000x800</item> -->
+        <item values="1.5625">extralarge</item>
+        <item values="1.0000">large</item>
+        <item values="0.2500">medium</item>
+        <item values="0.0625">small</item>
       </menu>
     </option>
   </optiondef>

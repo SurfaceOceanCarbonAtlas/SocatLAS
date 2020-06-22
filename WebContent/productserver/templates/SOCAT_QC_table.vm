@@ -47,11 +47,11 @@ function toggleConstraints () {
 	if (document.getElementById('constraints_toggle_hide').style.display=='none') {
 		document.getElementById('constraints_toggle_hide').style.display='';
 		document.getElementById('constraints_toggle').style.display='none';
-		document.getElementById('Metadata_table').className='sortable showOnepointfiveminus datatable';
+		document.getElementById('Metadata_table').className='sortable showTwominus datatable';
 	} else {
 		document.getElementById('constraints_toggle').style.display='';
 		document.getElementById('constraints_toggle_hide').style.display='none';
-		document.getElementById('Metadata_table').className='sortable hideOnepointfiveminus datatable';
+		document.getElementById('Metadata_table').className='sortable hideTwominus datatable';
 	}
 }
 
@@ -140,10 +140,10 @@ body {
   background-color: #CCC;
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
-table.hideOnepointfiveminus .onepointfiveminus {
+table.hideTwominus .twominus {
     display: none;
 }
-table.showOnepointfiveminus .onepointfiveminus {
+table.showTwominus .twominus {
     display: table-row;
 }
 
@@ -338,7 +338,7 @@ fieldset p .note {
     #set($metadata = $las_webrowset.getMetaData())
     #set($cols = $metadata.getColumnCount())
 
-    <table id="Metadata_table" class="sortable hideOnepointfiveminus datatable">
+    <table id="Metadata_table" class="sortable hideTwominus datatable">
         ## Set the column headers including one for the row number.
         <thead><tr>
 ##if ($readonly == false)
@@ -360,10 +360,10 @@ fieldset p .note {
           ## Advance the row.  We do this at the top since we are currently before the first row (see beforeFirst() above).
           #set($next=$las_webrowset.next())
           ## Use CSS color of every other row.
-       	  #if ( ($las_webrowset.getString(6)=="3.0") || ($las_webrowset.getString(6)=="4.0") )
-          	<tr class="twoplus">
+       	  #if ( ($las_webrowset.getString(6)=="1.2") || ($las_webrowset.getString(6)=="1.3") || ($las_webrowset.getString(6)=="1.4") || ($las_webrowset.getString(6)=="2.0") )
+          	<tr class="twominus">
           #else
-          	<tr class="onepointfiveminus">
+          	<tr class="threeplus">
           #end
              ## Add the row number
 ##if ($readonly == false)

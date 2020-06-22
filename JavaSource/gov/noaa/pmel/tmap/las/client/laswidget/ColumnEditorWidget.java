@@ -3,8 +3,6 @@ package gov.noaa.pmel.tmap.las.client.laswidget;
 import gov.noaa.pmel.tmap.las.client.ClientFactory;
 import gov.noaa.pmel.tmap.las.client.event.StringValueChangeEvent;
 import gov.noaa.pmel.tmap.las.client.event.WidgetSelectionChangeEvent;
-import gov.noaa.pmel.tmap.las.client.laswidget.DropDown;
-import gov.noaa.pmel.tmap.las.client.laswidget.LASRequest;
 import gov.noaa.pmel.tmap.las.client.util.Util;
 
 import java.util.ArrayList;
@@ -13,11 +11,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.Set;
 
-import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.FocusEvent;
@@ -39,7 +36,6 @@ import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
-import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLTable.CellFormatter;
 import com.google.gwt.user.client.ui.HTMLTable.RowFormatter;
@@ -49,10 +45,8 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.MultiWordSuggestOracle;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.PushButton;
-import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SuggestBox;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.ToggleButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -85,14 +79,18 @@ public class ColumnEditorWidget extends Composite {
     String[] headers;
 
     int selectedIndex = 0;
+    int selectedWoceNameIndex = 0;
 
     DropDown flags = new DropDown();
     ScrollPanel datascroll = new ScrollPanel();
-    HorizontalPanel idAndFlagControls = new HorizontalPanel();
+    HorizontalPanel expoControls = new HorizontalPanel();
+    HorizontalPanel woceControls = new HorizontalPanel();
+    HorizontalPanel flagControls = new HorizontalPanel();
     HorizontalPanel commentControls = new HorizontalPanel();
     HorizontalPanel openMinimizeControls = new HorizontalPanel();
     VerticalPanel mainpanel = new VerticalPanel();
     DropDown ids = new DropDown();
+    DropDown woces = new DropDown();
     FlexTable datatable = new FlexTable();
     FlexTable headertable = new FlexTable();
     SuggestBox comment; 
@@ -102,12 +100,9 @@ public class ColumnEditorWidget extends Composite {
     Map<String, List<String[]>> allrows = new HashMap<String, List<String[]>>();
     
     String datavar; // This is the variable that was on the vertical axis.
-    String wocevar; // This is the corresponding woce flag variable.
 
     int windowWidth;
     int windowHeight;
-
-    Random random = new Random();
 
     int columnOffset = 3;
     
@@ -126,7 +121,7 @@ public class ColumnEditorWidget extends Composite {
     EventBus eventBus = clientFactory.getEventBus();
     
 
-    public ColumnEditorWidget(String catid, String xml, String datavarname, String wocename) {
+    public ColumnEditorWidget(String catid, String xml, String datavarname, List<String> wocenames) {
 
         oracle = new MultiWordSuggestOracle();
         comment = new SuggestBox(oracle);
@@ -147,7 +142,6 @@ public class ColumnEditorWidget extends Composite {
 
             @Override
             public void onClick(ClickEvent event) {
-                CellFormatter formatter = datatable.getCellFormatter();
                 for (int i = headerRows; i < datatable.getRowCount(); i ++ ) {
                     CheckBox box = (CheckBox) datatable.getWidget(i, 0);
                     box.setValue(true);
@@ -162,7 +156,7 @@ public class ColumnEditorWidget extends Composite {
             @Override
             public void onClick(ClickEvent event) {
                
-                for (Iterator dirtyIt = dirtyrows.keySet().iterator(); dirtyIt.hasNext();) {
+                for (Iterator<Integer> dirtyIt = dirtyrows.keySet().iterator(); dirtyIt.hasNext();) {
                     Integer row = (Integer) dirtyIt.next();
                     // Programatically turn off the check box.
                     CheckBox box = (CheckBox) datatable.getWidget(row, 0);
@@ -192,15 +186,24 @@ public class ColumnEditorWidget extends Composite {
 
         });
 
-        HTML choose = new HTML("&nbsp;&nbsp;Choose an EXPOCODE to edit:&nbsp;&nbsp;");
-        choose.addStyleName("nowrap");
-        idAndFlagControls.add(choose);
+        HTML expointro = new HTML("&nbsp;&nbsp;Choose an EXPOCODE to edit:&nbsp;&nbsp;");
+        expointro.addStyleName("nowrap");
+        expoControls.add(expointro);
         ids.addStyleName("nowrap");
-        idAndFlagControls.add(ids);
+        expoControls.add(ids);
+
+        HTML woceintro = new HTML("&nbsp;&nbsp;Choose an WOCE flag to edit:&nbsp;&nbsp;");
+        woceintro.addStyleName("nowrap");
+        woceControls.add(woceintro);
+        for ( String name : wocenames )
+        	woces.addItem(name);
+        woces.addStyleName("nowrap");
+        woceControls.add(woces);
+
         commentL = new HTML("&nbsp;&nbsp;Comment:&nbsp;&nbsp;");
         commentL.addStyleName("nowrap");
         commentControls.add(commentL);
-        comment.setWidth("160px");
+        comment.setWidth("50em");
         comment.setStyleName("nowrap");
         comment.getValueBox().addFocusHandler(new FocusHandler() {
             @Override
@@ -209,14 +212,16 @@ public class ColumnEditorWidget extends Composite {
             }
           });
         commentControls.add(comment);       
+
         flags.addItem("2");
         flags.addItem("3");
         flags.addItem("4");
         flags.addStyleName("nowrap");
         HTML flagL = new HTML("&nbsp;&nbsp;Set flag of selected rows to:&nbsp;&nbsp;");
         flagL.addStyleName("nowrap");
-        idAndFlagControls.add(flagL);
-        idAndFlagControls.add(flags);
+        flagControls.add(flagL);
+        flagControls.add(flags);
+
         submit.addClickHandler(new ClickHandler() {
 
             @Override
@@ -243,12 +248,16 @@ public class ColumnEditorWidget extends Composite {
                 }
                 JSONArray edits = new JSONArray();
                 int index = 0;
-                for (Iterator dirtyIt = dirtyrows.keySet().iterator(); dirtyIt.hasNext();) {
+                for (Iterator<Integer> dirtyIt = dirtyrows.keySet().iterator(); dirtyIt.hasNext();) {
                     Integer widgetRow = (Integer) dirtyIt.next();
                     int datarow = widgetRow - headerRows;
                     String[] parts = currentRows.get(datarow);
                     JSONObject row = new JSONObject();
                     for (int i = 0; i < parts.length; i++) {
+                    	String lcheader = headers[i].toLowerCase();
+                    	// Skip WOCE flag columns other than the currently selected one
+                    	if ( lcheader.startsWith("woce_") && ! lcheader.equals(woces.getValue().toLowerCase()) )
+                    		continue;
                         row.put(headers[i], new JSONString(parts[i]));
                     }
                     edits.set(index, row);
@@ -265,15 +274,20 @@ public class ColumnEditorWidget extends Composite {
             }
 
         });
-        idAndFlagControls.add(new HTML("&nbsp;&nbsp"));
-        idAndFlagControls.add(submit);
-        idAndFlagControls.setStyleName("controls");
+
+        flagControls.add(new HTML("&nbsp;&nbsp"));
+        flagControls.add(submit);
+        flagControls.setStyleName("controls");
         
         openMinimizeControls.addStyleName("nowrap-brown");
         openMinimizeControls.setWidth("100%");
         openMinimizeControls.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
+
+        mainpanel.setSpacing(2);
         mainpanel.add(openMinimizeControls);
-        mainpanel.add(idAndFlagControls);
+        mainpanel.add(expoControls);
+        mainpanel.add(woceControls);
+        mainpanel.add(flagControls);
         mainpanel.add(commentControls);
         
        
@@ -332,7 +346,6 @@ public class ColumnEditorWidget extends Composite {
             xml = Util.decode(xml);
             lasRequest = new LASRequest(xml);
             datavar = datavarname;
-            wocevar = wocename;
             initialState = lasRequest;
             lasRequest.setProperty("ferret", "data_format", "csv");
             lasRequest.setOperation("Trajectory_Corrrelation_File", "V7");
@@ -429,9 +442,30 @@ public class ColumnEditorWidget extends Composite {
                     selectedIndex = ids.getSelectedIndex();
                     columns();
                 }
-               
+            } else if ( source.equals(woces) ) {
+                if ( dirtyrows.size() > 0 ) {
+                    woces.setSelectedIndex(selectedWoceNameIndex);
+                    Window.alert("You have unsaved changes. Clear or save your edits if you want to change WOCE flag.");
+                } else {
+                	// Rebuild the table to show the newly selected WOCE flag
+                    String id = ids.getValue();
+                    List<String[]> rows = allrows.get(id);
+                    datascroll.remove(datatable);
+                    datatable = new FlexTable();
+                    datatable.addStyleName("datatable");
+                    datascroll.add(datatable);
+                    setHeaders();
+                    int datarow = headerRows;
+                    for (int i = 0; i < rows.size(); i++) {
+                        String[] parts = rows.get(i);
+                        addRow(parts, datarow);
+                        datarow++;
+                    }
+                    selectedWoceNameIndex = woces.getSelectedIndex();
+                    columns();
+                }
             } else if ( source.equals(flags) ) {
-                for (Iterator dirtyIt = dirtyrows.keySet().iterator(); dirtyIt.hasNext();) {
+                for (Iterator<Integer> dirtyIt = dirtyrows.keySet().iterator(); dirtyIt.hasNext();) {
                     Integer widgetRow = (Integer) dirtyIt.next();
                     CheckBox box = (CheckBox) datatable.getWidget(widgetRow, 0);
                     setValue(box, false);
@@ -488,6 +522,7 @@ public class ColumnEditorWidget extends Composite {
             // The + columnOffset for the column with the check box and the column with flag
             String part = parts[p];
             if ( part.trim().equals("") ) part = "(none)";
+            String wocevar = woces.getValue();
             if ( headers[p].toLowerCase().equals(wocevar.toLowerCase()) ) {
                 HTML html = new HTML(part);
                 html.setTitle(part);
@@ -499,8 +534,8 @@ public class ColumnEditorWidget extends Composite {
                 datatable.setWidget(datarow, 2, html);
                 cellformatter.addStyleName(datarow, 2, "nowrap");
 
-            } else {
-                
+            } else if ( ! headers[p].toLowerCase().startsWith("woce_") ) {
+                // Do not show WOCE flags other than the selected one
                 HTML html = new HTML(part);
                 datatable.setWidget(datarow, column + columnOffset, html);
                 cellformatter.addStyleName(datarow, column + columnOffset, "nowrap");
@@ -606,7 +641,7 @@ public class ColumnEditorWidget extends Composite {
             popup.setPopupPosition(200, Window.getClientHeight()/3);
             popup.show();
             CellFormatter formatter = datatable.getCellFormatter();
-            for (Iterator dirtyIt = dirtyrows.keySet().iterator(); dirtyIt.hasNext();) {
+            for (Iterator<Integer> dirtyIt = dirtyrows.keySet().iterator(); dirtyIt.hasNext();) {
                 Integer widgetrow = (Integer) dirtyIt.next();
                 for (int i = 0; i < headers.length; i++) {
                     formatter.removeStyleName(widgetrow, i, "dirty");
@@ -698,7 +733,7 @@ public class ColumnEditorWidget extends Composite {
                     }
 
                 }
-                for (Iterator idIt = trajectoryIDs.iterator(); idIt.hasNext();) {
+                for (Iterator<String> idIt = trajectoryIDs.iterator(); idIt.hasNext();) {
                     String id = (String) idIt.next();
                     ids.addItem(id);
                 }
@@ -719,13 +754,15 @@ public class ColumnEditorWidget extends Composite {
             if ( headers[p].startsWith("\"")) headers[p] = headers[p].substring(1, headers[p].length());
             if ( headers[p].endsWith("\"")) headers[p] = headers[p].substring(0,headers[p].length()-1);
             if ( headers[p].endsWith("_")) headers[p] = headers[p].substring(0, headers[p].length()-1);
+            String wocevar = woces.getValue();
             if ( headers[p].toLowerCase().equals(wocevar.toLowerCase()) ) {
                 headertable.setWidget(0, 1, new HTML(headers[p]));
                 cellFormatter.addStyleName(0, 1, "nowrap");
             } else if (headers[p].toLowerCase().equals(datavar.toLowerCase()) ) {
                 headertable.setWidget(0, 2, new HTML(headers[p]));
                 cellFormatter.addStyleName(0, 2, "nowrap");
-            } else {
+            } else if ( ! headers[p].toLowerCase().startsWith("woce_") ) {
+                // Do not show WOCE flags other than the selected one
                 headertable.setWidget(0, column + columnOffset, new HTML(headers[p]));
                 cellFormatter.addStyleName(0, column + columnOffset, "nowrap");
                 column++;
@@ -747,7 +784,7 @@ public class ColumnEditorWidget extends Composite {
      * @param element
      *            a new HTML(text).getElement()
      */
-    public static native void evalScripts(com.google.gwt.user.client.Element element)
+    public static native void evalScripts(Element element)
     /*-{
         var scripts = element.getElementsByTagName("script");
 

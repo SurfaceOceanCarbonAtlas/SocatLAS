@@ -13,7 +13,7 @@
 <html>
   <head>
     <!-- Let IE know to use the IE9 standard browser and document modes -->
-    <meta content="LAS" name="LAS-Profile" id="las-profile" />
+    <meta content="LAS-SOCAT" name="LAS-Profile" id="las-profile" />
 
    <!--
 

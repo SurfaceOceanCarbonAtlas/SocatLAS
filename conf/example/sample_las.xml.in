@@ -1,23 +1,67 @@
 <?xml version='1.0' ?>
 <!DOCTYPE spec SYSTEM "spec.dtd" [
 
+
+<!-- Declaration of category files to be included -->
+<!ENTITY ContinentalMarginDefSOCAT_cat SYSTEM "ContinentalMarginDefSOCAT_cat.xml">
+<!ENTITY CruiseDataSOCAT_cat SYSTEM "CruiseDataSOCAT_cat.xml">
+<!ENTITY GriddedSOCAT_cat SYSTEM "GriddedSOCAT_cat.xml">
+
 <!-- Declaration of operations files to be included -->
 <!ENTITY operations SYSTEM "operations.xml">
 
 <!ENTITY insitu_operations SYSTEM "insitu_operations.xml">
 
 <!-- Declaration of dataset files to be included -->
-<!-- Default LAS datasets -->
-<!ENTITY coads SYSTEM "coads.xml">
-<!ENTITY levitus SYSTEM "levitus.xml">
-<!ENTITY paco SYSTEM "DODS_IRI_NOAA_NCEP_EMC_CMB_Pac_ocean.xml">
-<!ENTITY ocean_atlas_subset SYSTEM "ocean_atlas_subset.xml">
 
-<!-- Sample insitu datasets -->
-<!ENTITY insitu_demo_1 SYSTEM "insitu_demo_1.xml">
-<!ENTITY insitu_demo_2 SYSTEM "insitu_demo_2.xml">
-<!ENTITY nwioos_hake98 SYSTEM "nwioos_hake98.xml">
-<!--<!ENTITY pfeg SYSTEM "pfeg.xml">-->
+<!-- SOCAT dataset for QC -->
+<!ENTITY SOCATvLatest_ERDDAP SYSTEM "SOCATvLatest_ERDDAP.xml">
+
+<!-- SOCAT earlier datasets -->
+<!ENTITY SOCATv2019_ERDDAP SYSTEM "SOCATv2019_ERDDAP.xml">
+<!ENTITY SOCATv6_ERDDAP SYSTEM "SOCATv6_ERDDAP.xml">
+<!ENTITY SOCATv5_ERDDAP SYSTEM "SOCATv5_ERDDAP.xml">
+<!ENTITY SOCATv4_ERDDAP SYSTEM "SOCATv4_ERDDAP.xml">
+<!ENTITY SOCATv3_ERDDAP SYSTEM "SOCATv3_ERDDAP.xml">
+
+<!-- SOCAT gridded datasets -->
+
+<!ENTITY SOCAT_dist2land SYSTEM "SOCAT_dist2land.xml">
+
+<!ENTITY SOCATv2019_quarter_coastal SYSTEM "SOCATv2019_quarter_coastal.xml">
+<!ENTITY SOCATv2019_gridded_decadal SYSTEM "SOCATv2019_gridded_decadal.xml">
+<!ENTITY SOCATv2019_gridded_monthly SYSTEM "SOCATv2019_gridded_monthly.xml">
+<!ENTITY SOCATv2019_gridded_yearly SYSTEM "SOCATv2019_gridded_yearly.xml"> 
+
+<!ENTITY SOCATv6_quarter_coastal SYSTEM "SOCATv6_quarter_coastal.xml">
+<!ENTITY SOCATv6_gridded_decadal SYSTEM "SOCATv6_gridded_decadal.xml">
+<!ENTITY SOCATv6_gridded_monthly SYSTEM "SOCATv6_gridded_monthly.xml">
+<!ENTITY SOCATv6_gridded_yearly SYSTEM "SOCATv6_gridded_yearly.xml"> 
+
+<!ENTITY SOCATv5_quarter_coastal SYSTEM "SOCATv5_quarter_coastal.xml">
+<!ENTITY SOCATv5_gridded_decadal SYSTEM "SOCATv5_gridded_decadal.xml">
+<!ENTITY SOCATv5_gridded_monthly SYSTEM "SOCATv5_gridded_monthly.xml">
+<!ENTITY SOCATv5_gridded_yearly SYSTEM "SOCATv5_gridded_yearly.xml"> 
+
+<!ENTITY SOCATv4_quarter_coastal SYSTEM "SOCATv4_quarter_coastal.xml">
+<!ENTITY SOCATv4_gridded_decadal SYSTEM "SOCATv4_gridded_decadal.xml">
+<!ENTITY SOCATv4_gridded_monthly SYSTEM "SOCATv4_gridded_monthly.xml">
+<!ENTITY SOCATv4_gridded_yearly SYSTEM "SOCATv4_gridded_yearly.xml"> 
+
+<!ENTITY SOCATv3_quarter_coastal SYSTEM "SOCATv3_quarter_coastal.xml">
+<!ENTITY SOCATv3_gridded_decadal SYSTEM "SOCATv3_gridded_decadal.xml">
+<!ENTITY SOCATv3_gridded_monthly SYSTEM "SOCATv3_gridded_monthly.xml">
+<!ENTITY SOCATv3_gridded_yearly SYSTEM "SOCATv3_gridded_yearly.xml"> 
+
+<!ENTITY SOCATv2_quarter_coastal SYSTEM "SOCATv2_quarter_coastal.xml">
+<!ENTITY SOCATv2_gridded_decadal SYSTEM "SOCATv2_gridded_decadal.xml">
+<!ENTITY SOCATv2_gridded_monthly SYSTEM "SOCATv2_gridded_monthly.xml">
+<!ENTITY SOCATv2_gridded_yearly SYSTEM "SOCATv2_gridded_yearly.xml">
+
+<!ENTITY SOCATv1r5_quarter_coastal SYSTEM "SOCATv1r5_quarter_coastal.xml">
+<!ENTITY SOCATv1r5_gridded_decadal SYSTEM "SOCATv1r5_gridded_decadal.xml">
+<!ENTITY SOCATv1r5_gridded_monthly SYSTEM "SOCATv1r5_gridded_monthly.xml">
+<!ENTITY SOCATv1r5_gridded_yearly SYSTEM "SOCATv1r5_gridded_yearly.xml">
 
 ]>
 
@@ -27,7 +71,7 @@
  <output_dir>@JAKARTA_HOME@/webapps/@APPNAME@/output</output_dir>
  <institution name="Pacific Marine Environmental Lab"
               contact="@ADMIN_EMAIL@"
-              url="http://www.pmel.noaa.gov"/>
+              url="https://www.pmel.noaa.gov"/>
 
  <!-- Default properties for this server -->
  <properties>
@@ -35,10 +79,20 @@
   <product_server>
    <ui_timeout>20</ui_timeout>
    <ps_timeout>3600</ps_timeout>
-   <use_cache>true</use_cache>
-   <default_catid>ocean_atlas_subset</default_catid>
-   <default_dsid>ocean_atlas_subset</default_dsid>
-   <default_varid>TEMP-ocean_atlas_subset</default_varid>
+   <use_cache>false</use_cache>
+
+   <!-- for cruise tracks as the default use the following
+   -->
+   <default_catid>SOCATvLatest_ERDDAP</default_catid>
+   <default_dsid>socat_latest_fulldata</default_dsid>
+   <default_varid>fCO2_recommended-socat_latest_fulldata</default_varid>
+
+   <!-- for gridded as the default use something like the following
+   <default_catid>SOCATv4_gridded_decadal</default_catid>
+   <default_dsid>socat_v4_decadal</default_dsid>
+   <default_varid>fco2_ave_weighted_decade-socat_v4_decadal</default_varid>
+   -->
+
    <default_operation>Plot_2D_XY_zoom</default_operation>
    <default_option>Options_2D_image_contour_xy_7</default_option>
    <default_view>xy</default_view>
@@ -60,17 +114,58 @@
    &operations;
    &insitu_operations;
  </operations>
+ 
+ <las_categories>
+  &ContinentalMarginDefSOCAT_cat;
+  &CruiseDataSOCAT_cat;
+  &GriddedSOCAT_cat;
+ </las_categories>
 
  <!-- Datasets provided by this server -->
- <!-- Default gridded LAS datasets -->
- &coads;
- &levitus;
- &paco;
- &ocean_atlas_subset;
- <!-- Example scattered LAS datasets -->
- &insitu_demo_1;
- &insitu_demo_2;
- &nwioos_hake98;
- <!-- &pfeg; -->
+
+ <!-- SOCAT datasets -->
+ &SOCATvLatest_ERDDAP;
+ &SOCATv2019_ERDDAP;
+ &SOCATv6_ERDDAP;
+ &SOCATv5_ERDDAP;
+ &SOCATv4_ERDDAP;
+ &SOCATv3_ERDDAP;
+
+ &SOCAT_dist2land;
+
+ &SOCATv2019_quarter_coastal;
+ &SOCATv2019_gridded_decadal;
+ &SOCATv2019_gridded_monthly;
+ &SOCATv2019_gridded_yearly;
+
+ &SOCATv6_quarter_coastal;
+ &SOCATv6_gridded_decadal;
+ &SOCATv6_gridded_monthly;
+ &SOCATv6_gridded_yearly;
+
+ &SOCATv5_quarter_coastal;
+ &SOCATv5_gridded_decadal;
+ &SOCATv5_gridded_monthly;
+ &SOCATv5_gridded_yearly;
+
+ &SOCATv4_quarter_coastal;
+ &SOCATv4_gridded_decadal;
+ &SOCATv4_gridded_monthly;
+ &SOCATv4_gridded_yearly;
+
+ &SOCATv3_quarter_coastal;
+ &SOCATv3_gridded_decadal;
+ &SOCATv3_gridded_monthly;
+ &SOCATv3_gridded_yearly;
+
+ &SOCATv2_quarter_coastal;
+ &SOCATv2_gridded_decadal;
+ &SOCATv2_gridded_monthly;
+ &SOCATv2_gridded_yearly;
+
+ &SOCATv1r5_quarter_coastal;
+ &SOCATv1r5_gridded_decadal;
+ &SOCATv1r5_gridded_monthly;
+ &SOCATv1r5_gridded_yearly;
 
 </lasdata>

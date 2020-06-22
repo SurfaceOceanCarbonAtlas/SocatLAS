@@ -728,19 +728,17 @@ public class SimplePropPropViewer implements EntryPoint {
         // Get the names...
         VariableSerializable var0 = xAllDatasetVariables.get(v0);
 
-        // There is one and only one WOCE flag that will be used for these data.
-        String short_name = "WOCE_CO2_water";
-        String v1 = short_name+"-"+dsid;
-        
-        // Just use it. No checks required.
+        // Just hard-code the two current WOCE flags for SOCAT data
+        String woce_water = "WOCE_CO2_water";
+        String v1 = woce_water+"-"+dsid;
+        String woce_atm = "WOCE_CO2_atm";
+        String v2 = woce_atm + "-" + dsid;
 
         tableRequest.removeVariables();
         tableRequest.addVariable(dsid, v0, 0);
         tableRequest.addVariable(dsid, v1, 0);
-        columnEditor = new ColumnEditorWidget(dsid, tableRequest.toString(), var0.getShortname(), short_name);  
-        
-       
-
+        tableRequest.addVariable(dsid, v2, 0);
+        columnEditor = new ColumnEditorWidget(dsid, tableRequest.toString(), var0.getShortname(), Arrays.asList(woce_water,woce_atm));
         
         editDialog.setWidget(columnEditor);
         editDialog.show();

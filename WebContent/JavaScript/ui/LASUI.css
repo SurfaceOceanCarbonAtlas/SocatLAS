@@ -264,7 +264,6 @@ html,body {
 	margin: 0;
 	list-style: none;
 	height: 38px;
-	/*background:#fff url(grn_0.gif) repeat-x; filter:alpha(opacity=55);-moz-opacity:.55;opacity:.55; */
 	position: relative;
 	font-family: arial, verdana, sans-serif;
 }
@@ -281,14 +280,14 @@ html,body {
 	float: left;
 	color: #FFFFFC;
 	text-decoration: none;
-	font-size: 11px;
+	font-size: small;
 	font-weight: bold;
 	padding: 0 0 0 12px;
 	cursor: pointer;
 }
 
 .top_link_title:hover {
-	color: red; /* background:  url(grn_1.gif) no-repeat;*/
+	color: red;
 }
 
 .top_link_disabled {
@@ -297,7 +296,7 @@ html,body {
 	height: 13px;
 	color: #DDDDDD;
 	text-decoration: none;
-	font-size: 11px;
+	font-size: small;
 	font-weight: bold;
 	padding: 2px 2px 2px 4px;
 	cursor: pointer;
@@ -313,7 +312,7 @@ html,body {
 	height: 13px;
 	color: #FFFFFF;
 	text-decoration: none;
-	font-size: 11px;
+	font-size: small;
 	font-weight: bold;
 	padding: 2px 2px 2px 4px;
 	cursor: pointer;
@@ -324,8 +323,22 @@ html,body {
 }
 
 .top_link:hover {
-	color: #FFFFFF;
-	background: #AABDCE
+	color: #f5ed52;
+}
+
+.policy_link {
+	display: block;
+	color: #FFFFFC;
+	text-decoration: none;
+	font-size: medium;
+	font-weight: bold;
+	margin: 0px 2px 0px 2px;
+	cursor: pointer;
+	outline: 0px;
+}
+
+.policy_link:hover {
+	color: cyan;
 }
 
 .top_link_left {
@@ -335,15 +348,11 @@ html,body {
 	text-decoration: none;
 	font-size: 9px;
 	font-weight: bold;
-	margin-right: 2px;
+	padding: 2px 12px 0px 0px;
 	cursor: pointer;
 }
 
 .top_link_left:hover {
-	color: #f5ed52; /* background:  url(grn_1.gif) no-repeat; */
-}
-
-.top_link:hover {
 	color: #f5ed52;
 }
 

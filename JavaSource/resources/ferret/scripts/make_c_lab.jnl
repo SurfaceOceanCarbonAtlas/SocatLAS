@@ -1,5 +1,7 @@
 ! make_c_lab.jnl
 ! Called by set_constraint_labels. 
+! 
+! 4/2017    *acm* Set a flag: constraints choose platforms
 !
 ! Make the label from constraints. Calld as a second
 ! script as the command line from a single REPEAT
@@ -7,6 +9,12 @@
 ! Fix to let the rhs for month ranges have multiple items, 
 ! given in a comma-separated list
 !
+! Is there a constraint that selects the platform specifically? 
+! (E.G. used for marking SOCAT moorings.)
+
+IF ($lhs"0|vessel_name>1|expocode>1|platform_type>1|vessel_type>1|platform_name>1|*>0") THEN \
+    DEFINE SYMBOL constrain_by_platform = 1
+
 ! Is it where the data-var is not NaN? If so then don't try to make
 ! black sysmbols at missing-values, and no need for (0 missing) on labels
 

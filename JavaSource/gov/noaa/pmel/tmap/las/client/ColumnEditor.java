@@ -7,6 +7,7 @@ import gov.noaa.pmel.tmap.las.client.laswidget.LASRequest;
 import gov.noaa.pmel.tmap.las.client.util.Util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -93,7 +94,7 @@ public class ColumnEditor implements EntryPoint {
             xml = Util.decode(xml);
             lasRequest = new LASRequest(xml);
             String url = Util.getProductServer() + "?xml=" + URL.encode(lasRequest.toString());
-            columnEditor = new ColumnEditorWidget(catid, xml, datavarname, wocename);
+            columnEditor = new ColumnEditorWidget(catid, xml, datavarname, Arrays.asList(wocename));
         } else {
             Window.alert("This app must be launched from the main interface.");
         }

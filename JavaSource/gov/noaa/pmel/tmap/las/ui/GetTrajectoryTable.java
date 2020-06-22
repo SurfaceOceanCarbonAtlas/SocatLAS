@@ -408,7 +408,7 @@ public class GetTrajectoryTable extends LASAction {
                                                 "<html xmlns=\"http://www.w3.org/1999/xhtml\">"+
                                                 "<head>"+
                                                 "  <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />"+
-                                                "  <title>Table of Platforms</title>"+
+                                                "  <title>Table of Datasets</title>"+
                                                 "  <script src=\"JavaScript/frameworks/jquery-1.11.1.min.js\" type=\"text/javascript\"></script>"+
                                                 "</head>"+
                                                 "<body style=\"color:black; background:white; font-family:Arial,Helvetica,sans-serif; font-size:85%; line-height:130%;\">"+
@@ -494,12 +494,7 @@ public class GetTrajectoryTable extends LASAction {
                                                     }
 
                                                     for (int i = 0; i < parts.length; i++) {
-                                                        try {
-                                                            Double d = Double.valueOf(parts[i]);
-                                                            row.append("<td align=\"right\">"+parts[i]+"</td>\n");
-                                                        } catch (NumberFormatException e) {
-                                                            row.append("<td nowrap=\"nowrap\" colspan=\"1\">"+parts[i]+"</td>\n");
-                                                        }
+                                                        row.append("<td nowrap=\"nowrap\" colspan=\"1\">"+parts[i]+"</td>\n");
                                                     }
                                                     dsgQuery.append("?&amp;"+cruise_id+"=\""+parts[0]+"\"");
                                                     csvQuery.append("?&amp;"+cruise_id+"=\""+parts[0]+"\"");
