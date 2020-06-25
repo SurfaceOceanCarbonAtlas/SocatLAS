@@ -113,7 +113,7 @@ Choices are:
     <optiondef name="bathymetry_style">
       <option>
         <help>
-Choose a plain white background or grayscale bathymetry for the map plots. 
+Choose a plain white background or grayscale bathymetry for the map plots.
 
 Choices are:
 &lt;ul>&lt;li>&lt;b>Default&lt;/b> -- grayscale ocean bathymetry

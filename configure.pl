@@ -774,8 +774,19 @@ if ( getYesOrNo("Do you want to install the example data set configuration") ) {
     $sample_in[45] = "conf/example/SOCATv2019_quarter_coastal.xml";
     $sample_out[45] = $serverConf."/SOCATv2019_quarter_coastal.xml";
 
-    $sample_in[46] = "conf/example/SOCATvLatest_ERDDAP.xml";
-    $sample_out[46] = $serverConf."/SOCATvLatest_ERDDAP.xml";
+    $sample_in[46] = "conf/example/SOCATv2020_ERDDAP.xml";
+    $sample_out[46] = $serverConf."/SOCATv2020_ERDDAP.xml";
+    $sample_in[47] = "conf/example/SOCATv2020_gridded_decadal.xml";
+    $sample_out[47] = $serverConf."/SOCATv2020_gridded_decadal.xml";
+    $sample_in[48] = "conf/example/SOCATv2020_gridded_yearly.xml";
+    $sample_out[48] = $serverConf."/SOCATv2020_gridded_yearly.xml";
+    $sample_in[49] = "conf/example/SOCATv2020_gridded_monthly.xml";
+    $sample_out[49] = $serverConf."/SOCATv2020_gridded_monthly.xml";
+    $sample_in[50] = "conf/example/SOCATv2020_quarter_coastal.xml";
+    $sample_out[50] = $serverConf."/SOCATv2020_quarter_coastal.xml";
+
+    $sample_in[51] = "conf/example/SOCATvLatest_ERDDAP.xml";
+    $sample_out[51] = $serverConf."/SOCATvLatest_ERDDAP.xml";
 
     for ( my $i = 0; $i <= $#sample_in; $i++ ) {
        if ( -f $sample_out[$i] ) {

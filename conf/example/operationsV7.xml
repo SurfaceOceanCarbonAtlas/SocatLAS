@@ -159,7 +159,7 @@
     <service>ferret</service>
     <response ID="PlotResp">
       <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -369,8 +369,8 @@
         <arg chained="true" type="variable" index="1" operation="DBExtract" result="netcdf" file_suffix=".nc"/>
         <arg type="region" index="1" ID="in-situ-Region"/>
       </args>
-      <!-- A bit of a kludge... No service is really needed, but the ProductServer 
-				is not expecting the template service in the second operation of a compound 
+      <!-- A bit of a kludge... No service is really needed, but the ProductServer
+				is not expecting the template service in the second operation of a compound
 				operation... -->
       <service>ferret</service>
       <response ID="Data_Extract_netCDF_Response">
@@ -484,7 +484,7 @@
       <result type="DataTable" ID="ferret_listing" streamable="true" mime_type="ascii/text" file_suffix=".txt"/>
       <result type="cancel" ID="cancel"/>
     </response>
-    <service>ferret</service> 
+    <service>ferret</service>
     <grid_types>
       <grid_type name="trajectory"/>
     </grid_types>
@@ -497,9 +497,9 @@
     </region>
   </operation>
 
-  
-  
-  <!-- Private operation only invoked by correlation viewer when it knows 
+
+
+  <!-- Private operation only invoked by correlation viewer when it knows
 		the plot can be made from the existing netCDF file. -->
   <operation name="Trajectory Correlation Plot" ID="Trajectory_correlation_plot" service_action="Trajectory_correlation" private="true" output_template="zoom">
     <args>
@@ -599,7 +599,7 @@
       <grid_type name="trajectory"/>
     </grid_types>
   </operation>
-  <!-- This is the property-property operation for trajectory in-situ data. 
+  <!-- This is the property-property operation for trajectory in-situ data.
 		It gets called from the Correlation view defined below. -->
   <operation name="Correlation Plot" ID="Trajectory_correlation_extract_and_plot" default="true" category="file" output_template="zoom">
     <backend_service>
@@ -703,8 +703,8 @@
         <arg chained="true" type="variable" index="1" operation="ERDDAPExtract" result="netcdf" file_suffix=".nc"/>
         <arg type="region" index="1" ID="in-situ-Region"/>
       </args>
-      <!-- A bit of a kludge... No service is really needed, but the ProductServer 
-				is not expecting the template service in the second operation of a compound 
+      <!-- A bit of a kludge... No service is really needed, but the ProductServer
+				is not expecting the template service in the second operation of a compound
 				operation... -->
       <service>ferret</service>
       <response ID="ERDDAP_Data_Extract_netCDF_Response">
@@ -797,7 +797,7 @@
     </region>
   </operation>
   <!-- END ERDDAP Trajectory_interactive_plot -->
-  <!-- This is the property-property operation for trajectory in-situ data. 
+  <!-- This is the property-property operation for trajectory in-situ data.
 		It gets called from the Correlation view defined below. -->
   <operation name="Correlation Plot" ID="Trajectory_correlation_plot" default="true" category="file" output_template="zoom">
     <backend_service>
@@ -880,8 +880,8 @@
       <arg chained="true" type="variable" index="1" operation="ERDDAPExtract" result="netcdf" file_suffix=".nc"/>
       <arg type="region" index="1" ID="in-situ-Region"/>
     </args>
-    <!-- A bit of a kludge... No service is really needed, but the ProductServer 
-			is not expecting the template service in the second operation of a compound 
+    <!-- A bit of a kludge... No service is really needed, but the ProductServer
+			is not expecting the template service in the second operation of a compound
 			operation... -->
     <service>ferret</service>
     <response ID="netCDF_Data_Extract_netCDF_Response">
@@ -963,7 +963,7 @@
     </region>
   </operation>
   <!-- END ERDDAP Trajectory_interactive_plot -->
-  <!-- This is the property-property operation for trajectory in-situ data. 
+  <!-- This is the property-property operation for trajectory in-situ data.
 		It gets called from the Correlation view defined below. -->
   <operation name="Correlation Plot" ID="Trajectory_correlation_plot" default="true" category="file" output_template="zoom">
     <backend_service>
@@ -990,7 +990,7 @@
       <grid_type name="trajectory"/>
     </grid_types>
   </operation>
-  <!-- This is a correlation plot chain specific to the Trajectory data where 
+  <!-- This is a correlation plot chain specific to the Trajectory data where
 		the netCDF file is made once and used over and over for plots. -->
   <operation name="Correlation Plot" ID="SPPV" service_action="" default="true" category="correlation" output_template="SPPV_setup">
     <response ID="PlotResp" type="HTML" index="1">
@@ -1202,7 +1202,7 @@
       <result type="svg" ID="plot_svg" file_suffix=".svg"/>
       <result type="ps" ID="plot_ps" file_suffix=".ps"/>
       <result type="pdf" ID="plot_pdf" file_suffix=".pdf"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1316,7 +1316,7 @@
   <operation name="Adjacent plots (GIF only)" ID="SidebySide_Plot_2D" output_template="side_by_side" service_action="SideBySide" order="0202" category="visualization" isZoomable="true">
     <operation name="2D Plot" ID="Side1" output_template="output" service_action="Side1">
       <service>ferret</service>
-      <response ID="PlotResp"><result type="image" ID="plot_image1" streamable="true" mime_type="image/png" file_suffix=".png"/><!-- <result type="ps" ID="plot_postscript1" streamable="true" mime_type="application/postscript" 
+      <response ID="PlotResp"><result type="image" ID="plot_image1" streamable="true" mime_type="image/png" file_suffix=".png"/><!-- <result type="ps" ID="plot_postscript1" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps"/> -->
 				--&gt;
 				<result type="image" ID="ref_map1" file_suffix=".png"/>
@@ -1329,7 +1329,7 @@
       <service>ferret</service>
       <response ID="PlotResp">
         <result type="image" ID="plot_image2" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript2" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript2" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps"/> -->
         <result type="image" ID="ref_map2" file_suffix=".png"/>
         <result type="map_scale" ID="map_scale2" file_suffix=".xml"/>
@@ -1381,7 +1381,7 @@
       <result type="svg" ID="plot_svg" file_suffix=".svg"/>
       <result type="ps" ID="plot_ps" file_suffix=".ps"/>
       <result type="pdf" ID="plot_pdf" file_suffix=".pdf"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				file_suffix=".ps"/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1389,7 +1389,7 @@
       <result type="cancel" ID="cancel" file_suffix=".txt"/>
     </response>
     <region>
-      <!-- <intervals name="x" /> <intervals name="y" /> <intervals name="z" 
+      <!-- <intervals name="x" /> <intervals name="y" /> <intervals name="z"
 				/> -->
       <intervals name="t" type="Line Plots" title="Time Series"/>
     </region>
@@ -1405,7 +1405,7 @@
       <result type="svg" ID="plot_svg" file_suffix=".svg"/>
       <result type="ps" ID="plot_ps" file_suffix=".ps"/>
       <result type="pdf" ID="plot_pdf" file_suffix=".pdf"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				file_suffix=".ps"/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1431,7 +1431,7 @@
       <result type="svg" ID="plot_svg" file_suffix=".svg"/>
       <result type="ps" ID="plot_ps" file_suffix=".ps"/>
       <result type="pdf" ID="plot_pdf" file_suffix=".pdf"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				file_suffix=".ps"/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1439,7 +1439,7 @@
       <result type="cancel" ID="cancel" file_suffix=".txt"/>
     </response>
     <region>
-      <!-- <intervals name="x" /> <intervals name="y" /> <intervals name="z" 
+      <!-- <intervals name="x" /> <intervals name="y" /> <intervals name="z"
 				/> -->
       <intervals name="t" type="Line Plots" title="Time Series"/>
     </region>
@@ -1455,7 +1455,7 @@
       <result type="svg" ID="plot_svg" file_suffix=".svg"/>
       <result type="ps" ID="plot_ps" file_suffix=".ps"/>
       <result type="pdf" ID="plot_pdf" file_suffix=".pdf"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				file_suffix=".ps"/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1496,7 +1496,7 @@
     <service>ferret</service>
     <response ID="PlotResp">
       <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				file_suffix=".ps"/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1511,13 +1511,13 @@
     </grid_types>
     <optiondef IDREF="Options_2D_image_contour_xy_7"/>
   </operation>
-  <!-- Operations for xy map - just a map, no dataset or variable other than 
+  <!-- Operations for xy map - just a map, no dataset or variable other than
 		topo -->
   <operation name="xy map" ID="xy_map" output_template="output" service_action="xy_map" private="true" order="9999" isZoomable="true">
     <service>ferret</service>
     <response ID="PlotResp">
       <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				/> -->
       <result type="image" ID="ref_map"/>
       <result type="map_scale" ID="map_scale"/>
@@ -1699,7 +1699,7 @@
   </operation>
   <!-- END: dynamic overlay on Google Earth -->
   <!-- Begin: static overlay -->
-  <!-- overlay kml for non-vector plots [private]; it is used by the dynamic 
+  <!-- overlay kml for non-vector plots [private]; it is used by the dynamic
 		overlay -->
   <operation name="Plot to Google Earth (static)" ID="Plot_GE_Traj_kml" mime_type="application/vnd.google-earth.kml+xml" output_template="output_GE" private="true" category="virtual_globe">
     <!-- Extract and plot... -->
@@ -1756,7 +1756,7 @@
       <response ID="PlotResp">
         <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
         <result type="image" ID="colorbar" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps"/> -->
         <result type="image" ID="ref_map" file_suffix=".png"/>
         <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1790,7 +1790,7 @@
     <operation name="Plot_vector_GE" ID="Vector_for_GE" service_action="Plot_vector_GE">
       <response ID="PlotResp">
         <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps"/> -->
         <result type="image" ID="ref_map" file_suffix=".png"/>
         <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1855,7 +1855,7 @@
     <service>ferret</service>
     <response ID="PlotResp">
       <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				file_suffix=".ps"/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1963,7 +1963,7 @@
     <service>ferret</service>
     <response ID="PlotResp">
       <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -1990,7 +1990,7 @@
     <service>ferret</service>
     <response ID="PlotResp">
       <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -2011,7 +2011,7 @@
     <service>ferret</service>
     <response ID="PlotResp">
       <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				file_suffix=".ps"/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -2035,7 +2035,7 @@
     <service>ferret</service>
     <response ID="PlotResp">
       <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+      <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 				file_suffix=".ps"/> -->
       <result type="image" ID="ref_map" file_suffix=".png"/>
       <result type="map_scale" ID="map_scale" file_suffix=".xml"/>
@@ -2373,7 +2373,7 @@
       </args>
       <response ID="PlotResp" type="HTML" index="1">
         <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps"/> -->
         <result type="image" ID="ref_map" file_suffix=".png"/>
         <result type="debug" ID="debug" file_suffix=".txt"/>
@@ -2382,7 +2382,7 @@
       <service>ferret</service>
     </operation>
     <region>
-      <!-- Not sure about this since the plot is planar in XY but the extract 
+      <!-- Not sure about this since the plot is planar in XY but the extract
 				doesn't have to be. -->
       <intervals name="xy" type="Maps" title="Location Plot"/>
     </region>
@@ -2413,7 +2413,7 @@
       </args>
       <response ID="PlotResp" type="HTML" index="1">
         <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps"/> -->
         <result type="image" ID="ref_map" file_suffix=".png"/>
         <result type="map_scale" ID="map_scale"/>
@@ -2422,7 +2422,7 @@
       <service>ferret</service>
     </operation>
     <region>
-      <!-- Not sure about this since the plot is planar in XY but the extract 
+      <!-- Not sure about this since the plot is planar in XY but the extract
 				doesn't have to be. -->
       <intervals name="xy" type="Maps" title="Location and Value"/>
     </region>
@@ -2470,7 +2470,7 @@
       </args>
       <response ID="PlotResp" type="HTML" index="1">
         <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps"/> -->
         <result type="image" ID="ref_map" file_suffix=".png"/>
         <result type="map_scale" ID="map_scale"/>
@@ -2483,7 +2483,7 @@
       <type name="Maps"/>
     </visualization_types>
     <region>
-      <!-- Not sure about this since the plot is planar in XY but the extract 
+      <!-- Not sure about this since the plot is planar in XY but the extract
 				doesn't have to be. -->
       <intervals name="xy" type="Maps" title="Location Plot"/>
     </region>
@@ -2515,7 +2515,7 @@
       </args>
       <response ID="PlotResp" type="HTML" index="1">
         <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps"/> -->
         <result type="image" ID="ref_map" file_suffix=".png"/>
         <result type="map_scale" ID="map_scale"/>
@@ -2525,7 +2525,7 @@
       <service>ferret</service>
     </operation>
     <region>
-      <!-- Not sure about this since the plot is planar in XY but the extract 
+      <!-- Not sure about this since the plot is planar in XY but the extract
 				doesn't have to be. -->
       <intervals name="xy" type="Maps" title="Location Plot"/>
     </region>
@@ -2557,7 +2557,7 @@
       </args>
       <response ID="PlotResp" type="HTML" index="1">
         <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps"/> -->
         <result type="image" ID="ref_map" file_suffix=".png"/>
         <result type="debug" ID="debug" file_suffix=".txt"/>
@@ -2566,7 +2566,7 @@
       <service>ferret</service>
     </operation>
     <region>
-      <!-- Not sure about this since the plot is planar in XY but the extract 
+      <!-- Not sure about this since the plot is planar in XY but the extract
 				doesn't have to be. -->
       <intervals name="z" type="Line Plot" title="Depth Profile"/>
     </region>
@@ -2616,7 +2616,7 @@
       </args>
       <response ID="PlotResp" type="HTML" index="1">
         <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps" /> -->
         <result type="image" ID="ref_map" file_suffix=".png"/>
         <result type="map_scale" ID="map_scale"/>
@@ -2626,7 +2626,7 @@
       <service>ferret</service>
     </operation>
     <region>
-      <!-- Not sure about this since the plot is planar in XY but the extract 
+      <!-- Not sure about this since the plot is planar in XY but the extract
 				doesn't have to be. -->
       <intervals name="xy" type="Maps" title="Location Plot"/>
     </region>
@@ -2658,7 +2658,7 @@
       </args>
       <response ID="PlotResp" type="HTML" index="1">
         <result type="image" ID="plot_image" streamable="true" mime_type="image/png" file_suffix=".png"/>
-        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript" 
+        <!-- <result type="ps" ID="plot_postscript" streamable="true" mime_type="application/postscript"
 					file_suffix=".ps" /> -->
         <result type="image" ID="ref_map" file_suffix=".png"/>
         <result type="debug" ID="debug" file_suffix=".txt"/>
@@ -2667,7 +2667,7 @@
       <service>ferret</service>
     </operation>
     <region>
-      <!-- Not sure about this since the plot is planar in XY but the extract 
+      <!-- Not sure about this since the plot is planar in XY but the extract
 				doesn't have to be. -->
       <intervals name="t" type="Line Plot" title="Time Series"/>
     </region>
@@ -2685,9 +2685,9 @@
       <result type="xml" ID="thredds" streamable="true" mime_type="text/xml" file_suffix=".xml"/>
     </response>
   </operation>
-  <!-- Create a Metadata operation to replace the metadata action managed 
+  <!-- Create a Metadata operation to replace the metadata action managed
 		by the old UI. -->
-  <!-- This one shows only summeary and contact information with the variables 
+  <!-- This one shows only summeary and contact information with the variables
 		and their ranges. -->
   <operation name="Metadata" ID="Metadata" output_template="metadata" service_action="" private="true">
     <service>template</service>

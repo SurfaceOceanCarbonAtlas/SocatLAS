@@ -41,7 +41,7 @@
     &point_ui;
 
     <images>
-        <image name="Image_StdWorld" url="gifs/java_0_world.gif" 
+        <image name="Image_StdWorld" url="gifs/java_0_world.gif"
                bounds="-180,180,-90,90"/>
     </images>
     <menus>

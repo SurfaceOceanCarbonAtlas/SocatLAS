@@ -44,7 +44,7 @@
         <link match="/lasdata/grids/grid-XLON-YLAT-TMNTH-socat_v2_coast" />
         <properties>
           <ferret>
-            <seasonal_transform>MAX</seasonal_transform> 
+            <seasonal_transform>MAX</seasonal_transform>
           </ferret>
         </properties>
       </COAST_FCO2_MAX-socat_v2_coast>

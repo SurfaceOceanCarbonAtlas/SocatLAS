@@ -18,6 +18,7 @@
 <!ENTITY SOCATvLatest_ERDDAP SYSTEM "SOCATvLatest_ERDDAP.xml">
 
 <!-- SOCAT earlier datasets -->
+<!ENTITY SOCATv2020_ERDDAP SYSTEM "SOCATv2020_ERDDAP.xml">
 <!ENTITY SOCATv2019_ERDDAP SYSTEM "SOCATv2019_ERDDAP.xml">
 <!ENTITY SOCATv6_ERDDAP SYSTEM "SOCATv6_ERDDAP.xml">
 <!ENTITY SOCATv5_ERDDAP SYSTEM "SOCATv5_ERDDAP.xml">
@@ -28,30 +29,35 @@
 
 <!ENTITY SOCAT_dist2land SYSTEM "SOCAT_dist2land.xml">
 
+<!ENTITY SOCATv2020_quarter_coastal SYSTEM "SOCATv2020_quarter_coastal.xml">
+<!ENTITY SOCATv2020_gridded_decadal SYSTEM "SOCATv2020_gridded_decadal.xml">
+<!ENTITY SOCATv2020_gridded_monthly SYSTEM "SOCATv2020_gridded_monthly.xml">
+<!ENTITY SOCATv2020_gridded_yearly SYSTEM "SOCATv2020_gridded_yearly.xml">
+
 <!ENTITY SOCATv2019_quarter_coastal SYSTEM "SOCATv2019_quarter_coastal.xml">
 <!ENTITY SOCATv2019_gridded_decadal SYSTEM "SOCATv2019_gridded_decadal.xml">
 <!ENTITY SOCATv2019_gridded_monthly SYSTEM "SOCATv2019_gridded_monthly.xml">
-<!ENTITY SOCATv2019_gridded_yearly SYSTEM "SOCATv2019_gridded_yearly.xml"> 
+<!ENTITY SOCATv2019_gridded_yearly SYSTEM "SOCATv2019_gridded_yearly.xml">
 
 <!ENTITY SOCATv6_quarter_coastal SYSTEM "SOCATv6_quarter_coastal.xml">
 <!ENTITY SOCATv6_gridded_decadal SYSTEM "SOCATv6_gridded_decadal.xml">
 <!ENTITY SOCATv6_gridded_monthly SYSTEM "SOCATv6_gridded_monthly.xml">
-<!ENTITY SOCATv6_gridded_yearly SYSTEM "SOCATv6_gridded_yearly.xml"> 
+<!ENTITY SOCATv6_gridded_yearly SYSTEM "SOCATv6_gridded_yearly.xml">
 
 <!ENTITY SOCATv5_quarter_coastal SYSTEM "SOCATv5_quarter_coastal.xml">
 <!ENTITY SOCATv5_gridded_decadal SYSTEM "SOCATv5_gridded_decadal.xml">
 <!ENTITY SOCATv5_gridded_monthly SYSTEM "SOCATv5_gridded_monthly.xml">
-<!ENTITY SOCATv5_gridded_yearly SYSTEM "SOCATv5_gridded_yearly.xml"> 
+<!ENTITY SOCATv5_gridded_yearly SYSTEM "SOCATv5_gridded_yearly.xml">
 
 <!ENTITY SOCATv4_quarter_coastal SYSTEM "SOCATv4_quarter_coastal.xml">
 <!ENTITY SOCATv4_gridded_decadal SYSTEM "SOCATv4_gridded_decadal.xml">
 <!ENTITY SOCATv4_gridded_monthly SYSTEM "SOCATv4_gridded_monthly.xml">
-<!ENTITY SOCATv4_gridded_yearly SYSTEM "SOCATv4_gridded_yearly.xml"> 
+<!ENTITY SOCATv4_gridded_yearly SYSTEM "SOCATv4_gridded_yearly.xml">
 
 <!ENTITY SOCATv3_quarter_coastal SYSTEM "SOCATv3_quarter_coastal.xml">
 <!ENTITY SOCATv3_gridded_decadal SYSTEM "SOCATv3_gridded_decadal.xml">
 <!ENTITY SOCATv3_gridded_monthly SYSTEM "SOCATv3_gridded_monthly.xml">
-<!ENTITY SOCATv3_gridded_yearly SYSTEM "SOCATv3_gridded_yearly.xml"> 
+<!ENTITY SOCATv3_gridded_yearly SYSTEM "SOCATv3_gridded_yearly.xml">
 
 <!ENTITY SOCATv2_quarter_coastal SYSTEM "SOCATv2_quarter_coastal.xml">
 <!ENTITY SOCATv2_gridded_decadal SYSTEM "SOCATv2_gridded_decadal.xml">
@@ -114,7 +120,7 @@
    &operations;
    &insitu_operations;
  </operations>
- 
+
  <las_categories>
   &ContinentalMarginDefSOCAT_cat;
   &CruiseDataSOCAT_cat;
@@ -125,6 +131,7 @@
 
  <!-- SOCAT datasets -->
  &SOCATvLatest_ERDDAP;
+ &SOCATv2020_ERDDAP;
  &SOCATv2019_ERDDAP;
  &SOCATv6_ERDDAP;
  &SOCATv5_ERDDAP;
@@ -132,6 +139,11 @@
  &SOCATv3_ERDDAP;
 
  &SOCAT_dist2land;
+
+ &SOCATv2020_quarter_coastal;
+ &SOCATv2020_gridded_decadal;
+ &SOCATv2020_gridded_monthly;
+ &SOCATv2020_gridded_yearly;
 
  &SOCATv2019_quarter_coastal;
  &SOCATv2019_gridded_decadal;

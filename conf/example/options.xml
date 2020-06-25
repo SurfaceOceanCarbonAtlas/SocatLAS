@@ -2,11 +2,11 @@
      This file is broken into two sections:
 
      1) The first creates a set of uniquely named options.
-     2) The second combines those options into named groups of options. 
+     2) The second combines those options into named groups of options.
 
-     As of the 'Armstrong' release of LAS, we are still using the 
+     As of the 'Armstrong' release of LAS, we are still using the
      original options syntax and thus need to create a separate <optiondef>
-     for each named option.  Then we use more <optiondef>s and the 'inherit' 
+     for each named option.  Then we use more <optiondef>s and the 'inherit'
      attribute to associate individual options into named groups.
 -->
 
@@ -18,7 +18,7 @@
      o 'Generic image' (size, image_format, etc.)
      o '1D image'      line plot specific
      o '2D image'      lots of 2D image options
-     o 'XY image'      lon/lat specific 
+     o 'XY image'      lon/lat specific
      o 'comparison'    for multi-image plots
      o 'vector'       vector specific
      o 'script'        (Matlab,Ferret,GrADS, etc.)
@@ -62,8 +62,8 @@ from the data at Z=15.&lt;/p&gt;
   <optiondef name="expression">
     <option>
       <help>
-Evaluate an algebraic expression. &lt;b&gt;$&lt;/b&gt; is used to represent 
-the current variable; you must have at least one &lt;b&gt;$&lt;/b&gt; in your expression. Example:&lt;p&gt; 
+Evaluate an algebraic expression. &lt;b&gt;$&lt;/b&gt; is used to represent
+the current variable; you must have at least one &lt;b&gt;$&lt;/b&gt; in your expression. Example:&lt;p&gt;
 &lt;b&gt;9/5 * $ + 32&lt;/b&gt;   Convert degrees C to Fahrenheit
       </help>
       <title>Evaluate expression</title>
@@ -75,8 +75,8 @@ the current variable; you must have at least one &lt;b&gt;$&lt;/b&gt; in your ex
     <option>
       <help>
 Evaluate an algebraic expression for the second variable in a variable
-comparison. &lt;br&gt; &lt;b&gt;$&lt;/b&gt; is used to represent 
-the current variable; you must have at least one &lt;b&gt;$&lt;/b&gt; in your expression. Example:&lt;p&gt; 
+comparison. &lt;br&gt; &lt;b&gt;$&lt;/b&gt; is used to represent
+the current variable; you must have at least one &lt;b&gt;$&lt;/b&gt; in your expression. Example:&lt;p&gt;
 &lt;b&gt;9/5 * $ + 32&lt;/b&gt;   Convert degrees C to Fahrenheit
       </help>
       <title>Evaluate expression (2nd variable)</title>
@@ -178,7 +178,7 @@ the current variable; you must have at least one &lt;b&gt;$&lt;/b&gt; in your ex
   <optiondef name="use_ref_map">
     <option>
       <help>
-Draw a map showing the currently selected geographical region If &lt;b>Default&lt;/b> is 
+Draw a map showing the currently selected geographical region If &lt;b>Default&lt;/b> is
 selected, the server will decide whether it is appropriate to draw the map. If &lt;B>No&lt;/B> is selected, the map is never drawn.
       </help>
       <title>Show reference map</title>
@@ -193,7 +193,7 @@ selected, the server will decide whether it is appropriate to draw the map. If &
   <optiondef name="margins">
     <option>
       <help>
-Make the plot with or without margins: when no margins is chosen, the axes are 
+Make the plot with or without margins: when no margins is chosen, the axes are
 at the edges of the plot (WMS-style plots). By default margins are shown.
       </help>
       <title>Margins</title>
@@ -376,7 +376,7 @@ at the edges of the plot (WMS-style plots). By default margins are shown.
   <optiondef name="contour_style">
     <option>
       <help>What style of contours to draw
-Choices are: 
+Choices are:
 &lt;ul>
 &lt;li>&lt;b>Default&lt;/b> -- let LAS decide
 &lt;li>&lt;b>Raster&lt;/b> -- Fill each grid cell with the appropriate color
@@ -405,12 +405,12 @@ Choices are:
 &lt;li>&lt;b>60V&lt;/b> Draw 60 levels based on the variance of the data with open-ended extrema
 &lt;li>&lt;b>30H&lt;/b> Draw 30 levels based on a histogram
 &lt;li>&lt;b>25&lt;/b> Draw 25 levels spanning the range of the data
-&lt;li>&lt;b>30C&lt;/b> Draw 30 levels centered at 0 
+&lt;li>&lt;b>30C&lt;/b> Draw 30 levels centered at 0
 &lt;li>&lt;b>(0,100,10)&lt;/b>  Bands of color starting at 0, ending at 100, with an interval of 10
 &lt;li>&lt;b>(-inf)(-10,10,0.25)(inf)&lt;/b> Bands of color between -10 and 10 with an additional color at each end of the spectrum representing all values below (-inf) or above (inf)
 &lt;li>&lt;b>(-100)(-10,10,0.25)(100)&lt;/b> Bands of color between -10 and 10 with a additional bands for all outlying values up to +/- 100.
-&lt;/ul> 
-Detailed info is available in the Ferret User\'s Guide., see Levels at  
+&lt;/ul>
+Detailed info is available in the Ferret User\'s Guide., see Levels at
 http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/CONTOURING#_VPINDEXENTRY_853
       </help>
       <title>Color fill levels</title>
@@ -422,10 +422,10 @@ http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/C
     <option>
       <help>Set the contour levels of the plot. Contour levels are described using Ferret syntax. Examples:
 &lt;ul>&lt;li>&lt;b>(0,100,10)&lt;/b>  Draw lines starting at 0, ending at 100, with an interval of 10
-&lt;li>&lt;b>25&lt;/b> Draw 25 lines 
-&lt;li>&lt;b>10C&lt;/b> Draw 10 lines centered at 0 
-&lt;/ul> 
-Detailed info is available in the Ferret User\'s Guide., see Levels at  
+&lt;li>&lt;b>25&lt;/b> Draw 25 lines
+&lt;li>&lt;b>10C&lt;/b> Draw 10 lines centered at 0
+&lt;/ul>
+Detailed info is available in the Ferret User\'s Guide., see Levels at
 http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/CONTOURING#_VPINDEXENTRY_853
 </help>
       <title>Contour levels</title>
@@ -451,7 +451,7 @@ http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/C
   <optiondef name="set_aspect">
     <option>
       <help>Have LAS calculate a suitable aspect ratio
-Choices are: 
+Choices are:
 &lt;ul>&lt;li>&lt;b>Default&lt;/b> -- let LAS decide the aspect ratio
 &lt;li>&lt;b>Yes&lt;/b> -- Force LAS to calculate the aspect ratio of the plot based on the aspect ratio of the geographic region
 &lt;li>&lt;b>No&lt;/b> -- Do not change the aspect ratio based on the region.
@@ -468,12 +468,12 @@ Choices are:
 
   <optiondef name="land_type">
     <option>
-      <help>Style for drawing continents. Only applies to XY plots. 
-Choices are: 
-&lt;ul>&lt;li>&lt;b>Default&lt;/b> -- let LAS decide 
-&lt;li>&lt;b>None&lt;/b> -- don\'t draw continents 
-&lt;li>&lt;b>Outline&lt;/b> -- draw continent outlines 
-&lt;li>&lt;b>Filled&lt;/b> -- draw filled continents 
+      <help>Style for drawing continents. Only applies to XY plots.
+Choices are:
+&lt;ul>&lt;li>&lt;b>Default&lt;/b> -- let LAS decide
+&lt;li>&lt;b>None&lt;/b> -- don\'t draw continents
+&lt;li>&lt;b>Outline&lt;/b> -- draw continent outlines
+&lt;li>&lt;b>Filled&lt;/b> -- draw filled continents
 &lt;/ul>
       </help>
       <title>Land fill style</title>
@@ -519,10 +519,10 @@ creates two plots in one column.
     <option>
       <help>Set the contour levels of the second plot. Contour levels are described using Ferret syntax. Examples:
 &lt;ul>&lt;li>&lt;b>(0,100,10)&lt;/b>  Draw lines starting at 0, ending at 100, with an interval of 10
-&lt;li>&lt;b>25&lt;/b> Draw 25 lines 
-&lt;li>&lt;b>10C&lt;/b> Draw 10 lines centered at 0 
-&lt;/ul> 
-Detailed info is available in the Ferret User\'s Guide., see Levels at  
+&lt;li>&lt;b>25&lt;/b> Draw 25 lines
+&lt;li>&lt;b>10C&lt;/b> Draw 10 lines centered at 0
+&lt;/ul>
+Detailed info is available in the Ferret User\'s Guide., see Levels at
 http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/CONTOURING#_VPINDEXENTRY_853
       </help>
       <title>Contour levels (2nd variable) </title>
@@ -534,10 +534,10 @@ http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/C
     <option>
       <help>Set the fill levels of the second plot. Fill levels are described using Ferret syntax. Examples:
 &lt;ul>&lt;li>&lt;b>(0,100,10)&lt;/b>  Draw lines starting at 0, ending at 100, with an interval of 10
-&lt;li>&lt;b>25&lt;/b> Draw 25 lines 
-&lt;li>&lt;b>10C&lt;/b> Draw 10 lines centered at 0 
-&lt;/ul> 
-Detailed info is available in the Ferret User\'s Guide., see Levels at  
+&lt;li>&lt;b>25&lt;/b> Draw 25 lines
+&lt;li>&lt;b>10C&lt;/b> Draw 10 lines centered at 0
+&lt;/ul>
+Detailed info is available in the Ferret User\'s Guide., see Levels at
 http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/CONTOURING#_VPINDEXENTRY_853
       </help>
       <title>Color fill levels (2nd variable)</title>
@@ -616,7 +616,7 @@ http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/C
       <textfield name="vector_subsampling"/>
     </option>
   </optiondef>
-  
+
   <optiondef name="vector_length">
     <option>
       <help> This associates the value with the standard vector length, normally one half inch. By default this is computed automatically based on the length of the vectors shown. On FLOWline-style plots, this number controls the length of the arrow-heads.
@@ -625,7 +625,7 @@ http://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/customizing-plots/C
       <textfield name="vector_length"/>
     </option>
   </optiondef>
-  
+
   <optiondef name="vector_style">
     <option>
       <help> This option sets a choice of standard vector arrows, or a "flowline" style, which draws a pathline integration of a 2-dimensional instantaneous flow field (it is not a streamline calculation). The default is vector arrows.
@@ -668,7 +668,7 @@ i.e. 48 - start time: 24 hours before selected timestep
 &lt;li>2 weeks: 336 hrs
 &lt;li>1 month: 730.485 hrs  (24*(365.2425/12))
 &lt;li>3 month: 2191.455 hrs
-&lt;li>1 year: 8765.82 hrs  (365.2425*24) !! MAY BE TOO LARGE !! 
+&lt;li>1 year: 8765.82 hrs  (365.2425*24) !! MAY BE TOO LARGE !!
 &lt;/ul>
       </help>
       <title>Select time range</title>
@@ -696,7 +696,7 @@ i.e. 48 - start time: 24 hours before selected timestep
   <optiondef name="Options_Compare_Data" inherit="#expression,#expression2"/>
   <optiondef name="Options_Compare_Data_file" inherit="#expression,#expression2,#data_format"/>
 
-  <!-- Graphical products --> 
+  <!-- Graphical products -->
   <optiondef name="Options_Default" inherit="#expression,#interpolate_data,#image_format,#size,#use_ref_map,#use_graticules,#margins,#deg_min_sec"/>
   <!-- Eliminate the ref map -->
   <optiondef name="Options_Default_7" inherit="#expression,#interpolate_data,#image_format,#size,#use_graticules,#margins,#deg_min_sec"/>
@@ -740,7 +740,7 @@ i.e. 48 - start time: 24 hours before selected timestep
   <optiondef name="Options_2D_GE" inherit="#expression,#interpolate_data,#palette"/>
   <optiondef name="Options_2D_contour_GE" inherit="#Options_2D_GE,#contour_style,#fill_levels,#contour_levels,#mark_grid"/>
   <optiondef name="Options_2D_image_contour_GE" inherit="#Options_2D_contour_GE"/>
-  <optiondef name="Options_2D_image_contour_xy_GE" inherit="#Options_2D_image_contour_GE,#set_aspect,#land_type,#stride_quality_factor,#ge_overlay_style"/>  
+  <optiondef name="Options_2D_image_contour_xy_GE" inherit="#Options_2D_image_contour_GE,#set_aspect,#land_type,#stride_quality_factor,#ge_overlay_style"/>
   <!-- Comparison 2-dimensional plots -->
   <optiondef name="Options_Compare" inherit="#Options_2D_contour,#expression2"/>
 

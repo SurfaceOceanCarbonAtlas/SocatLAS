@@ -2,6 +2,9 @@
   <category name="SOCAT Latest Data Collection" ID="SOCATvLatest_ERDDAP" sort_order="001">
     <filter action="apply-dataset" equals="SOCAT Latest Data Collection"/>
   </category>
+  <category name="SOCAT v2020 Data Collection" ID="SOCATv2020_ERDDAP" sort_order="008">
+    <filter action="apply-dataset" equals="SOCAT v2020 Data Collection"/>
+  </category>
   <category name="SOCAT v2019 Data Collection" ID="SOCATv2019_ERDDAP" sort_order="009">
     <filter action="apply-dataset" equals="SOCAT v2019 Data Collection"/>
   </category>

@@ -1,5 +1,5 @@
 <datasets>
-  <socat_latest_fulldata name="SOCAT Latest Data Collection" 
+  <socat_latest_fulldata name="SOCAT Latest Data Collection"
                          url="http://******/erddap/tabledap/"
                          doc="doc/piecewise_decimation_reference.html" >
     <properties>
@@ -20,10 +20,10 @@
         <lon_domain>-180:180</lon_domain>
         <title>SOCAT Latest Data Collection</title>
         <time>time</time>
-        <all_variables>socat_doi, qc_flag, socat_version, all_region_ids, 
+        <all_variables>socat_doi, qc_flag, socat_version, all_region_ids,
                        sample_number, year, month, day, hour, minute, second,
                        sal, temp, Temperature_equi, delta_temp, Temperature_atm, Pressure_atm, Pressure_equi,
-                       woa_sss, pressure_ncep_slp, etopo2, dist_to_land, gvCO2, 
+                       woa_sss, pressure_ncep_slp, etopo2, dist_to_land, gvCO2,
                        fCO2_recommended, fCO2_source, WOCE_CO2_water, WOCE_CO2_atm,
                        xCO2_water_equi_temp_wet_ppm, xCO2_water_sst_wet_ppm,
                        xCO2_water_equi_temp_dry_ppm, xCO2_water_sst_dry_ppm,
@@ -50,9 +50,9 @@
                        xH2O_equi, relative_humidity, specific_humidity,
                        calc_speed, ship_speed, ship_dir, wind_speed_rel, wind_speed_true, wind_dir_true, wind_dir_rel,
                        region_id, day_of_year, tmonth, lon360</all_variables>
-        <downloadall_variables>socat_doi, qc_flag, socat_version, year, month, day, hour, minute, second, 
+        <downloadall_variables>socat_doi, qc_flag, socat_version, year, month, day, hour, minute, second,
                                sal, temp, Temperature_equi, Pressure_atm, Pressure_equi,
-                               woa_sss, pressure_ncep_slp, etopo2, dist_to_land, gvCO2, 
+                               woa_sss, pressure_ncep_slp, etopo2, dist_to_land, gvCO2,
                                fCO2_recommended, fCO2_source, WOCE_CO2_water</downloadall_variables>
         <trajectory_id>expocode</trajectory_id>
         <server>TableDAP Trajectory</server>
@@ -77,7 +77,7 @@
       </correlation>
       <thumbnails>
          <metadata>expocode,platform_name,platform_type,investigators,qc_flag</metadata>
-         <!-- Only the pairs which contain the variable from the main page are plotted from this group. 
+         <!-- Only the pairs which contain the variable from the main page are plotted from this group.
          <variable_pairs>
          </variable_pairs>
          -->
@@ -101,7 +101,7 @@
             time-socat_latest_fulldata,xCO2_water_equi_temp_dry_ppm-socat_latest_fulldata,WOCE_CO2_water-socat_latest_fulldata
             time-socat_latest_fulldata,xCO2_water_sst_dry_ppm-socat_latest_fulldata,WOCE_CO2_water-socat_latest_fulldata
         </coordinate_pairs>
-        <!-- The names of the variables needed to make all of the thumbnail plots so the netcdf file can be as minimal as possible. 
+        <!-- The names of the variables needed to make all of the thumbnail plots so the netcdf file can be as minimal as possible.
              Do not list latitude,longitude,depth,time,expocode
              as these are handled by LAS internally
         -->
@@ -529,7 +529,7 @@
 </grids>
 
 <axes>
-  <time-socat_latest_fulldata type="t" units="days" 
+  <time-socat_latest_fulldata type="t" units="days"
       display_lo="01-Jan-1957 00:00:00" display_hi="31-Dec-2020 00:00:00">
     <arange start="1957-01-01 00:00" size="23376" step="1" />
   </time-socat_latest_fulldata>
